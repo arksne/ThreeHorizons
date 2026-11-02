@@ -1,0 +1,16 @@
+# --- vendor-бинарники: portable Blender ~900 МБ, в git не тянем ---
+tools/blender/
+
+# --- локальные кэши инструментов ---
+.serena/
+__pycache__/
+*.pyc
+
+# --- локальные бэкапы проекта (9 снимков, ~326 МБ) ---
+backups/
+
+# --- служебное ---
+*.blend1
+Thumbs.db
+desktop.ini
+.DS_Store
