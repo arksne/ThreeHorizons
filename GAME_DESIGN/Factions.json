@@ -114,12 +114,18 @@
    "government": "без единого правителя (капитаны и банды)",
    "districtsGame": [
     "central_market", "main_harbor", "warehouses", "taverns",
-    "inns", "shops", "residential", "meeting_places", "npc_hiring"
+    "inns", "shops", "residential", "meeting_places", "black_market"
    ],
    "paletteTokens": ["GRN_WOOD", "ARK_STEEL", "GRN_TERRA"],
-   "status": "PROPOSED",
-   "notes": "C-11: Bible §2 и C-05 дают 0.8×0.6 км/1700 м/8000 (взято здесь), ISLAND_CATALOG — 1100×850 м и роль «торговый хаб». Нужно решение владельца: Гавань = пиратский free-port (выбрано) или отдельный торговый хаб + Pirate Base.",
-   "sources": ["Bible §2", "CITY_LAYOUTS", "ISLAND_CATALOG", "C-05", "C-11"]
+   "blackMarket": {
+    "enabled": true,
+    "location": "black_harbor",
+    "note": "Отдельный нелегальный контур торговли: без записей в Audit, цена ниже/выше в зависимости от риска, патрули могут изъять груз.",
+    "rulesRef": "GAME_DESIGN/Prices.json#BLACK_MARKET"
+   },
+   "status": "APPROVED",
+   "notes": "C-11 APPROVED (2026-11-10): одна Гавань — пиратский свободный порт и торговый узел, 0.8×0.6 км по C-05, с чёрным рынком. Pirate Base отдельным островом не вводим.",
+   "sources": ["Bible §2", "CITY_LAYOUTS", "C-05", "C-11"]
   }
  ],
  "pirateOutpost": {

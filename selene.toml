@@ -1,7 +1,15 @@
-std = "roblox"
+# Селен: в офлайн-среде стандартная библиотека Roblox не скачивается (нужны сеть и запись в
+# %LOCALAPPDATA%). Поэтому берём встроенный lua51 и отключаем единственный зависящий от него линт.
+# Синтаксис и стиль проверяются полностью; API-глобалы Roblox ловит luau-compile.
+# Когда появится сеть — вернуть std = "roblox" и удалить блок [lints].
+
+std = "lua51"
 
 exclude = [
-  "tools/luau/**",
-  "backups/**",
-  "ROBLOX_IMPLEMENTATION/build/**",
+    "tools/luau/**",
+    "backups/**",
+    "ROBLOX_IMPLEMENTATION/build/**",
 ]
+
+[lints]
+undefined_variable = "allow"

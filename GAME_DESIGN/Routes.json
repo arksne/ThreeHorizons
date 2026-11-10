@@ -1,0 +1,78 @@
+{
+ "schemaVersion": 1,
+ "generatedFrom": [
+  "docs/world/TRADE_ROUTES.md",
+  "docs/WORLD_MASTER_MAP.md#Маршруты",
+  "docs/THREE_HORIZONS_PROJECT_BIBLE.md#4"
+ ],
+ "note": "Маршруты связывают столицы с хабом (Чёрная Гавань). Расстояния и время в игровых единицах считаются в Ф2.7 по WORLD_COORDINATES.csv — здесь их пока нет намеренно.",
+ "speedMs": 18,
+ "speedNote": "18 м/с — скорость среднего корпуса (Bible §4 / плановая).",
+ "routes": [
+  {
+   "id": "arkvein_hub",
+   "from": "arkvein",
+   "to": "black_harbor",
+   "type": "cargo",
+   "cargo": ["ships", "parts", "metal"],
+   "backCargo": ["goods_all_factions"],
+   "distanceGameM": null,
+   "distanceLoreKm": null,
+   "status": "APPROVED",
+   "note": "Корабли/механизмы в обмен на товары всех фракций."
+  },
+  {
+   "id": "valmer_hub",
+   "from": "valmer",
+   "to": "black_harbor",
+   "type": "cargo",
+   "cargo": ["aquacrystal", "water_services"],
+   "backCargo": ["goods_all_factions"],
+   "distanceGameM": null,
+   "distanceLoreKm": null,
+   "status": "APPROVED",
+   "note": "Вода/очистка в обмен на питьё и услуги."
+  },
+  {
+   "id": "grinwald_hub",
+   "from": "grinwald",
+   "to": "black_harbor",
+   "type": "cargo",
+   "cargo": ["grain", "flour", "bread"],
+   "backCargo": ["goods_all_factions"],
+   "distanceGameM": null,
+   "distanceLoreKm": null,
+   "status": "APPROVED",
+   "note": "Продовольствие."
+  },
+  {
+   "id": "esterholm_hub",
+   "from": "esterholm",
+   "to": "black_harbor",
+   "type": "cargo",
+   "cargo": ["research_goods", "ruins_loot"],
+   "backCargo": ["supplies"],
+   "distanceGameM": null,
+   "distanceLoreKm": null,
+   "status": "APPROVED",
+   "note": "Исследовательские грузы из руин (C-08: без мистики)."
+  },
+  {
+   "id": "pirate_raid",
+   "from": "black_harbor",
+   "to": "arkvein",
+   "type": "contraband",
+   "cargo": ["seized_goods"],
+   "backCargo": [],
+   "distanceGameM": null,
+   "distanceLoreKm": null,
+   "status": "PROPOSED",
+   "note": "Рейды на маршрут Арквейн↔Гавань; контрабандный тип, аудит не пишется."
+  }
+ ],
+ "requirements": {
+  "noShoreCrossings": "Маршруты не пересекают берега островов (проверка validate_world.py в Ф2.6).",
+  "escortPoints": "Эскорт-точки на маршрутах (пока без координат — Ф2).",
+  "intermediateWarehouses": "Промежуточные склады на длинных плечах (позже, Ф6)."
+ }
+}

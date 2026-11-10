@@ -1,0 +1,132 @@
+{
+ "schemaVersion": 1,
+ "approved": "S-01…S-06 (DECISIONS.md, 2026-11-10)",
+ "generatedFrom": [
+  "docs/MASTER_SCALE_SPEC.md",
+  "docs/WORLD_MASTER_MAP.md",
+  "docs/WORLD_NETWORK_ARCHITECTURE.md",
+  "docs/ARCHITECTURE.md",
+  "docs/QUALITY_ASSURANCE.md",
+  "docs/UX_DESIGN_SPEC.md",
+  "docs/DESIGN_TOKENS.md",
+  "docs/AUDIO_DESIGN_BIBLE.md",
+  "docs/CLOUD_SYSTEM.md",
+  "docs/THREE_LAYER_CLOUD_SEA.md",
+  "docs/SPECS_COMBINED.md",
+  "docs/PROCEDURAL_GENERATION.md",
+  "docs/ART_PIPELINE_BLENDER_KIT.md"
+ ],
+ "scale": {
+  "metersToStuds": 3.571,
+  "studsToMeters": 0.28,
+  "worldCompression": 0.1,
+  "verticalCompression": 0.1,
+  "note": "S-01 и S-02: 1 м = 3.571 studs, мир сжат 1:10 по всем осям."
+ },
+ "ergonomics": {
+  "playerHeightM": 1.7,
+  "shoulderWidthM": 0.5,
+  "doorM": [1.0, 2.1],
+  "corridorMinM": 1.2,
+  "ceilingLivingM": 2.7,
+  "ceilingServiceM": 3.2,
+  "stairs": { "depthM": 0.25, "heightM": 0.18 },
+  "rampMaxDeg": 20,
+  "furnitureM": { "tableH": 0.75, "chairH": 0.45, "bed": [2.0, 0.9], "wardrobeDepth": 0.6 }
+ },
+ "city": {
+  "streetSecondaryM": 4,
+  "streetMainM": 8,
+  "squareMinM": [20, 20],
+  "dockM": [40, 14],
+  "buildingGapM": 3,
+  "chunkM": 100
+ },
+ "world": {
+  "mapStuds": [54000, 78000],
+  "mapKm": [18, 26],
+  "seaY": 0,
+  "islands": 6,
+  "miniIslands": 10,
+  "streaming": { "pcRadiusStuds": 1200, "mobileRadiusStuds": 500 }
+ },
+ "art": {
+  "heroTriMax": 12000,
+  "meshPartTriMax": 9500,
+  "lod1Ratio": 0.35,
+  "lod2Ratio": 0.08,
+  "materialsMaxPerAsset": 3,
+  "textureSize": 1024,
+  "tileM": 4,
+  "houseBoxesMaxL0": 60
+ },
+ "limits": {
+  "nearPartsMax": 8000,
+  "remotePerSecMax": 60,
+  "playersPerShard": 60
+ },
+ "net": {
+  "shardRange": [60, 80],
+  "messagingPerMin": 1000,
+  "memoryOpsPerMin": 100000,
+  "posRepNearHz": 10,
+  "posRepFarHz": 2,
+  "nearDistanceStuds": 500,
+  "weatherTickSec": 10,
+  "fleetOffline": { "tickMin": 5, "capHours": 24 }
+ },
+ "rateLimit": { "tradePerSec": 5, "interactPerSec": 10, "chatPerSec": 3 },
+ "save": { "autosaveSec": 120, "retries": 3, "bindToClose": true, "migrations": true },
+ "platform": {
+  "pc": { "targetRadiusStuds": 1200, "shadows": true },
+  "mobile": { "targetRadiusStuds": 500, "shadows": false, "lodBias": -1, "minButtonPt": 44 },
+  "profiles": ["Low", "Med", "High"],
+  "autoDowngradeFps": 30
+ },
+ "procgen": {
+  "rng": "mulberry32",
+  "facade": "+Z",
+  "windowM": [0.9, 1.2],
+  "windowStepM": 1.8,
+  "beamM": 0.24,
+  "roofKinds": ["gable", "hip", "tower", "flat"]
+ },
+ "ui": {
+  "template": "список слева → детали справа → действие внизу",
+  "windowsCount": 11,
+  "verbs": { "interact": "E", "dock": "F", "map": "M", "inventory": "Tab", "help": "H" },
+  "tokens": { "parchment": "#E8DCC0", "parchmentDark": "#CBB98F", "brass": "#B08D3E", "ink": "#1E1A14" },
+  "radiusPx": 4,
+  "borderPx": 2,
+  "titleFont": "serif (Garamond / Merriweather)",
+  "bodyFont": "sans 14–16px"
+ },
+ "audio": {
+  "bpm": [70, 95],
+  "zones": ["arkvein", "valmer", "grinwald", "esterholm", "black_harbor", "sea"],
+  "uiMaxDb": -12,
+  "naming": "TH_AU_<faction>_<name>_v1"
+ },
+ "clouds": {
+  "fieldKm": [12, 12],
+  "tickHz": 4,
+  "puffMaxActive": 6,
+  "puffLifetimeSec": 6,
+  "layers": 3,
+  "nativeClouds": true,
+  "meshClouds": false
+ },
+ "cloudSea": {
+  "layers": ["lower", "middle", "upper"],
+  "yStuds": [1.2, 5.0, 9.5],
+  "wave": [0.8, 1.4, 2.0],
+  "billows": [18, 14, 10]
+ },
+ "defeat": {
+  "respawnSafePoint": true,
+  "keepSkills": true,
+  "cargoLoss": "часть груза",
+  "ship": { "damage": true, "cargoLoss": true, "capture": true, "destroyOnCrit": true },
+  "respawnShieldSec": 5
+ }
+}

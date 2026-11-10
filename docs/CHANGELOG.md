@@ -1,3 +1,17 @@
+## v0.2.0 — 2026-11-10
+
+### Ф1 · Канон → данные (закрыта, 13/13)
+- `docs/roadmap/canon-map.md`: 53 строки «источник → JSON → поле», 13 JSON в плане.
+- `GAME_DESIGN/`: `Factions`, `Heroes`, `Goods`, `Prices`, `Ships`, `Professions`, `Routes`,
+  `Buildings`, `Weather`, `NPC`, `Quests`, `constants` — все с полем `generatedFrom`.
+- `tools/validate_design.py`: проверка 12 файлов (id, ссылки, цепочки, маршруты, квесты, константы);
+  негативный тест ловит битый JSON. `tools/bundle_design.py` → `bundle.json` + `Config/Bundle.lua`.
+- Решения: **C-10** — районы столиц по `CITY_LAYOUTS`, лорный список — названия/атмосфера;
+  **C-11** — Чёрная Гавань = пиратский свободный порт + торговый узел (0.8×0.6 км) **с чёрным рынком**,
+  Pirate Base отдельным островом не вводим.
+- `selene.toml`: `std = "lua51"` + отключён `undefined_variable` (офлайн-среда; вернуть `roblox` при сети).
+- `preflight` зелёный уже с реальным кодом (`Bundle.lua`): stylua + selene + luau-compile + rojo build.
+
 ## v0.1.0 — 2026-11-10
 
 **Чистый старт.** Наработки v1.x обнулены (вынесены в `_TRASH_2026-11-10/`), оставлен только канон

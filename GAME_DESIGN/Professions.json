@@ -1,0 +1,28 @@
+{
+ "schemaVersion": 1,
+ "generatedFrom": [
+  "docs/THREE_HORIZONS_PROJECT_BIBLE.md#5",
+  "docs/SPECS_COMBINED.md#BALANCING"
+ ],
+ "note": "Классов нет — есть обучение навыкам. Мультипрофессии разрешены (Bible §5). Часы прокачки — PROPOSED из BALANCING (простые 1–5 ч, сложные 20+ ч).",
+ "skills": [
+  { "id": "engineering",   "name": "Инженерия",             "complex": true,  "levels": [{ "lvl": 1, "hours": 2 }, { "lvl": 2, "hours": 8 }, { "lvl": 3, "hours": 24 }], "effect": "скорость ремонта и качество деталей" },
+  { "id": "smithing",      "name": "Кузнечное дело",        "complex": true,  "levels": [{ "lvl": 1, "hours": 2 }, { "lvl": 2, "hours": 10 }, { "lvl": 3, "hours": 24 }], "effect": "выход металла и деталей" },
+  { "id": "construction",  "name": "Строительство",         "complex": true,  "levels": [{ "lvl": 1, "hours": 2 }, { "lvl": 2, "hours": 8 }, { "lvl": 3, "hours": 20 }], "effect": "скорость постройки и стоимость" },
+  { "id": "navigation",    "name": "Навигация",             "complex": false, "levels": [{ "lvl": 1, "hours": 1 }, { "lvl": 2, "hours": 3 }, { "lvl": 3, "hours": 5 }], "effect": "точность карты и курс" },
+  { "id": "seamanship",    "name": "Судовождение",          "complex": false, "levels": [{ "lvl": 1, "hours": 1 }, { "lvl": 2, "hours": 3 }, { "lvl": 3, "hours": 5 }], "effect": "управление кораблём, шторм-штраф" },
+  { "id": "trade",         "name": "Торговля",              "complex": false, "levels": [{ "lvl": 1, "hours": 1 }, { "lvl": 2, "hours": 3 }, { "lvl": 3, "hours": 5 }], "effect": "лучшие цены, доступ к чёрному рынку" },
+  { "id": "farming",       "name": "Земледелие",            "complex": false, "levels": [{ "lvl": 1, "hours": 1 }, { "lvl": 2, "hours": 3 }, { "lvl": 3, "hours": 5 }], "effect": "урожай и качество зерна" },
+  { "id": "husbandry",     "name": "Животноводство",        "complex": false, "levels": [{ "lvl": 1, "hours": 1 }, { "lvl": 2, "hours": 3 }, { "lvl": 3, "hours": 5 }], "effect": "продукция ферм" },
+  { "id": "shooting",      "name": "Стрельба",              "complex": true,  "levels": [{ "lvl": 1, "hours": 2 }, { "lvl": 2, "hours": 8 }, { "lvl": 3, "hours": 20 }], "effect": "точность и перезарядка" },
+  { "id": "fencing",       "name": "Фехтование",            "complex": true,  "levels": [{ "lvl": 1, "hours": 2 }, { "lvl": 2, "hours": 8 }, { "lvl": 3, "hours": 20 }], "effect": "ближний бой, парирование" },
+  { "id": "repair",        "name": "Ремонт",                "complex": false, "levels": [{ "lvl": 1, "hours": 1 }, { "lvl": 2, "hours": 3 }, { "lvl": 3, "hours": 5 }], "effect": "скорость латания корпуса/снастей" },
+  { "id": "management",    "name": "Управление предприятиями", "complex": true, "levels": [{ "lvl": 1, "hours": 2 }, { "lvl": 2, "hours": 10 }, { "lvl": 3, "hours": 24 }], "effect": "доход мастерской, слоты предприятия" }
+ ],
+ "rules": {
+  "noClasses": true,
+  "multiProfession": true,
+  "gain": "Опыт начисляется за действия (не тестом): подтверждается сервером, с txId-защитой.",
+  "status": "PROPOSED (часы и эффекты) / APPROVED (состав навыков)"
+ }
+}

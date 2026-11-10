@@ -1,0 +1,53 @@
+{
+ "schemaVersion": 1,
+ "generatedFrom": [
+  "docs/SPECS_COMBINED.md#BALANCING",
+  "docs/THREE_HORIZONS_PROJECT_BIBLE.md#6",
+  "docs/CONTRADICTIONS.md#C-11"
+ ],
+ "note": "Все цены — PROPOSED, до гейм-теста (Ф9) их можно менять только здесь. Валюта — монета.",
+ "currency": "coin",
+ "hulls": {
+  "light":  { "price": 800,  "note": "лёгкий корпус 18×6 м" },
+  "medium": { "price": 3000, "note": "средний корпус 32×10 м" },
+  "heavy":  { "price": 9000, "note": "тяжёлый корпус 48×15 м" }
+ },
+ "maintenance": { "perTripPercent": 2, "note": "обслуживание флота, % от стоимости за рейс" },
+ "workshop": { "incomePerGameHour": 40, "note": "пассивный доход мастерской" },
+ "professions": { "simpleHours": [1, 5], "complexHoursMin": 20 },
+ "risks": {
+  "stormWearMultiplier": 1.5,
+  "pirateCargoLossMaxPercent": 30
+ },
+ "goods": {
+  "wood": 10,
+  "planks": 25,
+  "ore": 15,
+  "metal": 40,
+  "parts": 90,
+  "fiber": 8,
+  "cloth": 20,
+  "clothes": 55,
+  "ether_raw": 30,
+  "fuel": 70,
+  "grain": 12,
+  "flour": 25,
+  "bread": 45,
+  "aquacrystal": 120
+ },
+ "goodsNote": "Базовые цены товаров придуманы для старта механики (PROPOSED): выведены из цепочек, не из канона. Проверяются в Ф9.",
+ "BLACK_MARKET": {
+  "enabled": true,
+  "location": "black_harbor",
+  "priceMultiplier": 0.7,
+  "sellMultiplier": 1.15,
+  "audit": "off-record",
+  "risk": {
+   "patrolSeizureChancePercent": 15,
+   "note": "груз могут изъять при проверке; событие пишется в журнал только фактом изъятия, без суммы"
+  },
+  "restrictedGoods": ["fuel", "aquacrystal", "grain"],
+  "note": "Чёрный рынок — отдельный контур: обычные сделки идут через Audit, чёрный — нет. Стратегические ресурсы можно продать/купить здесь без записи в аудит."
+ },
+ "status": "PROPOSED"
+}

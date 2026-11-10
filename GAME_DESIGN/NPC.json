@@ -1,0 +1,72 @@
+{
+ "schemaVersion": 1,
+ "generatedFrom": [
+  "docs/THREE_HORIZONS_PROJECT_BIBLE.md#7",
+  "docs/ARCHITECTURE.md#2",
+  "docs/world/CITY_LAYOUTS.md"
+ ],
+ "note": "NPC с расписанием и состояниями, без тяжёлого ИИ. Вне видимости игроков — агрегированное состояние, а не полная симуляция.",
+ "npcs": [
+  {
+   "id": "trader_marek",
+   "name": "Марек",
+   "role": "торговец",
+   "faction": "arkvein",
+   "location": "arkenhold.market",
+   "schedule": { "morning": "arkenhold.market", "day": "arkenhold.market", "night": "arkenhold.tavern" },
+   "dialog": { "greet": "Свежий товар, честные цены.", "default": "Смотри, не задерживайся." },
+   "services": ["shop"],
+   "quests": ["vale_planks"]
+  },
+  {
+   "id": "master_oren",
+   "name": "Орен",
+   "role": "мастер",
+   "faction": "arkvein",
+   "location": "arkenhold.workshop",
+   "schedule": { "morning": "arkenhold.workshop", "day": "arkenhold.workshop", "night": "arkenhold.residential" },
+   "dialog": { "greet": "Инструмент не трогай без спроса.", "default": "Работаю." },
+   "services": ["craft", "quests"],
+   "quests": ["vale_planks"]
+  },
+  {
+   "id": "dockmaster_ilsa",
+   "name": "Ильза",
+   "role": "начальник причала",
+   "faction": "arkvein",
+   "location": "arkenhold.trade_harbor",
+   "schedule": { "morning": "arkenhold.trade_harbor", "day": "arkenhold.trade_harbor", "night": "arkenhold.tavern" },
+   "dialog": { "greet": "Швартовка — по расписанию.", "default": "Свободных мест нет." },
+   "services": ["dock", "quests"],
+   "quests": []
+  },
+  {
+   "id": "tavern_keeper_bram",
+   "name": "Брам",
+   "role": "тавернщик",
+   "faction": "arkvein",
+   "location": "arkenhold.taverns",
+   "schedule": { "morning": "arkenhold.taverns", "day": "arkenhold.taverns", "night": "arkenhold.taverns" },
+   "dialog": { "greet": "Слухи дешевле эля.", "default": "Мест нет." },
+   "services": ["rest", "rumors"],
+   "quests": []
+  },
+  {
+   "id": "broker_vex",
+   "name": "Векс",
+   "role": "посредник чёрного рынка",
+   "faction": "black_harbor",
+   "location": "black_harbor.black_market",
+   "schedule": { "morning": "black_harbor.taverns", "day": "black_harbor.black_market", "night": "black_harbor.black_market" },
+   "dialog": { "greet": "Не задавай вопросов — и я не задам.", "default": "Товар или уходи." },
+   "services": ["black_market"],
+   "quests": []
+  }
+ ],
+ "rules": {
+  "states": ["morning", "day", "night"],
+  "aggregation": "Вне радиуса видимости NPC не ходит: сервер держит состояние по расписанию и применяет при входе в радиус.",
+  "noTeleport": "Переход между точками расписания — по таймеру, без мгновенных телепортов в кадре игрока.",
+  "status": "APPROVED"
+}
+}

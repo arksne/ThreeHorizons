@@ -1,44 +1,62 @@
 # STATUS — где мы сейчас
 
-> Живой файл: одна страница «текущее состояние». История изменений — `docs/CHANGELOG.md`,
-> решения — `docs/DECISIONS.md`, план — `ROADMAP_0.1.md`.
+> Живой файл: одна страница «текущее состояние». История — `docs/CHANGELOG.md`, решения —
+> `docs/DECISIONS.md`, план — `ROADMAP_0.1.md`, статусы шагов — `docs/PROGRESS.json`.
 > Обновлён: **2026-11-10**.
 
 ## Текущая фаза
 
-**Ф0 · База и правила** — шаги 0.1–0.12. Статусы — в `docs/PROGRESS.json` (канвас красится из него).
+Закрыты: **Ф0** (12/12) и **Ф1** (13/13). Следующая — **Ф2 · Масштаб и геометрия мира**.
 
-| Шаг | Статус | Evidence |
-|---|---|---|
-| 0.1 Скелет папок | ✅ | `GAME_DESIGN/`, `ART_ASSETS/{models,textures,previews}`, `ROBLOX_IMPLEMENTATION/{src,tests,build}`, `STEAM_IMPLEMENTATION/`, `tests/`, `backups/` + README в каждой |
-| 0.2 `.gitignore` | ✅ | бинарники арта, build, бэкапы, вендорные тулзы исключены |
-| 0.3 Коммит + тег | ✅ | `e52efa7`, тег `v0.1.0` |
-| 0.4 Инвентаризация | ✅ | `tools/TOOLCHAIN.md` |
-| 0.5 Тулчейн | ✅ | Luau CLI восстановлен в `tools/luau/`; Rojo/selene/StyLua найдены в `D:\DSH\20-tools` |
-| 0.6 `preflight.ps1` | ✅ | `PREFLIGHT OK` на пустом src |
-| 0.7 Документы управления | ✅ | `STATUS.md`, `CHANGELOG.md`, `DECISIONS.md` приведены к формату |
-| 0.8 Правила имён | ✅ | `docs/NAMING.md` |
-| 0.9 Версии и бэкапы | ✅ | `tools/bump_version.py`, `tools/backup.ps1`, `version.json` |
-| 0.10 Шаблон сессии | ✅ | `docs/SESSION_TEMPLATE.md` |
-| 0.11 Решения S-01…S-06 | ✅ | записаны в `DECISIONS.md`, подтверждены владельцем 2026-11-10 |
-| 0.12 Пустой плейс | ✅ | `ROBLOX_IMPLEMENTATION/build/TH_dev.rbxlx` собран Rojo |
+## Ф0 · База и правила — закрыта
+
+Скелет папок, `.gitignore`, `tools/preflight.ps1` (+ `-Art`), `tools/TOOLCHAIN.md`,
+`docs/STATUS.md` / `CHANGELOG.md` / `DECISIONS.md` / `NAMING.md` / `SESSION_TEMPLATE.md`,
+`docs/PROGRESS.json`, `tools/bump_version.py`, `tools/backup.ps1`, `version.json`,
+`ROBLOX_IMPLEMENTATION/default.project.json` + `build/TH_dev.rbxlx`.
+Решения **S-01…S-06** приняты и записаны.
+
+## Ф1 · Канон → данные — закрыта
+
+| Артефакт | Что внутри |
+|---|---|
+| `docs/roadmap/canon-map.md` | 53 строки «источник → JSON → поле» |
+| `GAME_DESIGN/Factions.json` | 3 фракции + Эстерхольм + Чёрная Гавань (с чёрным рынком), палитры, районы game/lore |
+| `GAME_DESIGN/Heroes.json` | 3 пары М/Ж, возрасты, крючки, точка встречи |
+| `GAME_DESIGN/Goods.json` | 14 товаров, 5 цепочек, 3 стратегических ресурса |
+| `GAME_DESIGN/Prices.json` | цены корпусов/товаров, чёрный рынок (всё PROPOSED) |
+| `GAME_DESIGN/Ships.json` | 3 корпуса, 10 модулей, 6 ролей экипажа |
+| `GAME_DESIGN/Professions.json` | 12 навыков с уровнями |
+| `GAME_DESIGN/Routes.json` | 4 маршрута + пиратский рейд (расстояния — Ф2.7) |
+| `GAME_DESIGN/Buildings.json` | 8 классов зданий с бюджетами |
+| `GAME_DESIGN/Weather.json` | 4 состояния + эффекты |
+| `GAME_DESIGN/NPC.json`, `Quests.json` | 5 NPC с расписанием, 3 стартовых квеста |
+| `GAME_DESIGN/constants.json` | масштаб, эргономика, лимиты, UI, облака, поражение |
+| `GAME_DESIGN/bundle.json` + `Config/Bundle.lua` | собранный бандл для Luau |
+| `tools/validate_design.py`, `tools/bundle_design.py` | валидатор (12 файлов) и сборка бандла |
+
+Решения **C-10 / C-11** приняты (районы — по CITY_LAYOUTS; Гавань — пираты + торговля + чёрный рынок).
 
 ## Проверено фактически
 
-- `pwsh -File tools/preflight.ps1` → `PREFLIGHT OK`.
-- `rojo build` собирает `TH_dev.rbxlx` из `default.project.json`.
-- Git: `v0.1.0` + рабочие коммиты по шагам.
+- `tools/validate_design.py` → **DESIGN OK**; негативный тест (битый JSON) падает с понятной ошибкой.
+- `tools/bundle_design.py` → `bundle.json` + `Bundle.lua` (12 блоков), `luau-compile` проходит.
+- `pwsh -File tools/preflight.ps1` → **PREFLIGHT OK** (stylua, selene, luau-compile, rojo build).
+- Git: тег `v0.1.0`, бэкап `backups/v0.1.0_2026-11-10`.
 
-## Следующее
+## Следующее (Ф2)
 
-**Ф1 · Канон → данные**: 12 JSON в `GAME_DESIGN/`, валидатор, `bundle.json`.
+**2.1** константы масштаба (3.571 studs/м, сжатие 1:10) → **2.2** координаты 6 островов →
+**2.3** мини-острова → **2.4** высоты → **2.5** карта → **2.6** валидатор геометрии →
+**2.7** времена перелётов → **2.8** кварталы Аркенхольда → **2.9** blockout-прикидка → **2.10** фиксация.
 
 ## Открытые вопросы
 
-Нет. Решения S-01…S-06 приняты: 1 м = 3.571 studs, сжатие 1:10, карта 18×26 км, шард 60,
-вода near-зоной, облака — три слоя.
+Нет. C-10/C-11 закрыты, S-01…S-06 приняты.
 
 ## Известные риски
 
-- Blender не в проекте (восстановить из `../_ThreeHorizons_archive_2026-11-10/tools/blender/` в Ф3.1).
-- Roblox Studio подключается только в Ф6 (MCP), до этого все проверки офлайн.
+- **selene** работает с `std = "lua51"` (roblox-std требует сети/записи в `%LOCALAPPDATA%`);
+  `undefined_variable` отключён, API-ошибки ловит `luau-compile`. Вернуть `roblox` при появлении сети.
+- **Blender** не в проекте — восстановить из `../_ThreeHorizons_archive_2026-11-10/tools/blender/` в Ф3.1.
+- **Roblox Studio** — подключение в Ф6.

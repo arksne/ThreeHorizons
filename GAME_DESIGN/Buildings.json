@@ -1,0 +1,28 @@
+{
+ "schemaVersion": 1,
+ "generatedFrom": [
+  "docs/world/BUILDING_CATALOG.md",
+  "docs/QUALITY_ASSURANCE.md#A-1",
+  "docs/MASTER_SCALE_SPEC.md#2-#3"
+ ],
+ "note": "Классы зданий. Размеры — по BUILDING_CATALOG; бюджеты — гейт A-1 (дом ≤60 боксов L0) и пайплайн (hero ≤12k tri).",
+ "classes": [
+  { "id": "house_small", "name": "Дом малый",   "sizeM": [8, 10],  "floors": [1, 2], "function": "жильё",             "interior": true,  "boxBudgetL0": 60, "triBudget": 12000 },
+  { "id": "house_medium","name": "Дом средний", "sizeM": [10, 14], "floors": [2, 3], "function": "жильё",             "interior": true,  "boxBudgetL0": 60, "triBudget": 12000 },
+  { "id": "house_large", "name": "Дом большой", "sizeM": [14, 18], "floors": [2, 3], "function": "жильё/аренда",      "interior": true,  "boxBudgetL0": 60, "triBudget": 12000 },
+  { "id": "shop",        "name": "Торговый",    "sizeM": [12, 18], "floors": [2],    "function": "лавки/товары",      "interior": true,  "boxBudgetL0": 60, "triBudget": 12000 },
+  { "id": "tavern",      "name": "Таверна",     "sizeM": [18, 24], "floors": [2],    "function": "общий зал, найм",   "interior": true,  "boxBudgetL0": 60, "triBudget": 12000 },
+  { "id": "workshop",    "name": "Мастерская",  "sizeM": [12, 20], "floors": [1, 2], "function": "инструмент/ремонт", "interior": true,  "boxBudgetL0": 60, "triBudget": 12000 },
+  { "id": "warehouse",   "name": "Склад",       "sizeM": [20, 35], "floors": [1],    "function": "товарный хаб",      "interior": false, "boxBudgetL0": 40, "triBudget": 6000 },
+  { "id": "dock",        "name": "Причал",      "sizeM": [40, 14], "floors": [1],    "function": "швартовка среднего корпуса", "interior": false, "boxBudgetL0": 30, "triBudget": 3000 }
+ ],
+ "rules": {
+  "doorM": [1.0, 2.1],
+  "ceilingLivingM": 2.7,
+  "ceilingServiceM": 3.2,
+  "fireGapM": 3,
+  "facade": "+Z (дверь/вывеска), pivot в основании",
+  "interiorsFull": "Полные интерьеры только для посещаемых зданий (BUILDING_CATALOG).",
+  "status": "APPROVED"
+ }
+}

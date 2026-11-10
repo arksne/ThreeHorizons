@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "generatedFrom": [
+  "docs/THREE_HORIZONS_PROJECT_BIBLE.md#4",
+  "docs/MASTER_SCALE_SPEC.md#4",
+  "docs/ART_PIPELINE_BLENDER_KIT.md"
+ ],
+ "note": "Три корпуса-конфигуратора, а не классы. Сборка из модулей с лимитами. Интерьер обязателен (Bible §4).",
+ "metersToStuds": 3.571,
+ "hulls": [
+  {
+   "id": "light",
+   "name": "Лёгкий",
+   "role": "разведка, скорость",
+   "sizeM": [18, 6],
+   "sizeStuds": [64.3, 21.4],
+   "hullHeightM": 2.5,
+   "mastMaxM": 14,
+   "crewMax": 2,
+   "cargoSlots": 4,
+   "speedBaseMs": 22,
+   "triBudget": 4000,
+   "status": "APPROVED"
+  },
+  {
+   "id": "medium",
+   "name": "Средний",
+   "role": "универсал (груз + бой)",
+   "sizeM": [32, 10],
+   "sizeStuds": [114.3, 35.7],
+   "hullHeightM": 3.5,
+   "mastMaxM": 24,
+   "crewMax": 4,
+   "cargoSlots": 10,
+   "speedBaseMs": 18,
+   "triBudget": 6000,
+   "status": "APPROVED"
+  },
+  {
+   "id": "heavy",
+   "name": "Тяжёлый",
+   "role": "груз и бой",
+   "sizeM": [48, 15],
+   "sizeStuds": [171.4, 53.6],
+   "hullHeightM": 4.5,
+   "mastMaxM": 32,
+   "crewMax": 6,
+   "cargoSlots": 20,
+   "speedBaseMs": 14,
+   "triBudget": 9500,
+   "status": "APPROVED"
+  }
+ ],
+ "modules": [
+  { "id": "engine",    "name": "Двигатель",  "slots": 1, "affects": ["speed", "fuelUse"] },
+  { "id": "fuel_tank", "name": "Топливо",    "slots": 2, "affects": ["range"] },
+  { "id": "hull",      "name": "Корпус",     "slots": 1, "affects": ["durability", "mass"] },
+  { "id": "deck",      "name": "Палуба",     "slots": 1, "affects": ["cargo", "crew"] },
+  { "id": "sails",     "name": "Паруса",     "slots": 3, "affects": ["speed", "wind"] },
+  { "id": "weapons",   "name": "Вооружение", "slots": 4, "affects": ["combat"] },
+  { "id": "hold",      "name": "Трюм",       "slots": 2, "affects": ["cargoSlots"] },
+  { "id": "navigation","name": "Навигация",  "slots": 1, "affects": ["map", "stormPenalty"] },
+  { "id": "interior",  "name": "Интерьер",   "slots": 1, "affects": ["crewSpaces"], "required": true },
+  { "id": "flag",      "name": "Флаги",      "slots": 1, "affects": ["faction", "identification"] }
+ ],
+ "interiorRooms": ["cabin_helm", "captain_cabin", "engine_room", "hold", "crew_quarters", "armory"],
+ "crewRoles": ["captain", "navigator", "engineer", "gunner", "harpooner", "sailor"],
+ "rules": {
+  "assemblyLimits": ["mass", "size", "power", "capacity", "compatibility"],
+  "interiorRequired": true,
+  "npcCaptains": "Флот NPC: офлайн-симуляция сервером (тики), без вечной физики каждого NPC.",
+  "collisions": "Корпус — 1 CanCollide-бокс + палуба; такелаж/декор CanCollide=false.",
+  "status": "APPROVED (правила), PROPOSED (скорость/вместимость до гейм-теста)"
+ }
+}

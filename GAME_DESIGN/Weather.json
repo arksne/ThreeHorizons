@@ -1,0 +1,53 @@
+{
+ "schemaVersion": 1,
+ "generatedFrom": [
+  "docs/THREE_HORIZONS_PROJECT_BIBLE.md#7",
+  "docs/CLOUD_SYSTEM.md#2.1",
+  "docs/SPECS_COMBINED.md#ANIMATION"
+ ],
+ "note": "Четыре состояния погоды. Параметры облаков/атмосферы — из CLOUD_SYSTEM §2.1; игровые эффекты и длительности — PROPOSED до теста.",
+ "states": [
+  {
+   "id": "clear",
+   "name": "Ясно",
+   "clouds": { "cover": 0.18, "density": 0.35, "color": "white" },
+   "atmosphere": { "density": 0.28, "haze": 1.2 },
+   "effects": { "visibilityMultiplier": 1.0, "navigationPenalty": 0.0, "wearMultiplier": 1.0, "driftMultiplier": 1.0, "boardingAllowed": true },
+   "durationMin": 25,
+   "weight": 45
+  },
+  {
+   "id": "overcast",
+   "name": "Облачно",
+   "clouds": { "cover": 0.72, "density": 0.62, "color": "grey" },
+   "atmosphere": { "density": 0.42, "haze": 2.4 },
+   "effects": { "visibilityMultiplier": 0.85, "navigationPenalty": 0.05, "wearMultiplier": 1.05, "driftMultiplier": 1.0, "boardingAllowed": true },
+   "durationMin": 20,
+   "weight": 30
+  },
+  {
+   "id": "fog",
+   "name": "Туман",
+   "clouds": { "cover": 0.85, "density": 0.78, "color": "grey_white" },
+   "atmosphere": { "density": 0.58, "haze": 5.0 },
+   "effects": { "visibilityMultiplier": 0.5, "navigationPenalty": 0.2, "wearMultiplier": 1.1, "driftMultiplier": 0.9, "boardingAllowed": false },
+   "durationMin": 12,
+   "weight": 15
+  },
+  {
+   "id": "storm",
+   "name": "Шторм",
+   "clouds": { "cover": 0.95, "density": 0.92, "color": "dark_grey" },
+   "atmosphere": { "density": 0.5, "haze": 3.2 },
+   "effects": { "visibilityMultiplier": 0.35, "navigationPenalty": 0.35, "wearMultiplier": 1.5, "driftMultiplier": 1.6, "boardingAllowed": false },
+   "durationMin": 8,
+   "weight": 10
+  }
+ ],
+ "rules": {
+  "synchronized": "Погода синхронна для всех игроков шарда; источник — серверный WeatherService (в v0.1 — таймер по весам).",
+  "transitions": "Плавный переход 10–20 с (интерполяция параметров Clouds/Atmosphere и эффектов).",
+  "dayNight": "Цикл дня/ночи независим от погоды, влияет на свет и видимость.",
+  "status": "APPROVED (состав/эффекты) / PROPOSED (длительности и веса)"
+ }
+}

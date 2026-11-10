@@ -1,0 +1,56 @@
+{
+ "schemaVersion": 1,
+ "generatedFrom": [
+  "docs/THREE_HORIZONS_PROJECT_BIBLE.md#3,#7",
+  "docs/ARCHITECTURE.md#3",
+  "docs/SPECS_COMBINED.md#SECURITY"
+ ],
+ "note": "Стартовые квесты v0.1 — по одному на героя. Награда выдаётся один раз: флаг в профиле + txId. Общие события (пиратское нападение) — одно на всех рядом.",
+ "quests": [
+  {
+   "id": "vale_planks",
+   "hero": "vale",
+   "title": "Заказ верфи",
+   "giver": "master_oren",
+   "steps": [
+    { "n": 1, "text": "Принести 5 досок мастеру Орену", "check": "inventory.planks >= 5" },
+    { "n": 2, "text": "Поговорить с Ореном", "check": "talk:master_oren" }
+   ],
+   "rewards": { "money": 120, "items": [], "skill": { "id": "construction", "xp": 30 } },
+   "txIdRule": "Награда выдаётся один раз: profile.quests.vale_planks.done = true + txId.",
+   "status": "PROPOSED"
+  },
+  {
+   "id": "morwey_crystal",
+   "hero": "morwey",
+   "title": "Долг дома",
+   "giver": "trader_marek",
+   "steps": [
+    { "n": 1, "text": "Купить 2 аквакристалла", "check": "inventory.aquacrystal >= 2" },
+    { "n": 2, "text": "Передать груз торговцу на площади", "check": "trade:trader_marek" }
+   ],
+   "rewards": { "money": 150, "items": [], "skill": { "id": "trade", "xp": 40 } },
+   "txIdRule": "Награда выдаётся один раз: profile.quests.morwey_crystal.done = true + txId.",
+   "status": "PROPOSED"
+  },
+  {
+   "id": "ashford_grain",
+   "hero": "ashford",
+   "title": "Налог землевладельцу",
+   "giver": "dockmaster_ilsa",
+   "steps": [
+    { "n": 1, "text": "Собрать 10 зерна", "check": "inventory.grain >= 10" },
+    { "n": 2, "text": "Сдать зерно на причале", "check": "turnin:dockmaster_ilsa" }
+   ],
+   "rewards": { "money": 100, "items": [], "skill": { "id": "farming", "xp": 30 } },
+   "txIdRule": "Награда выдаётся один раз: profile.quests.ashford_grain.done = true + txId.",
+   "status": "PROPOSED"
+  }
+ ],
+ "rules": {
+  "sharedEvents": "Одно пиратское нападение — одно событие на всех игроков рядом (без копий на игрока).",
+  "personalQuests": "Личные квесты не видны другим игрокам.",
+  "rewardOnce": "Награда: флаг в профиле + txId; повтор с тем же txId — no-op.",
+  "status": "APPROVED (правила) / PROPOSED (тексты и числа наград)"
+}
+}

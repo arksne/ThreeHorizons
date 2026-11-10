@@ -5,6 +5,7 @@ build/
 __pycache__/
 *.pyc
 .serena/
+.cache/
 node_modules/
 *.log
 
