@@ -75,11 +75,13 @@ MINI_ISLANDS = [
 ]
 
 # Маршруты грузоперевозок (C-11: Pirate Base отдельным островом не вводим).
+# pirate_raid идёт по тому же плечу, что arkvein_hub, но тип contraband — на карте рисуется пунктиром.
 ROUTES = [
     {"id": "arkvein_hub", "from": "arkvein", "to": "black_harbor", "type": "cargo"},
     {"id": "valmer_hub", "from": "valmer", "to": "black_harbor", "type": "cargo"},
     {"id": "grinwald_hub", "from": "grinwald", "to": "black_harbor", "type": "cargo"},
     {"id": "esterholm_hub", "from": "esterholm", "to": "black_harbor", "type": "cargo"},
+    {"id": "pirate_raid", "from": "black_harbor", "to": "arkvein", "type": "contraband"},
 ]
 
 SPEED_M_S = 18.0   # скорость среднего корпуса (Bible §4)
@@ -139,18 +141,24 @@ def build_island(raw: dict) -> dict:
 def build_mini(raw: dict) -> dict:
     game_x = lore_to_game_m(raw["loreX"])
     game_z = lore_to_game_m(raw["loreZ"])
+    game_w = lore_to_game_m(raw["loreW"])
+    game_d = lore_to_game_m(raw["loreD"])
     return {
         "id": raw["id"],
         "name": raw["name"],
         "role": raw["role"],
+        "loreXM": raw["loreX"] * 1000,
+        "loreZM": raw["loreZ"] * 1000,
+        "loreWM": raw["loreW"] * 1000,
+        "loreDM": raw["loreD"] * 1000,
         "gameXM": round(game_x, 1),
         "gameZM": round(game_z, 1),
-        "gameWM": round(lore_to_game_m(raw["loreW"]), 1),
-        "gameDM": round(lore_to_game_m(raw["loreD"]), 1),
+        "gameWM": round(game_w, 1),
+        "gameDM": round(game_d, 1),
         "studsX": round(m_to_studs(game_x)),
         "studsZ": round(m_to_studs(game_z)),
-        "studsW": round(m_to_studs(lore_to_game_m(raw["loreW"]))),
-        "studsD": round(m_to_studs(lore_to_game_m(raw["loreD"]))),
+        "studsW": round(m_to_studs(game_w)),
+        "studsD": round(m_to_studs(game_d)),
     }
 
 

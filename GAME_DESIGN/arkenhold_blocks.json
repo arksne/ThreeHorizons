@@ -1,0 +1,433 @@
+{
+ "schemaVersion": 1,
+ "status": "APPROVED",
+ "generatedFrom": [
+  "docs/world/CITY_LAYOUTS.md",
+  "GAME_DESIGN/Buildings.json",
+  "docs/MASTER_SCALE_SPEC.md#3",
+  "docs/DECISIONS.md#S-09",
+  "docs/DECISIONS.md#C-10"
+ ],
+ "note": "Сетка кварталов Аркенхольда. Районы — по CITY_LAYOUTS (C-10). Здания стоят вдоль улицы фасадом к ней, с зазором 3 м (пожарный разрыв). Раскладка зданий — базовая, Ф9 уточнит по контексту.",
+ "city": "arkenhold",
+ "citySizeM": [
+  250,
+  200
+ ],
+ "grid": {
+  "cols": 4,
+  "rows": 2,
+  "streetMainM": 8,
+  "streetSecondaryM": 4,
+  "buildingGapM": 3,
+  "note": "Вертикальные улицы: главная 8 м (между 0|1 и 2|3), второстепенная 4 м (между 1|2). Горизонтальная: главная 8 м между рядами."
+ },
+ "waterSide": "east",
+ "blocks": [
+  {
+   "id": "central_square",
+   "name": "Центральная площадь",
+   "x": 0.0,
+   "z": 0.0,
+   "w": 57.5,
+   "d": 96.0,
+   "waterfront": false,
+   "buildingKinds": [
+    "tavern",
+    "house_medium",
+    "house_medium"
+   ],
+   "streetSide": "south",
+   "buildings": [
+    {
+     "kind": "tavern",
+     "x": 0.0,
+     "z": 72.0,
+     "w": 18,
+     "d": 24,
+     "rotationDeg": 0,
+     "facade": "south"
+    },
+    {
+     "kind": "house_medium",
+     "x": 21.0,
+     "z": 82.0,
+     "w": 10,
+     "d": 14,
+     "rotationDeg": 0,
+     "facade": "south"
+    },
+    {
+     "kind": "house_medium",
+     "x": 34.0,
+     "z": 82.0,
+     "w": 10,
+     "d": 14,
+     "rotationDeg": 0,
+     "facade": "south"
+    }
+   ]
+  },
+  {
+   "id": "residential",
+   "name": "Жилой квартал",
+   "x": 65.5,
+   "z": 0.0,
+   "w": 57.5,
+   "d": 96.0,
+   "waterfront": false,
+   "buildingKinds": [
+    "house_small",
+    "house_small",
+    "house_medium"
+   ],
+   "streetSide": "south",
+   "buildings": [
+    {
+     "kind": "house_small",
+     "x": 0.0,
+     "z": 86.0,
+     "w": 8,
+     "d": 10,
+     "rotationDeg": 0,
+     "facade": "south"
+    },
+    {
+     "kind": "house_small",
+     "x": 11.0,
+     "z": 86.0,
+     "w": 8,
+     "d": 10,
+     "rotationDeg": 0,
+     "facade": "south"
+    },
+    {
+     "kind": "house_medium",
+     "x": 22.0,
+     "z": 82.0,
+     "w": 10,
+     "d": 14,
+     "rotationDeg": 0,
+     "facade": "south"
+    }
+   ]
+  },
+  {
+   "id": "industrial",
+   "name": "Промышленная зона",
+   "x": 127.0,
+   "z": 0.0,
+   "w": 57.5,
+   "d": 96.0,
+   "waterfront": false,
+   "buildingKinds": [
+    "workshop",
+    "warehouse",
+    "house_small"
+   ],
+   "streetSide": "south",
+   "buildings": [
+    {
+     "kind": "workshop",
+     "x": 0.0,
+     "z": 76.0,
+     "w": 12,
+     "d": 20,
+     "rotationDeg": 0,
+     "facade": "south"
+    },
+    {
+     "kind": "warehouse",
+     "x": 15.0,
+     "z": 61.0,
+     "w": 20,
+     "d": 35,
+     "rotationDeg": 0,
+     "facade": "south"
+    },
+    {
+     "kind": "house_small",
+     "x": 38.0,
+     "z": 86.0,
+     "w": 8,
+     "d": 10,
+     "rotationDeg": 0,
+     "facade": "south"
+    }
+   ]
+  },
+  {
+   "id": "shipyard",
+   "name": "Большая верфь",
+   "x": 192.5,
+   "z": 0.0,
+   "w": 57.5,
+   "d": 96.0,
+   "waterfront": false,
+   "buildingKinds": [
+    "workshop",
+    "warehouse",
+    "house_medium"
+   ],
+   "streetSide": "south",
+   "buildings": [
+    {
+     "kind": "workshop",
+     "x": 0.0,
+     "z": 76.0,
+     "w": 12,
+     "d": 20,
+     "rotationDeg": 0,
+     "facade": "south"
+    },
+    {
+     "kind": "warehouse",
+     "x": 15.0,
+     "z": 61.0,
+     "w": 20,
+     "d": 35,
+     "rotationDeg": 0,
+     "facade": "south"
+    },
+    {
+     "kind": "house_medium",
+     "x": 38.0,
+     "z": 82.0,
+     "w": 10,
+     "d": 14,
+     "rotationDeg": 0,
+     "facade": "south"
+    }
+   ]
+  },
+  {
+   "id": "engineering",
+   "name": "Инженерный квартал",
+   "x": 0.0,
+   "z": 104.0,
+   "w": 57.5,
+   "d": 96.0,
+   "waterfront": false,
+   "buildingKinds": [
+    "workshop",
+    "house_medium",
+    "house_small"
+   ],
+   "streetSide": "north",
+   "buildings": [
+    {
+     "kind": "workshop",
+     "x": 0.0,
+     "z": 0.0,
+     "w": 12,
+     "d": 20,
+     "rotationDeg": 0,
+     "facade": "north"
+    },
+    {
+     "kind": "house_medium",
+     "x": 15.0,
+     "z": 0.0,
+     "w": 10,
+     "d": 14,
+     "rotationDeg": 0,
+     "facade": "north"
+    },
+    {
+     "kind": "house_small",
+     "x": 28.0,
+     "z": 0.0,
+     "w": 8,
+     "d": 10,
+     "rotationDeg": 0,
+     "facade": "north"
+    }
+   ]
+  },
+  {
+   "id": "metallurgy",
+   "name": "Металлургический район",
+   "x": 65.5,
+   "z": 104.0,
+   "w": 57.5,
+   "d": 96.0,
+   "waterfront": false,
+   "buildingKinds": [
+    "workshop",
+    "warehouse",
+    "house_medium"
+   ],
+   "streetSide": "north",
+   "buildings": [
+    {
+     "kind": "workshop",
+     "x": 0.0,
+     "z": 0.0,
+     "w": 12,
+     "d": 20,
+     "rotationDeg": 0,
+     "facade": "north"
+    },
+    {
+     "kind": "warehouse",
+     "x": 15.0,
+     "z": 0.0,
+     "w": 20,
+     "d": 35,
+     "rotationDeg": 0,
+     "facade": "north"
+    },
+    {
+     "kind": "house_medium",
+     "x": 38.0,
+     "z": 0.0,
+     "w": 10,
+     "d": 14,
+     "rotationDeg": 0,
+     "facade": "north"
+    }
+   ]
+  },
+  {
+   "id": "warehouses",
+   "name": "Склады",
+   "x": 127.0,
+   "z": 104.0,
+   "w": 57.5,
+   "d": 96.0,
+   "waterfront": false,
+   "buildingKinds": [
+    "warehouse",
+    "house_large",
+    "house_small"
+   ],
+   "streetSide": "north",
+   "buildings": [
+    {
+     "kind": "warehouse",
+     "x": 0.0,
+     "z": 0.0,
+     "w": 20,
+     "d": 35,
+     "rotationDeg": 0,
+     "facade": "north"
+    },
+    {
+     "kind": "house_large",
+     "x": 23.0,
+     "z": 0.0,
+     "w": 14,
+     "d": 18,
+     "rotationDeg": 0,
+     "facade": "north"
+    },
+    {
+     "kind": "house_small",
+     "x": 40.0,
+     "z": 0.0,
+     "w": 8,
+     "d": 10,
+     "rotationDeg": 0,
+     "facade": "north"
+    }
+   ]
+  },
+  {
+   "id": "trade_harbor",
+   "name": "Торговая гавань",
+   "x": 192.5,
+   "z": 104.0,
+   "w": 57.5,
+   "d": 96.0,
+   "waterfront": true,
+   "buildingKinds": [
+    "shop",
+    "house_medium",
+    "house_small"
+   ],
+   "streetSide": "north",
+   "buildings": [
+    {
+     "kind": "shop",
+     "x": 0.0,
+     "z": 0.0,
+     "w": 12,
+     "d": 18,
+     "rotationDeg": 0,
+     "facade": "north"
+    },
+    {
+     "kind": "house_medium",
+     "x": 15.0,
+     "z": 0.0,
+     "w": 10,
+     "d": 14,
+     "rotationDeg": 0,
+     "facade": "north"
+    },
+    {
+     "kind": "house_small",
+     "x": 28.0,
+     "z": 0.0,
+     "w": 8,
+     "d": 10,
+     "rotationDeg": 0,
+     "facade": "north"
+    }
+   ],
+   "dock": {
+    "kind": "dock",
+    "x": 60.5,
+    "z": 41.0,
+    "w": 40,
+    "d": 14,
+    "rotationDeg": 0
+   }
+  }
+ ],
+ "streets": [
+  {
+   "id": "street_v0",
+   "kind": "main",
+   "x": 57.5,
+   "z": 0.0,
+   "w": 8,
+   "d": 200,
+   "orientation": "vertical"
+  },
+  {
+   "id": "street_v1",
+   "kind": "secondary",
+   "x": 123.0,
+   "z": 0.0,
+   "w": 4,
+   "d": 200,
+   "orientation": "vertical"
+  },
+  {
+   "id": "street_v2",
+   "kind": "main",
+   "x": 184.5,
+   "z": 0.0,
+   "w": 8,
+   "d": 200,
+   "orientation": "vertical"
+  },
+  {
+   "id": "street_h0",
+   "kind": "main",
+   "x": 0.0,
+   "z": 96.0,
+   "w": 250,
+   "d": 8,
+   "orientation": "horizontal"
+  }
+ ],
+ "totals": {
+  "blockAreaM2": 44160.0,
+  "streetAreaM2": 6000,
+  "cityAreaM2": 50000,
+  "blockShare": 0.8832,
+  "note": "Кварталы + улицы = площадь города (проверяется validate_world)."
+ }
+}

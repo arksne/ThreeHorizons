@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1600" viewBox="0 0 2400 1600">
+<rect width="2400" height="1600" fill="#E8DCC0"/>
+<text x="90" y="78" font-family="Georgia,serif" font-size="50" font-weight="bold" fill="#1E1A14">ТРИ ГОРИЗОНТА — КАРТА МИРА</text>
+<text x="90" y="116" font-family="sans-serif" font-size="22" fill="#1E1A14">Рамка S-07: атлас + 18×26 км игровых · 1 лор-км = 100 м · высоты — над облачным морем (Y=0)</text>
+<rect x="90.0" y="150.0" width="920.8" height="1330.0" fill="none" stroke="#6C8292" stroke-width="4"/>
+<line x1="550.4" y1="354.6" x2="243.5" y2="738.3" stroke="#3A3C42" stroke-width="5"/>
+<line x1="857.3" y1="738.3" x2="243.5" y2="738.3" stroke="#3A3C42" stroke-width="5"/>
+<line x1="458.3" y1="1224.2" x2="243.5" y2="738.3" stroke="#3A3C42" stroke-width="5"/>
+<line x1="642.5" y1="815.0" x2="243.5" y2="738.3" stroke="#3A3C42" stroke-width="5"/>
+<polygon points="243.5,244.3 251.5,252.3 243.5,260.3 235.5,252.3" fill="#A3845B" stroke="#1E1A14"/>
+<text x="263.5" y="258.3" font-family="sans-serif" font-size="17" fill="#1E1A14">A1</text>
+<polygon points="908.5,295.5 916.5,303.5 908.5,311.5 900.5,303.5" fill="#A3845B" stroke="#1E1A14"/>
+<text x="928.5" y="309.5" font-family="sans-serif" font-size="17" fill="#1E1A14">A2</text>
+<polygon points="857.3,1318.5 865.3,1326.5 857.3,1334.5 849.3,1326.5" fill="#A3845B" stroke="#1E1A14"/>
+<text x="877.3" y="1332.5" font-family="sans-serif" font-size="17" fill="#1E1A14">A3</text>
+<polygon points="192.3,1318.5 200.3,1326.5 192.3,1334.5 184.3,1326.5" fill="#A3845B" stroke="#1E1A14"/>
+<text x="212.3" y="1332.5" font-family="sans-serif" font-size="17" fill="#1E1A14">A4</text>
+<rect x="519.7" y="331.6" width="61.4" height="46.0" rx="9" fill="#3A3C42" stroke="#1E1A14" stroke-width="3"/>
+<line x1="581.1" y1="354.6" x2="593.1" y2="354.6" stroke="#1E1A14" stroke-width="2"/>
+<text x="597.1" y="352.6" font-family="sans-serif" font-size="20" font-weight="bold" fill="#1E1A14">Арквейн</text>
+<text x="597.1" y="374.6" font-family="sans-serif" font-size="17" fill="#1E1A14">280 м</text>
+<rect x="795.9" y="692.2" width="122.8" height="92.1" rx="9" fill="#4E7E8C" stroke="#1E1A14" stroke-width="3"/>
+<line x1="918.7" y1="738.3" x2="930.7" y2="738.3" stroke="#1E1A14" stroke-width="2"/>
+<text x="934.7" y="736.3" font-family="sans-serif" font-size="20" font-weight="bold" fill="#1E1A14">Вальмер</text>
+<text x="934.7" y="758.3" font-family="sans-serif" font-size="17" fill="#1E1A14">210 м</text>
+<rect x="394.4" y="1175.6" width="127.9" height="97.2" rx="9" fill="#5A6B3C" stroke="#1E1A14" stroke-width="3"/>
+<line x1="522.2" y1="1224.2" x2="534.2" y2="1224.2" stroke="#1E1A14" stroke-width="2"/>
+<text x="538.2" y="1222.2" font-family="sans-serif" font-size="20" font-weight="bold" fill="#1E1A14">Гринвальд</text>
+<text x="538.2" y="1244.2" font-family="sans-serif" font-size="17" fill="#1E1A14">165 м</text>
+<rect x="638.6" y="812.4" width="7.7" height="5.1" rx="9" fill="#A3845B" stroke="#1E1A14" stroke-width="3"/>
+<line x1="646.3" y1="815.0" x2="658.3" y2="815.0" stroke="#1E1A14" stroke-width="2"/>
+<text x="662.3" y="813.0" font-family="sans-serif" font-size="20" font-weight="bold" fill="#1E1A14">Эстерхольм</text>
+<text x="662.3" y="835.0" font-family="sans-serif" font-size="17" fill="#1E1A14">190 м</text>
+<rect x="241.4" y="736.7" width="4.1" height="3.1" rx="9" fill="#A3845B" stroke="#1E1A14" stroke-width="3"/>
+<line x1="245.5" y1="738.3" x2="257.5" y2="738.3" stroke="#1E1A14" stroke-width="2"/>
+<text x="261.5" y="736.3" font-family="sans-serif" font-size="20" font-weight="bold" fill="#1E1A14">Чёрная Гавань</text>
+<text x="261.5" y="758.3" font-family="sans-serif" font-size="17" fill="#1E1A14">170 м</text>
+<rect x="90" y="1514.0" width="102.3" height="13" fill="#1E1A14"/>
+<text x="90" y="1554.0" font-family="sans-serif" font-size="20" fill="#1E1A14">2 км</text>
+<line x1="1290" y1="110" x2="1290" y2="1540" stroke="#B08D3E" stroke-width="3"/>
+<text x="1330" y="134" font-family="Georgia,serif" font-size="30" font-weight="bold" fill="#1E1A14">ЛЕГЕНДА</text>
+<line x1="1330" y1="182" x2="1352" y2="182" stroke="#6C8292" stroke-width="5"/>
+<text x="1372" y="190" font-family="sans-serif" font-size="22" fill="#1E1A14">Остров (высота — над морем)</text>
+<polygon points="1341,206 1352,214 1341,222 1330,214" fill="#A3845B" stroke="#1E1A14"/>
+<text x="1372" y="222" font-family="sans-serif" font-size="22" fill="#1E1A14">Мини-остров (промысловый)</text>
+<line x1="1330" y1="246" x2="1352" y2="246" stroke="#3A3C42" stroke-width="5"/>
+<text x="1372" y="254" font-family="sans-serif" font-size="22" fill="#1E1A14">Грузовой маршрут</text>
+<line x1="1330" y1="278" x2="1352" y2="278" stroke="#8C2B1B" stroke-width="5" stroke-dasharray="10,7"/>
+<text x="1372" y="286" font-family="sans-serif" font-size="22" fill="#1E1A14">Пиратский рейд</text>
+<text x="1330" y="338" font-family="Georgia,serif" font-size="30" font-weight="bold" fill="#1E1A14">ОСТРОВА</text>
+<rect x="1330" y="370" width="22" height="17" fill="#3A3C42" stroke="#1E1A14" stroke-width="2"/>
+<text x="1366" y="386" font-family="sans-serif" font-size="22" fill="#1E1A14">Арквейн — 280 м</text>
+<rect x="1330" y="400" width="22" height="17" fill="#4E7E8C" stroke="#1E1A14" stroke-width="2"/>
+<text x="1366" y="416" font-family="sans-serif" font-size="22" fill="#1E1A14">Вальмер — 210 м</text>
+<rect x="1330" y="430" width="22" height="17" fill="#5A6B3C" stroke="#1E1A14" stroke-width="2"/>
+<text x="1366" y="446" font-family="sans-serif" font-size="22" fill="#1E1A14">Гринвальд — 165 м</text>
+<rect x="1330" y="460" width="22" height="17" fill="#A3845B" stroke="#1E1A14" stroke-width="2"/>
+<text x="1366" y="476" font-family="sans-serif" font-size="22" fill="#1E1A14">Эстерхольм — 190 м</text>
+<rect x="1330" y="490" width="22" height="17" fill="#A3845B" stroke="#1E1A14" stroke-width="2"/>
+<text x="1366" y="506" font-family="sans-serif" font-size="22" fill="#1E1A14">Чёрная Гавань — 170 м</text>
+<text x="1330" y="552" font-family="Georgia,serif" font-size="30" font-weight="bold" fill="#1E1A14">МАРШРУТЫ (18 м/с)</text>
+<line x1="1330" y1="592" x2="1352" y2="592" stroke="#3A3C42" stroke-width="4"/>
+<text x="1366" y="600" font-family="sans-serif" font-size="20" fill="#1E1A14">Арквейн → Чёрная Гавань</text>
+<text x="1366" y="624" font-family="sans-serif" font-size="17" fill="#1E1A14">9605 м · 8.9 мин</text>
+<line x1="1330" y1="644" x2="1352" y2="644" stroke="#3A3C42" stroke-width="4"/>
+<text x="1366" y="652" font-family="sans-serif" font-size="20" fill="#1E1A14">Вальмер → Чёрная Гавань</text>
+<text x="1366" y="676" font-family="sans-serif" font-size="17" fill="#1E1A14">12000 м · 11.1 мин</text>
+<line x1="1330" y1="696" x2="1352" y2="696" stroke="#3A3C42" stroke-width="4"/>
+<text x="1366" y="704" font-family="sans-serif" font-size="20" fill="#1E1A14">Гринвальд → Чёрная Гавань</text>
+<text x="1366" y="728" font-family="sans-serif" font-size="17" fill="#1E1A14">10387 м · 9.6 мин</text>
+<line x1="1330" y1="748" x2="1352" y2="748" stroke="#3A3C42" stroke-width="4"/>
+<text x="1366" y="756" font-family="sans-serif" font-size="20" fill="#1E1A14">Эстерхольм → Чёрная Гавань</text>
+<text x="1366" y="780" font-family="sans-serif" font-size="17" fill="#1E1A14">7943 м · 7.4 мин</text>
+<text x="1330" y="1430" font-family="Georgia,serif" font-size="30" font-weight="bold" fill="#1E1A14">ИСТОЧНИК</text>
+<text x="1330" y="1468" font-family="sans-serif" font-size="20" fill="#1E1A14">GAME_DESIGN/World.json — истина по геометрии</text>
+<text x="1330" y="1495" font-family="sans-serif" font-size="20" fill="#1E1A14">docs/world/WORLD_COORDINATES.csv — экспорт</text>
+<text x="1330" y="1522" font-family="sans-serif" font-size="20" fill="#1E1A14">tools/build_world.py — пересчёт из constants.json</text>
+<text x="1330" y="1549" font-family="sans-serif" font-size="20" fill="#1E1A14">Правило канона: текст важнее арта (D-001)</text>
+<text x="1330" y="1576" font-family="sans-serif" font-size="20" fill="#1E1A14">Рамка и позиции — DECISIONS.md S-07…S-11</text>
+</svg>

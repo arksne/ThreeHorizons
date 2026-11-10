@@ -277,6 +277,49 @@
 
 ---
 
+## `arkenhold_blocks.json` (Ф2.8) — сетка кварталов столицы
+
+```jsonc
+{
+ "schemaVersion": 1,
+ "status": "APPROVED",
+ "generatedFrom": ["docs/world/CITY_LAYOUTS.md", "GAME_DESIGN/Buildings.json",
+                   "docs/MASTER_SCALE_SPEC.md#3", "docs/DECISIONS.md#S-09"],
+
+ "city": "arkenhold",
+ "citySizeM": [250, 200],
+ "grid": {"cols": 4, "rows": 2,
+          "streetMainM": 8, "streetSecondaryM": 4, "buildingGapM": 3},
+ "waterSide": "east",
+
+ "blocks": [
+   {"id": "central_square", "name": "Центральная площадь",
+    "x": 0, "z": 0, "w": 57.5, "d": 96,
+    "waterfront": false, "streetSide": "south",
+    "buildingKinds": ["tavern", "house_medium", "house_medium"],
+    "buildings": [
+      {"kind": "tavern", "x": 0, "z": 72, "w": 18, "d": 24,
+       "rotationDeg": 0, "facade": "south"}
+    ]}
+ ],
+ "streets": [
+   {"id": "street_v0", "kind": "main", "x": 57.5, "z": 0,
+    "w": 8, "d": 200, "orientation": "vertical"}
+ ],
+ "totals": {"blockAreaM2": 44160, "streetAreaM2": 6000,
+            "cityAreaM2": 50000, "blockShare": 0.8832}
+}
+```
+
+**Читают:** Ф9 (квартал собирается в мир), Ф6 (ассеты ставятся по `buildingKinds`), Ф22 (проверка).
+
+**Правила:**
+- `blocks` + `streets` **покрывают город без остатка** — проверяется `tools/validate_world.py`.
+- Здание стоит **вдоль улицы** (`facade` = `streetSide`), зазор между зданиями ≥ `buildingGapM` (3 м).
+- `x`,`z` — координаты **внутри квартала** (не города).
+
+---
+
 ## Что ещё появится
 
 | Файл | Фаза | Назначение |

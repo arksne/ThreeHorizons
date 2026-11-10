@@ -1,0 +1,326 @@
+{
+ "schemaVersion": 1,
+ "status": "APPROVED",
+ "generatedFrom": [
+  "docs/WORLD_MASTER_MAP.md",
+  "docs/MASTER_SCALE_SPEC.md",
+  "docs/world/ISLAND_CATALOG.md",
+  "docs/DECISIONS.md#S-07",
+  "docs/DECISIONS.md#S-08",
+  "docs/DECISIONS.md#S-10"
+ ],
+ "note": "Геометрия мира. Рамка S-07 (атлас + 18×26 км игровых). Генерируется из constants.json — руками не править.",
+ "frame": {
+  "id": "S-07",
+  "mapGameM": [
+   18000,
+   26000
+  ],
+  "mapStuds": [
+   64278,
+   92846
+  ],
+  "metersToStuds": 3.571,
+  "worldCompression": 0.1,
+  "seaY": 0,
+  "heights": {
+   "low": 0.3,
+   "plateau": 0.55,
+   "peak": 1.0
+  }
+ },
+ "islands": [
+  {
+   "id": "arkvein",
+   "name": "Арквейн",
+   "faction": "arkvein",
+   "role": "Производство: корабли, механизмы, инженерия",
+   "loreXM": 90000,
+   "loreZM": 40000,
+   "loreWM": 12000,
+   "loreDM": 9000,
+   "gameXM": 9000.0,
+   "gameZM": 4000.0,
+   "gameWM": 1200.0,
+   "gameDM": 900.0,
+   "studsX": 32139,
+   "studsZ": 14284,
+   "studsW": 4285,
+   "studsD": 3214,
+   "heightM": 280,
+   "heights": {
+    "seaY": 0,
+    "lowM": 84.0,
+    "lowY": 300,
+    "plateauM": 154.0,
+    "plateauY": 550,
+    "peakM": 280.0,
+    "peakY": 1000
+   },
+   "capital": "arkenhold",
+   "capitalSizeM": [
+    250,
+    200
+   ]
+  },
+  {
+   "id": "valmer",
+   "name": "Вальмер",
+   "faction": "valmer",
+   "role": "Вода: добыча/очистка/хранение/распределение",
+   "loreXM": 150000,
+   "loreZM": 115000,
+   "loreWM": 24000,
+   "loreDM": 18000,
+   "gameXM": 15000.0,
+   "gameZM": 11500.0,
+   "gameWM": 2400.0,
+   "gameDM": 1800.0,
+   "studsX": 53565,
+   "studsZ": 41066,
+   "studsW": 8570,
+   "studsD": 6428,
+   "heightM": 210,
+   "heights": {
+    "seaY": 0,
+    "lowM": 63.0,
+    "lowY": 225,
+    "plateauM": 115.5,
+    "plateauY": 412,
+    "peakM": 210.0,
+    "peakY": 750
+   },
+   "capital": "valmara",
+   "capitalSizeM": [
+    300,
+    250
+   ]
+  },
+  {
+   "id": "grinwald",
+   "name": "Гринвальд",
+   "faction": "grinwald",
+   "role": "Продукты питания",
+   "loreXM": 72000,
+   "loreZM": 210000,
+   "loreWM": 25000,
+   "loreDM": 19000,
+   "gameXM": 7200.0,
+   "gameZM": 21000.0,
+   "gameWM": 2500.0,
+   "gameDM": 1900.0,
+   "studsX": 25711,
+   "studsZ": 74991,
+   "studsW": 8928,
+   "studsD": 6785,
+   "heightM": 165,
+   "heights": {
+    "seaY": 0,
+    "lowM": 49.5,
+    "lowY": 177,
+    "plateauM": 90.8,
+    "plateauY": 324,
+    "peakM": 165.0,
+    "peakY": 589
+   },
+   "capital": "grinholm",
+   "capitalSizeM": [
+    300,
+    250
+   ]
+  },
+  {
+   "id": "esterholm",
+   "name": "Эстерхольм",
+   "faction": null,
+   "role": "Нейтральный порт: исследования, точка встречи трёх сюжетов",
+   "loreXM": 108000,
+   "loreZM": 130000,
+   "loreWM": 1500.0,
+   "loreDM": 1000,
+   "gameXM": 10800.0,
+   "gameZM": 13000.0,
+   "gameWM": 150.0,
+   "gameDM": 100.0,
+   "studsX": 38567,
+   "studsZ": 46423,
+   "studsW": 536,
+   "studsD": 357,
+   "heightM": 190,
+   "heights": {
+    "seaY": 0,
+    "lowM": 57.0,
+    "lowY": 204,
+    "plateauM": 104.5,
+    "plateauY": 373,
+    "peakM": 190.0,
+    "peakY": 678
+   },
+   "capital": null,
+   "capitalSizeM": [
+    150,
+    100
+   ]
+  },
+  {
+   "id": "black_harbor",
+   "name": "Чёрная Гавань",
+   "faction": null,
+   "role": "Пиратский свободный порт и торговый узел, чёрный рынок (C-11)",
+   "loreXM": 30000,
+   "loreZM": 115000,
+   "loreWM": 800.0,
+   "loreDM": 600.0,
+   "gameXM": 3000.0,
+   "gameZM": 11500.0,
+   "gameWM": 80.0,
+   "gameDM": 60.0,
+   "studsX": 10713,
+   "studsZ": 41066,
+   "studsW": 286,
+   "studsD": 214,
+   "heightM": 170,
+   "heights": {
+    "seaY": 0,
+    "lowM": 51.0,
+    "lowY": 182,
+    "plateauM": 93.5,
+    "plateauY": 334,
+    "peakM": 170.0,
+    "peakY": 607
+   },
+   "capital": null,
+   "capitalSizeM": [
+    80,
+    60
+   ]
+  }
+ ],
+ "miniIslands": [
+  {
+   "id": "A1",
+   "name": "Рыболовный форпост",
+   "role": "Промысловый: рыба",
+   "loreXM": 30000,
+   "loreZM": 20000,
+   "loreWM": 420.0,
+   "loreDM": 300.0,
+   "gameXM": 3000.0,
+   "gameZM": 2000.0,
+   "gameWM": 42.0,
+   "gameDM": 30.0,
+   "studsX": 10713,
+   "studsZ": 7142,
+   "studsW": 150,
+   "studsD": 107
+  },
+  {
+   "id": "A2",
+   "name": "Соляной промысел",
+   "role": "Промысловый: соль",
+   "loreXM": 160000,
+   "loreZM": 30000,
+   "loreWM": 420.0,
+   "loreDM": 300.0,
+   "gameXM": 16000.0,
+   "gameZM": 3000.0,
+   "gameWM": 42.0,
+   "gameDM": 30.0,
+   "studsX": 57136,
+   "studsZ": 10713,
+   "studsW": 150,
+   "studsD": 107
+  },
+  {
+   "id": "A3",
+   "name": "Лесозаготовка",
+   "role": "Промысловый: лес",
+   "loreXM": 150000,
+   "loreZM": 230000,
+   "loreWM": 420.0,
+   "loreDM": 300.0,
+   "gameXM": 15000.0,
+   "gameZM": 23000.0,
+   "gameWM": 42.0,
+   "gameDM": 30.0,
+   "studsX": 53565,
+   "studsZ": 82133,
+   "studsW": 150,
+   "studsD": 107
+  },
+  {
+   "id": "A4",
+   "name": "Рудник",
+   "role": "Промысловый: руда",
+   "loreXM": 20000,
+   "loreZM": 230000,
+   "loreWM": 420.0,
+   "loreDM": 300.0,
+   "gameXM": 2000.0,
+   "gameZM": 23000.0,
+   "gameWM": 42.0,
+   "gameDM": 30.0,
+   "studsX": 7142,
+   "studsZ": 82133,
+   "studsW": 150,
+   "studsD": 107
+  }
+ ],
+ "travelTimes": {
+  "arkvein_hub": {
+   "from": "arkvein",
+   "to": "black_harbor",
+   "type": "cargo",
+   "distanceGameM": 9604.7,
+   "distanceStuds": 34298,
+   "distanceLoreKm": 96.05,
+   "seconds": 534,
+   "minutes": 8.9,
+   "speedMs": 18.0
+  },
+  "valmer_hub": {
+   "from": "valmer",
+   "to": "black_harbor",
+   "type": "cargo",
+   "distanceGameM": 12000.0,
+   "distanceStuds": 42852,
+   "distanceLoreKm": 120.0,
+   "seconds": 667,
+   "minutes": 11.1,
+   "speedMs": 18.0
+  },
+  "grinwald_hub": {
+   "from": "grinwald",
+   "to": "black_harbor",
+   "type": "cargo",
+   "distanceGameM": 10387.0,
+   "distanceStuds": 37092,
+   "distanceLoreKm": 103.87,
+   "seconds": 577,
+   "minutes": 9.6,
+   "speedMs": 18.0
+  },
+  "esterholm_hub": {
+   "from": "esterholm",
+   "to": "black_harbor",
+   "type": "cargo",
+   "distanceGameM": 7942.9,
+   "distanceStuds": 28364,
+   "distanceLoreKm": 79.43,
+   "seconds": 441,
+   "minutes": 7.4,
+   "speedMs": 18.0
+  },
+  "pirate_raid": {
+   "from": "black_harbor",
+   "to": "arkvein",
+   "type": "contraband",
+   "distanceGameM": 9604.7,
+   "distanceStuds": 34298,
+   "distanceLoreKm": 96.05,
+   "seconds": 534,
+   "minutes": 8.9,
+   "speedMs": 18.0
+  }
+ }
+}

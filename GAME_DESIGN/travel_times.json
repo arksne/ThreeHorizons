@@ -1,0 +1,68 @@
+{
+ "schemaVersion": 1,
+ "status": "APPROVED",
+ "generatedFrom": [
+  "GAME_DESIGN/World.json",
+  "GAME_DESIGN/Routes.json",
+  "docs/THREE_HORIZONS_PROJECT_BIBLE.md#4"
+ ],
+ "note": "Времена перелётов: скорость среднего корпуса 18 м/с (Bible §4), координаты игровые — сжатие 1:10 уже учтено. Проверка: разница с Routes.json ≤ 5 %.",
+ "speedMs": 18,
+ "routes": [
+  {
+   "from": "arkvein",
+   "to": "black_harbor",
+   "type": "cargo",
+   "distanceGameM": 9604.7,
+   "distanceStuds": 34298,
+   "distanceLoreKm": 96.05,
+   "seconds": 534,
+   "minutes": 8.9,
+   "speedMs": 18.0
+  },
+  {
+   "from": "valmer",
+   "to": "black_harbor",
+   "type": "cargo",
+   "distanceGameM": 12000.0,
+   "distanceStuds": 42852,
+   "distanceLoreKm": 120.0,
+   "seconds": 667,
+   "minutes": 11.1,
+   "speedMs": 18.0
+  },
+  {
+   "from": "grinwald",
+   "to": "black_harbor",
+   "type": "cargo",
+   "distanceGameM": 10387.0,
+   "distanceStuds": 37092,
+   "distanceLoreKm": 103.87,
+   "seconds": 577,
+   "minutes": 9.6,
+   "speedMs": 18.0
+  },
+  {
+   "from": "esterholm",
+   "to": "black_harbor",
+   "type": "cargo",
+   "distanceGameM": 7942.9,
+   "distanceStuds": 28364,
+   "distanceLoreKm": 79.43,
+   "seconds": 441,
+   "minutes": 7.4,
+   "speedMs": 18.0
+  },
+  {
+   "from": "black_harbor",
+   "to": "arkvein",
+   "type": "contraband",
+   "distanceGameM": 9604.7,
+   "distanceStuds": 34298,
+   "distanceLoreKm": 96.05,
+   "seconds": 534,
+   "minutes": 8.9,
+   "speedMs": 18.0
+  }
+ ]
+}

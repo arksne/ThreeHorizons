@@ -5,7 +5,7 @@
   "docs/WORLD_MASTER_MAP.md#Маршруты",
   "docs/THREE_HORIZONS_PROJECT_BIBLE.md#4"
  ],
- "note": "Маршруты связывают столицы с хабом (Чёрная Гавань). Расстояния и время в игровых единицах считаются в Ф2.7 по WORLD_COORDINATES.csv — здесь их пока нет намеренно.",
+ "note": "Маршруты связывают столицы с хабом (Чёрная Гавань). Расстояния и время посчитаны в Ф2.7 из GAME_DESIGN/World.json (18 м/с, сжатие 1:10 учтено).",
  "speedMs": 18,
  "speedNote": "18 м/с — скорость среднего корпуса (Bible §4 / плановая).",
  "routes": [
@@ -14,60 +14,94 @@
    "from": "arkvein",
    "to": "black_harbor",
    "type": "cargo",
-   "cargo": ["ships", "parts", "metal"],
-   "backCargo": ["goods_all_factions"],
-   "distanceGameM": null,
-   "distanceLoreKm": null,
+   "cargo": [
+    "ships",
+    "parts",
+    "metal"
+   ],
+   "backCargo": [
+    "goods_all_factions"
+   ],
+   "distanceGameM": 9604.7,
+   "distanceLoreKm": 96.05,
    "status": "APPROVED",
-   "note": "Корабли/механизмы в обмен на товары всех фракций."
+   "note": "Корабли/механизмы в обмен на товары всех фракций.",
+   "travelSec": 534,
+   "travelMin": 8.9
   },
   {
    "id": "valmer_hub",
    "from": "valmer",
    "to": "black_harbor",
    "type": "cargo",
-   "cargo": ["aquacrystal", "water_services"],
-   "backCargo": ["goods_all_factions"],
-   "distanceGameM": null,
-   "distanceLoreKm": null,
+   "cargo": [
+    "aquacrystal",
+    "water_services"
+   ],
+   "backCargo": [
+    "goods_all_factions"
+   ],
+   "distanceGameM": 12000.0,
+   "distanceLoreKm": 120.0,
    "status": "APPROVED",
-   "note": "Вода/очистка в обмен на питьё и услуги."
+   "note": "Вода/очистка в обмен на питьё и услуги.",
+   "travelSec": 667,
+   "travelMin": 11.1
   },
   {
    "id": "grinwald_hub",
    "from": "grinwald",
    "to": "black_harbor",
    "type": "cargo",
-   "cargo": ["grain", "flour", "bread"],
-   "backCargo": ["goods_all_factions"],
-   "distanceGameM": null,
-   "distanceLoreKm": null,
+   "cargo": [
+    "grain",
+    "flour",
+    "bread"
+   ],
+   "backCargo": [
+    "goods_all_factions"
+   ],
+   "distanceGameM": 10387.0,
+   "distanceLoreKm": 103.87,
    "status": "APPROVED",
-   "note": "Продовольствие."
+   "note": "Продовольствие.",
+   "travelSec": 577,
+   "travelMin": 9.6
   },
   {
    "id": "esterholm_hub",
    "from": "esterholm",
    "to": "black_harbor",
    "type": "cargo",
-   "cargo": ["research_goods", "ruins_loot"],
-   "backCargo": ["supplies"],
-   "distanceGameM": null,
-   "distanceLoreKm": null,
+   "cargo": [
+    "research_goods",
+    "ruins_loot"
+   ],
+   "backCargo": [
+    "supplies"
+   ],
+   "distanceGameM": 7942.9,
+   "distanceLoreKm": 79.43,
    "status": "APPROVED",
-   "note": "Исследовательские грузы из руин (C-08: без мистики)."
+   "note": "Исследовательские грузы из руин (C-08: без мистики).",
+   "travelSec": 441,
+   "travelMin": 7.4
   },
   {
    "id": "pirate_raid",
    "from": "black_harbor",
    "to": "arkvein",
    "type": "contraband",
-   "cargo": ["seized_goods"],
+   "cargo": [
+    "seized_goods"
+   ],
    "backCargo": [],
-   "distanceGameM": null,
-   "distanceLoreKm": null,
+   "distanceGameM": 9604.7,
+   "distanceLoreKm": 96.05,
    "status": "PROPOSED",
-   "note": "Рейды на маршрут Арквейн↔Гавань; контрабандный тип, аудит не пишется."
+   "note": "Рейды на маршрут Арквейн↔Гавань; контрабандный тип, аудит не пишется.",
+   "travelSec": 534,
+   "travelMin": 8.9
   }
  ],
  "requirements": {
