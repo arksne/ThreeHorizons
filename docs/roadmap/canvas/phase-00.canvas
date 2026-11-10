@@ -1,0 +1,174 @@
+{
+ "nodes": [
+  {
+   "id": "p0_head",
+   "type": "text",
+   "text": "# Ф0 · База и правила · ⭐ критический путь\n**Цель:** пустой, но полностью рабочий скелет проекта: структура папок, инструменты, гейты,\n\n**12 шагов · готово 0/12** · файл: [[phase-00-baza]] · индекс: [[ROADMAP_0.1]]",
+   "x": 0,
+   "y": -190,
+   "width": 1080,
+   "height": 150,
+   "color": "6"
+  },
+  {
+   "id": "p0_s0_1",
+   "type": "text",
+   "text": "### 0.1 · Структура папок\nсоздать дерево по `ARCHITECTURE.md` §1 и техстеку библии §9: `GAME_DESIGN/`, `ART_ASSETS/{models,textures,previews}`, `ROBLOX_IMPLEMENTATION/{src,tests,build}`, `STEAM_IMPLEMENTATION/`, `tools/`, `tests/`, `backups/`, `docs/`.\n🛠 pwsh `New-Item`.\n**✔ Готово, когда:** `Get-ChildItem -Recurse -Directory` показывает все папки, пустые — с `.gitkeep`.\n_Канон: `docs/ARCHITECTURE.md` §1; `docs/THREE_HORIZONS_PROJECT_BIBLE.md` §9._",
+   "x": 0,
+   "y": 0,
+   "width": 620,
+   "height": 298,
+   "color": "5"
+  },
+  {
+   "id": "p0_s0_2",
+   "type": "text",
+   "text": "### 0.2 · `.gitignore` и правила репозитория\nигнорировать `backups/`, `build/`, `*.fbx`, `*.blend1`, `ART_ASSETS/textures/*.png` (кроме манифеста), портативные тулзы, `node_modules/`, `.rojo/`, логи.\n**✔ Готово, когда:** тестовый `.fbx` и `backups/` не появляются в `git status`.\n_Канон: `docs/ART_PIPELINE_BLENDER_KIT.md` §7 («FBX не коммитим»)._",
+   "x": 0,
+   "y": 320,
+   "width": 620,
+   "height": 226,
+   "color": "5"
+  },
+  {
+   "id": "p0_s0_3",
+   "type": "text",
+   "text": "### 0.3 · Первый коммит и тег\n`git init` (если ещё нет), коммит «v0.1.0: clean lore base», тег `v0.1.0`.\n**✔ Готово, когда:** `git log --oneline` содержит коммит, `git tag` — `v0.1.0`.",
+   "x": 0,
+   "y": 568,
+   "width": 620,
+   "height": 178,
+   "color": "5"
+  },
+  {
+   "id": "p0_s0_4",
+   "type": "text",
+   "text": "### 0.4 · Инвентаризация инструментов\nпроверить и записать версии: `git`, `python` (3.x), `node`, `rojo`, `stylua`, `selene`, `luau`/`luau-compile`, `blender` (4.x). Результат — `tools/TOOLCHAIN.md` с путями и версиями.\n**✔ Готово, когда:** каждая команда запускается и версия записана; отсутствующие помечены «установить в Ф0.5» с ссылкой на установку.\n_Канон: скилл проекта (пути тулзов) + `docs/ART_PIPELINE_BLENDER_KIT.md` §«Ограничения»._",
+   "x": 0,
+   "y": 768,
+   "width": 620,
+   "height": 250,
+   "color": "5"
+  },
+  {
+   "id": "p0_s0_5",
+   "type": "text",
+   "text": "### 0.5 · Установка и фиксация тулчейна\nдоставить недостающее: Rojo + плагин Studio, StyLua, selene (std=roblox), Luau CLI, при необходимости Node/pnpm. Версии — в `tools/TOOLCHAIN.md`.\n**✔ Готово, когда:** `rojo --version`, `stylua --version`, `selene --version`, `luau-compile --help` отвечают без ошибок.",
+   "x": 0,
+   "y": 1040,
+   "width": 620,
+   "height": 202,
+   "color": "5"
+  },
+  {
+   "id": "p0_s0_6",
+   "type": "text",
+   "text": "### 0.6 · `tools/preflight.ps1` — единая проверка\nскрипт с 4 проверками: `stylua --check`, `selene`, `luau-compile` всех `.lua` из `ROBLOX_IMPLEMENTATION/src`, `rojo build` в `ROBLOX_IMPLEMENTATION/build/`. Флаг `-Art` — позже (Ф3, валидатор FBX).\n**✔ Готово, когда:** на пустом проекте скрипт печатает `PREFLIGHT OK` (0 модулей — не ошибка).\n_Канон: `docs/QUALITY_ASSURANCE.md` Gate S-1._",
+   "x": 0,
+   "y": 1264,
+   "width": 620,
+   "height": 250,
+   "color": "5"
+  },
+  {
+   "id": "p0_s0_7",
+   "type": "text",
+   "text": "### 0.7 · Документы управления: `STATUS.md`, `DECISIONS.md`, `CHANGELOG.md`\nпревратить `docs/PROJECT_STATUS.md` в короткий `docs/STATUS.md` (текущая фаза/шаг, что проверено фактически, что дальше). `DECISIONS.md` — оставить таблицу + правило ID. `CHANGELOG.md` — переписать под формат `## v0.x.y — дата`.\n**✔ Готово, когда:** три файла существуют, шаблонные строки заполнены (пустая фаза = «Ф0 в работе»).\n_Канон: старые `DECISIONS.md`/`CHANGELOG.md` (структура), `docs/QUALITY_ASSURANCE.md` Gate R-1._",
+   "x": 0,
+   "y": 1536,
+   "width": 620,
+   "height": 302,
+   "color": "5"
+  },
+  {
+   "id": "p0_s0_8",
+   "type": "text",
+   "text": "### 0.8 · Правила именования\nзафиксировать в `docs/NAMING.md`: ассеты `TH_<FACTION>_<TYPE>_<VAR>` (+`_L1`,`_L2`), звуки `TH_AU_<faction>_<name>_v1`, модули `PascalCase.lua`, события `v1:<Domain>:<Action>`, папки `TH_Shared`/`TH_Server`/`TH_Client`.\n**✔ Готово, когда:** документ есть, пример каждого типа приведён.\n_Канон: `docs/MASTER_SCALE_SPEC.md` §1 (имена), `docs/AUDIO_DESIGN_BIBLE.md` (звук), `docs/ARCHITECTURE.md` §3 (сеть)._",
+   "x": 0,
+   "y": 1860,
+   "width": 620,
+   "height": 226,
+   "color": "5"
+  },
+  {
+   "id": "p0_s0_9",
+   "type": "text",
+   "text": "### 0.9 · Скрипты версии и бэкапа\n`tools/bump_version.py` — поднимает версию в одном `version.json` и печатает блок для CHANGELOG; `tools/backup.ps1` — zip `docs/` + `src/` в `backups/vX_<дата>/`.\n**✔ Готово, когда:** `bump_version 0.1.1` меняет `version.json`, бэкап создаёт архив и попадает в `.gitignore`.",
+   "x": 0,
+   "y": 2108,
+   "width": 620,
+   "height": 202,
+   "color": "5"
+  },
+  {
+   "id": "p0_s0_10",
+   "type": "text",
+   "text": "### 0.10 · Шаблон рабочей сессии\n`docs/SESSION_TEMPLATE.md`: что прочитать перед стартом (фаза, канон-файлы), что записать после (шаг, evidence, коммит), чек-лист гейтов.\n**✔ Готово, когда:** шаблон заполняется за 2 минуты и покрывает «вход/выход/проверка».",
+   "x": 0,
+   "y": 2332,
+   "width": 620,
+   "height": 202,
+   "color": "5"
+  },
+  {
+   "id": "p0_s0_11",
+   "type": "text",
+   "text": "### 0.11 · Принять решения S-01…S-06\nзанести в `docs/DECISIONS.md` шесть строк из раздела 6 `ROADMAP_0.1.md` (метры→studs, сжатие, размер карты, лимит шарда, вода, облака) со статусом `APPROVED`.\n**✔ Готово, когда:** `grep -c 'S-0' docs/DECISIONS.md` = 6, каждая строка имеет основание.\n_Канон: `docs/MASTER_SCALE_SPEC.md`, `docs/WORLD_SCALE.md`, `docs/WORLD_MASTER_MAP.md`, `docs/CONTRADICTIONS.md` (P-01…P-03)._",
+   "x": 0,
+   "y": 2556,
+   "width": 620,
+   "height": 250,
+   "color": "5"
+  },
+  {
+   "id": "p0_s0_12",
+   "type": "text",
+   "text": "### 0.12 · Пустой «эталонный» плейс\nсобрать `ROBLOX_IMPLEMENTATION/build/TH_base.rbxlx` из пустого `default.project.json` через `rojo build`; открыть в Studio, убедиться, что запускается без ошибок.\n**✔ Готово, когда:** Studio открывает плейс, Output пуст, `preflight` зелёный, тег `v0.1.0` стоит.",
+   "x": 0,
+   "y": 2828,
+   "width": 620,
+   "height": 202,
+   "color": "5"
+  },
+  {
+   "id": "p0_Defi",
+   "type": "text",
+   "text": "**Definition of Done**\n☐ Дерево папок соответствует `ARCHITECTURE.md` §1.\n☐ `tools/preflight.ps1` → `PREFLIGHT OK`.\n☐ `tools/TOOLCHAIN.md` с версиями всех тулзов.\n☐ Решения S-01…S-06 в `DECISIONS.md`.\n☐ `STATUS.md`, `CHANGELOG.md`, `NAMING.md`, `SESSION_TEMPLATE.md` заполнены.\n☐ Коммиты по шагам, тег `v0.1.0`, бэкап `backups/v0.1_<дата>`.",
+   "x": 660,
+   "y": 0,
+   "width": 420,
+   "height": 294,
+   "color": "4"
+  },
+  {
+   "id": "p0_Риск",
+   "type": "text",
+   "text": "**Риски и грабли**\n• **Ставить тулзы в PATH «на глаз».** Фиксируйте точные пути в `TOOLCHAIN.md`, иначе следующая сессия\n• **Тянуть в репозиторий FBX/текстуры.** Это десятки мегабайт и ломает git; только манифесты.\n• **Начать «потихоньку» делать ассеты в Ф0.** Нельзя: без масштаба (Ф2) и данных (Ф1) их придётся",
+   "x": 660,
+   "y": 316,
+   "width": 420,
+   "height": 294,
+   "color": "2"
+  },
+  {
+   "id": "p0_Чего",
+   "type": "text",
+   "text": "**Чего в этой фазе НЕ делаем**\n— Любых моделей, текстур, звуков.\n— Игровых модулей (кроме пустого `Main.server.lua` для проверки сборки).\n— Правок канона в `docs/` — только техническая реорганизация (`STATUS.md`).",
+   "x": 660,
+   "y": 632,
+   "width": 420,
+   "height": 198,
+   "color": "1"
+  }
+ ],
+ "edges": [
+  {
+   "id": "p0_e",
+   "fromNode": "p0_head",
+   "fromSide": "right",
+   "toNode": "p0_s0_1",
+   "toSide": "left",
+   "color": "6"
+  }
+ ]
+}

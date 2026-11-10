@@ -1,0 +1,174 @@
+{
+ "nodes": [
+  {
+   "id": "p3_head",
+   "type": "text",
+   "text": "# Ф3 · Арт-пайплайн (Blender → FBX → Roblox)\n**Цель:** воспроизводимый конвейер: скрипт в Blender → правильный FBX → проверка → импорт в Studio\n\n**12 шагов · готово 0/12** · файл: [[phase-03-art-pipeline]] · индекс: [[ROADMAP_0.1]]",
+   "x": 0,
+   "y": -190,
+   "width": 1080,
+   "height": 150,
+   "color": "6"
+  },
+  {
+   "id": "p3_s3_1",
+   "type": "text",
+   "text": "### 3.1 · Blender: установка и безопасный запуск\nзафиксировать путь к портативному Blender 4.x; скрипт `tools/blender.ps1` с `--threads 2` и `PriorityClass = BelowNormal` (иначе CPU 99 %).\n**✔ Готово, когда:** `blender --version` через обёртку отвечает, CPU при рендере ≤ 50 %.\n_Канон: скилл проекта (грабли Blender)._",
+   "x": 0,
+   "y": 0,
+   "width": 620,
+   "height": 226,
+   "color": "5"
+  },
+  {
+   "id": "p3_s3_2",
+   "type": "text",
+   "text": "### 3.2 · Структура `blender/`\n`blender/{scripts,presets,export,renders,validate_assets.py,manifest.json}` + `blender/README.md` (как запускать, где что).\n**✔ Готово, когда:** структура есть, `README` объясняет один полный цикл.",
+   "x": 0,
+   "y": 248,
+   "width": 620,
+   "height": 154,
+   "color": "5"
+  },
+  {
+   "id": "p3_s3_3",
+   "type": "text",
+   "text": "### 3.3 · Пресет экспорта\n`blender/presets/export_preset.md` + `export_config.py`: scene unit = 1 м, `apply_scale_options='FBX_SCALE_ALL'`, Y-up, forward −Z, `set_origin_base_center()`.\n**✔ Готово, когда:** тестовый куб 1×1×1 м экспортируется, в Studio = 3.571×3.571×3.571 st и стоит на полу.\n_Канон: `ART_PIPELINE_BLENDER_KIT.md` §«Технические правила» 1–3._",
+   "x": 0,
+   "y": 424,
+   "width": 620,
+   "height": 226,
+   "color": "5"
+  },
+  {
+   "id": "p3_s3_4",
+   "type": "text",
+   "text": "### 3.4 · `blender/scripts/hero_export.py` (каркас)\nCLI: `--style`, `--out`, `--validate`, `--all`. Пока с одной тестовой функцией `build_box(name, size_m)`; каркас для будущих моделей зданий/кораблей.\n**✔ Готово, когда:** `python hero_export.py --out blender/export` создаёт FBX + запись в манифест.",
+   "x": 0,
+   "y": 672,
+   "width": 620,
+   "height": 202,
+   "color": "5"
+  },
+  {
+   "id": "p3_s3_5",
+   "type": "text",
+   "text": "### 3.5 · `blender/validate_assets.py`\nпроверять каждый FBX: tri ≤ 12k (hero), UV присутствует, ≤ 3 материала, нет вырожденных граней, нормали наружу, габариты = заявленным, пивот в основании, LOD-соотношения 35 % / 8 %.\n**✔ Готово, когда:** испорченный FBX (открытые торцы, перевёрнутые нормали) даёт понятные ошибки.",
+   "x": 0,
+   "y": 896,
+   "width": 620,
+   "height": 202,
+   "color": "5"
+  },
+  {
+   "id": "p3_s3_6",
+   "type": "text",
+   "text": "### 3.6 · LOD-конвейер\n`hero_export.py --lod`: Decimate до 35 % и 8 %, суффиксы `_L1`/`_L2`; проверка силуэта (совпадение bbox ±5 %).\n**✔ Готово, когда:** L0/L1/L2 у тестового объекта имеют tri в допуске, силуэт не «схлопывается».",
+   "x": 0,
+   "y": 1120,
+   "width": 620,
+   "height": 178,
+   "color": "5"
+  },
+  {
+   "id": "p3_s3_7",
+   "type": "text",
+   "text": "### 3.7 · Манифест ассетов\n`blender/manifest.json`: `{name, faction, kind, dimsM, tri:{L0,L1,L2}, materials[], files[], createdAt, status}`. Частичный экспорт **мержит** манифест, не затирает.\n**✔ Готово, когда:** экспорт одного объекта не теряет записи остальных.\n_Канон: `ART_PIPELINE_BLENDER_KIT.md` §«Файлы»._",
+   "x": 0,
+   "y": 1320,
+   "width": 620,
+   "height": 202,
+   "color": "5"
+  },
+  {
+   "id": "p3_s3_8",
+   "type": "text",
+   "text": "### 3.8 · Приёмка текстурами\n`tools/gen_textures.py` (numpy+Pillow): для начала 3 материала × 3 карты (albedo/normal/roughness) 512², палитры строго из `DESIGN_TOKENS.md`; бесшовность проверяется тайлингом 3×3.\n**✔ Готово, когда:** 9 PNG, бесшовность визуально проверена, `manifest.json` текстур содержит HEX.\n_Канон: `TEXTURE_PIPELINE.md`; `DESIGN_TOKENS.md`._",
+   "x": 0,
+   "y": 1544,
+   "width": 620,
+   "height": 226,
+   "color": "5"
+  },
+  {
+   "id": "p3_s3_9",
+   "type": "text",
+   "text": "### 3.9 · Сквозной тест «куб → Studio»\nкуб 1 м с текстурой: FBX → 3D Importer → `ReplicatedStorage/TH_Art` → Part c MeshPart, `Anchored=true`; сверить размер (3.571 st), пивот, материал.\n**✔ Готово, когда:** скриншот в Studio с линейкой-стеной 10 studs, куб стоит ровно.\n_Канон: `ART_PIPELINE_BLENDER_KIT.md` §«Как это выглядит по шагам» 3–5._",
+   "x": 0,
+   "y": 1792,
+   "width": 620,
+   "height": 250,
+   "color": "5"
+  },
+  {
+   "id": "p3_s3_10",
+   "type": "text",
+   "text": "### 3.10 · `docs/PIPELINE.md`\nописать полный цикл: скрипт → FBX → валидатор → импорт руками → id в `MeshAssets.lua` → фолбэк. Отдельно — «чего нельзя автоматизировать» (FBX-импорт, модерация).\n**✔ Готово, когда:** новый человек (или агент) проходит цикл по документу без вопросов.",
+   "x": 0,
+   "y": 2064,
+   "width": 620,
+   "height": 202,
+   "color": "5"
+  },
+  {
+   "id": "p3_s3_11",
+   "type": "text",
+   "text": "### 3.11 · `preflight -Art`\nдобавить в `tools/preflight.ps1` флаг `-Art`: прогон `validate_assets.py` по `blender/export/**` + отчёт.\n**✔ Готово, когда:** `preflight -Art` зелёный на тестовом кубе.",
+   "x": 0,
+   "y": 2288,
+   "width": 620,
+   "height": 154,
+   "color": "5"
+  },
+  {
+   "id": "p3_s3_12",
+   "type": "text",
+   "text": "### 3.12 · Фиксация пайплайна\nтег `v0.4.0`, запись в DECISIONS «пайплайн экспорта зафиксирован», бэкап.\n**✔ Готово, когда:** всё вышеперечисленное воспроизводится с чистой папки.",
+   "x": 0,
+   "y": 2464,
+   "width": 620,
+   "height": 178,
+   "color": "5"
+  },
+  {
+   "id": "p3_Defi",
+   "type": "text",
+   "text": "**Definition of Done**\n☐ `hero_export.py` + `validate_assets.py` + `export_config.py` + `manifest.json`.\n☐ Тестовый ассет проходит путь «Blender → Studio» с правильным размером и пивотом.\n☐ LOD L1/L2 генерируются, валидатор проверяет соотношения.\n☐ 9 текстур-заготовок с бесшовностью.\n☐ `docs/PIPELINE.md`, `preflight -Art`, тег `v0.4.0`.",
+   "x": 660,
+   "y": 0,
+   "width": 420,
+   "height": 294,
+   "color": "4"
+  },
+  {
+   "id": "p3_Риск",
+   "type": "text",
+   "text": "**Риски и грабли**\n• **Пивот «как получилось»** — главная причина «утопленных» зданий. Проверка в валидаторе обязательна.\n• **FBX-импорт нельзя сделать из Luau** — в пайплайне всегда есть ручной шаг; не строить иллюзий\n• **Модерация текстур занимает время** — до загрузки живём на `Color+Material` фолбэке.\n• **Blender жрёт CPU** — только через обёртку с `--threads 2`.",
+   "x": 660,
+   "y": 316,
+   "width": 420,
+   "height": 318,
+   "color": "2"
+  },
+  {
+   "id": "p3_Чего",
+   "type": "text",
+   "text": "**Чего в этой фазе НЕ делаем**\n— Не делаем все 30+ ассетов — только каркас пайплайна и тестовый куб (ассеты — Ф4).\n— Не настраиваем Steam-экспорт и не трогаем Roblox-логику.",
+   "x": 660,
+   "y": 656,
+   "width": 420,
+   "height": 174,
+   "color": "1"
+  }
+ ],
+ "edges": [
+  {
+   "id": "p3_e",
+   "fromNode": "p3_head",
+   "fromSide": "right",
+   "toNode": "p3_s3_1",
+   "toSide": "left",
+   "color": "6"
+  }
+ ]
+}

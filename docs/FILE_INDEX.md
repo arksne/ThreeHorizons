@@ -9,7 +9,8 @@
 
 | Файл | Размер | Назначение |
 |---|---|---|
-| HANDOFF.md | 23.1 KB |  |
+| .gitignore | 363 B |  |
+| HANDOFF.md | 28.3 KB |  |
 | README.md | 2.5 KB |  |
 
 ## docs/ — документация
@@ -24,12 +25,12 @@
 | AUDIO_DESIGN_BIBLE.md | 1.0 KB |  |
 | AUDIO_UX_OPTIMIZATION.md | 2.9 KB |  |
 | BALANCING_SPEC.md | 1.4 KB |  |
-| CHANGELOG.md | 18.0 KB |  |
+| CHANGELOG.md | 20.5 KB |  |
 | CLOUD_SYSTEM.md | 7.8 KB |  |
 | CONTRADICTIONS.md | 4.9 KB |  |
 | DECISIONS.md | 2.6 KB |  |
 | DESIGN_TOKENS.md | 3.5 KB |  |
-| FILE_INDEX.md | 12.4 KB |  |
+| FILE_INDEX.md | 12.5 KB |  |
 | LIVE_RELEASE_SPEC.md | 1.0 KB |  |
 | MASTER_SCALE_SPEC.md | 2.7 KB |  |
 | PLATFORM_SUPPORT_SPEC.md | 1.0 KB |  |
@@ -65,13 +66,14 @@
 | cloud_gen_hi.py | 14.2 KB |  |
 | cloud_gen_real.py | 19.0 KB |  |
 | cloud_gen_real2.py | 17.6 KB |  |
-| hero_export.py | 64.2 KB |  |
+| hero_export.py | 66.6 KB |  |
 | render_previews.py | 4.6 KB |  |
 | scene_fleet.py | 4.4 KB |  |
 | scene_sky.py | 5.3 KB |  |
 | scene_street.py | 9.0 KB |  |
 | ships.py | 2.5 KB |  |
 | val_green_houses.py | 3.8 KB |  |
+| validate_assets.py | 6.9 KB |  |
 
 ### blender/export/
 
@@ -79,21 +81,35 @@
 - `clouds/` — **24 FBX** (TH_CLOUD_CumulusLarge_00.fbx … TH_CLOUD_Wisp_01_L2.fbx)
 - `clouds_real/` — **3 FBX** (TH_CLOUD_Cumulus_Real.fbx … TH_CLOUD_Cumulus_Real_L2.fbx)
 - `greenwald/` — **19 FBX** (TH_GRE_House_00.fbx … TH_GRE_Workshop_00_L2.fbx)
-- `manifest.json` — 16.4 KB
+- `manifest.json` — 21.9 KB
 - `ships/` — **39 FBX** (TH_DOCK_Pier_01.fbx … TH_WALL_Segment_01.fbx)
+- `validation.json` — 19.3 KB
 - `valmere/` — **19 FBX** (TH_VAL_House_00.fbx … TH_VAL_Workshop_00_L2.fbx)
 
 ## tools/ — утилиты
 
 | Файл | Размер | Назначение |
 |---|---|---|
+| _add_manifest_merge.py | 1.5 KB |  |
+| _add_origin_fix.py | 1.6 KB |  |
+| _add_tri_guard.py | 1.1 KB |  |
+| _docs_gpu.py | 3.2 KB |  |
+| _docs_quality_tools.py | 6.9 KB |  |
+| _fix_export_cwd.py | 1.1 KB |  |
+| _fix_preflight.py | 2.8 KB |  |
+| _fix_selene_warnings.py | 4.8 KB |  |
+| _fix_validator_pivot.py | 1.3 KB |  |
 | _patch_demo.py | 1.7 KB |  |
 | _patch_demo_photomode.py | 6.4 KB |  |
+| _read_validation.py | 557 B |  |
 | _update_handoff_docs.py | 5.9 KB |  |
 | build_cloud_test.py | 1.2 KB |  |
 | build_offline_bundle.py | 2.9 KB |  |
 | fix_typed_fields.py | 2.2 KB |  |
 | gen_textures.py | 12.8 KB |  |
+| gpu_bench.py | 3.0 KB |  |
+| gpu_bench_hi.py | 2.6 KB |  |
+| gpu_probe.py | 952 B |  |
 | make_cloud_puff_textures.py | 5.5 KB |  |
 | make_cloud_sheet.py | 1.4 KB |  |
 | make_contact_sheet.py | 967 B |  |
@@ -106,6 +122,7 @@
 | update_registry_hero.py | 1.6 KB |  |
 | update_registry_textures.py | 1.2 KB |  |
 | capture_studio.ps1 | 1.4 KB |  |
+| preflight.ps1 | 5.1 KB |  |
 
 > `tools/blender/` (~900 МБ, portable Blender 4.5.15) и `tools/luau/` (Luau CLI) не индексируются построчно — это рантаймы, они исключены из бэкапов.
 
@@ -167,53 +184,53 @@
 
 - `ReplicatedStorage\TH_Shared\Config\Clouds.lua` — 4.1 KB
 - `ReplicatedStorage\TH_Shared\Config\Factions.lua` — 2.2 KB
-- `ReplicatedStorage\TH_Shared\Config\Goods.lua` — 2.6 KB
-- `ReplicatedStorage\TH_Shared\Config\Heroes.lua` — 2.4 KB
-- `ReplicatedStorage\TH_Shared\Config\MaterialConfig.lua` — 6.1 KB
+- `ReplicatedStorage\TH_Shared\Config\Goods.lua` — 2.7 KB
+- `ReplicatedStorage\TH_Shared\Config\Heroes.lua` — 2.5 KB
+- `ReplicatedStorage\TH_Shared\Config\MaterialConfig.lua` — 6.2 KB
 - `ReplicatedStorage\TH_Shared\Config\MeshAssets.lua` — 3.4 KB
 - `ReplicatedStorage\TH_Shared\Config\Palettes.lua` — 2.2 KB
-- `ReplicatedStorage\TH_Shared\Config\Ships.lua` — 1.4 KB
-- `ReplicatedStorage\TH_Shared\Generators\ArchitectureGenerator.lua` — 7.6 KB
-- `ReplicatedStorage\TH_Shared\Generators\BuildingGenerator.lua` — 15.1 KB
+- `ReplicatedStorage\TH_Shared\Config\Ships.lua` — 1.5 KB
+- `ReplicatedStorage\TH_Shared\Generators\ArchitectureGenerator.lua` — 8.1 KB
+- `ReplicatedStorage\TH_Shared\Generators\BuildingGenerator.lua` — 15.2 KB
 - `ReplicatedStorage\TH_Shared\Generators\DecorationGenerator.lua` — 2.4 KB
-- `ReplicatedStorage\TH_Shared\Generators\EnvironmentGenerator.lua` — 2.5 KB
-- `ReplicatedStorage\TH_Shared\Generators\InteriorGenerator.lua` — 2.3 KB
-- `ReplicatedStorage\TH_Shared\Generators\ShipGenerator.lua` — 7.9 KB
-- `ReplicatedStorage\TH_Shared\Net\NetAPI.lua` — 1.9 KB
+- `ReplicatedStorage\TH_Shared\Generators\EnvironmentGenerator.lua` — 3.1 KB
+- `ReplicatedStorage\TH_Shared\Generators\InteriorGenerator.lua` — 2.4 KB
+- `ReplicatedStorage\TH_Shared\Generators\ShipGenerator.lua` — 8.3 KB
+- `ReplicatedStorage\TH_Shared\Net\NetAPI.lua` — 1.8 KB
 - `ReplicatedStorage\TH_Shared\Sim\CloudField.lua` — 7.5 KB
 - `ReplicatedStorage\TH_Shared\Types\Types.lua` — 835 B
-- `ServerScriptService\TH_Server\Build\Builder.lua` — 4.0 KB
-- `ServerScriptService\TH_Server\Build\LODBuilder.lua` — 2.1 KB
+- `ServerScriptService\TH_Server\Build\Builder.lua` — 4.1 KB
+- `ServerScriptService\TH_Server\Build\LODBuilder.lua` — 1.9 KB
 - `ServerScriptService\TH_Server\Build\MeshBuilding.lua` — 4.3 KB
 - `ServerScriptService\TH_Server\Build\WorldAssembler.lua` — 3.9 KB
-- `ServerScriptService\TH_Server\Build\WorldBuilder.lua` — 3.1 KB
-- `ServerScriptService\TH_Server\Data\DataSchema.lua` — 1.5 KB
-- `ServerScriptService\TH_Server\Data\PlayerData.lua` — 1.8 KB
+- `ServerScriptService\TH_Server\Build\WorldBuilder.lua` — 3.3 KB
+- `ServerScriptService\TH_Server\Data\DataSchema.lua` — 1.6 KB
+- `ServerScriptService\TH_Server\Data\PlayerData.lua` — 1.9 KB
 - `ServerScriptService\TH_Server\Economy\Contracts.lua` — 2.6 KB
 - `ServerScriptService\TH_Server\Economy\Production.lua` — 2.4 KB
-- `ServerScriptService\TH_Server\Economy\Property.lua` — 2.3 KB
+- `ServerScriptService\TH_Server\Economy\Property.lua` — 2.4 KB
 - `ServerScriptService\TH_Server\Economy\Shops.lua` — 2.7 KB
 - `ServerScriptService\TH_Server\Economy\Wallet.lua` — 1.7 KB
-- `ServerScriptService\TH_Server\Main.server.lua` — 7.1 KB
-- `ServerScriptService\TH_Server\NPC\NPCService.lua` — 1.7 KB
+- `ServerScriptService\TH_Server\Main.server.lua` — 7.5 KB
+- `ServerScriptService\TH_Server\NPC\NPCService.lua` — 1.9 KB
 - `ServerScriptService\TH_Server\NPC\Schedules.lua` — 1.5 KB
 - `ServerScriptService\TH_Server\Security\ServerSecurity.lua` — 1.3 KB
-- `ServerScriptService\TH_Server\Ships\CrewService.lua` — 1.5 KB
-- `ServerScriptService\TH_Server\Ships\FleetOffline.lua` — 2.0 KB
+- `ServerScriptService\TH_Server\Ships\CrewService.lua` — 1.6 KB
+- `ServerScriptService\TH_Server\Ships\FleetOffline.lua` — 2.1 KB
 - `ServerScriptService\TH_Server\Ships\ShipService.lua` — 2.0 KB
 - `ServerScriptService\TH_Server\Social\FriendsChat.lua` — 1.9 KB
-- `ServerScriptService\TH_Server\Social\Guilds.lua` — 2.2 KB
-- `ServerScriptService\TH_Server\Story\Quests.lua` — 3.6 KB
+- `ServerScriptService\TH_Server\Social\Guilds.lua` — 2.3 KB
+- `ServerScriptService\TH_Server\Story\Quests.lua` — 3.9 KB
 - `ServerScriptService\TH_Server\Story\StoryFlags.lua` — 1.1 KB
 - `ServerScriptService\TH_Server\World\Analytics.lua` — 1.1 KB
-- `ServerScriptService\TH_Server\World\CapitalLayouts.lua` — 2.1 KB
+- `ServerScriptService\TH_Server\World\CapitalLayouts.lua` — 2.2 KB
 - `ServerScriptService\TH_Server\World\CloudSystem.lua` — 8.9 KB
-- `ServerScriptService\TH_Server\World\CrossShard.lua` — 2.2 KB
-- `ServerScriptService\TH_Server\World\DistrictLayout.lua` — 2.9 KB
+- `ServerScriptService\TH_Server\World\CrossShard.lua` — 2.3 KB
+- `ServerScriptService\TH_Server\World\DistrictLayout.lua` — 3.2 KB
 - `ServerScriptService\TH_Server\World\Streaming.lua` — 2.4 KB
 - `ServerScriptService\TH_Server\World\WeatherService.lua` — 1.6 KB
 - `ServerScriptService\TH_Server\World\WorldEvents.lua` — 1.3 KB
-- `StarterPlayer\TH_Client\ClientMain.client.lua` — 2.9 KB
+- `StarterPlayer\TH_Client\ClientMain.client.lua` — 2.8 KB
 - `StarterPlayer\TH_Client\Controllers\Interaction.lua` — 1.2 KB
 - `StarterPlayer\TH_Client\Controllers\ShipController.lua` — 2.0 KB
 - `StarterPlayer\TH_Client\UI\UIkit.lua` — 3.1 KB
@@ -231,12 +248,40 @@
 
 ## build/ — артефакты прогонов (генерируются)
 
+- `bench_cycles.png` — 248.4 KB
+- `bench_eevee.png` — 241.6 KB
+- `bench_hi_cycles_cpu.png` — 1.4 MB
+- `bench_hi_eevee_nort.png` — 1.4 MB
+- `bench_hi_eevee_rt.png` — 1.4 MB
 - `check_err.txt` — 0 B
 - `check_out.txt` — 1.1 KB
 - `cloud_test_bundle.lua` — 13.2 KB
 - `dump_raw.txt` — 1.6 MB
+- `export_all.txt` — 31.7 KB
+- `export_all_err.txt` — 0 B
+- `export_manor_arkwain.txt` — 1.7 KB
+- `export_manor_arkwain_err.txt` — 0 B
+- `export_manor_greenwald.txt` — 1.7 KB
+- `export_manor_greenwald_err.txt` — 0 B
+- `export_manor_valmere.txt` — 1.7 KB
+- `export_manor_valmere_err.txt` — 0 B
+- `gpu_bench.txt` — 6.5 KB
+- `gpu_bench_err.txt` — 0 B
+- `gpu_bench_hi.txt` — 13.8 KB
+- `gpu_bench_hi_err.txt` — 0 B
+- `gpu_bench_opengl.txt` — 11.9 KB
+- `gpu_bench_opengl_err.txt` — 0 B
+- `gpu_bench_vulkan.txt` — 11.9 KB
+- `gpu_bench_vulkan_err.txt` — 0 B
+- `gpu_probe.txt` — 1.0 KB
+- `gpu_probe2.txt` — 1.0 KB
+- `gpu_probe2_err.txt` — 0 B
+- `gpu_probe_err.txt` — 0 B
 - `modules.json` — 1.6 KB
 - `offline_bundle.lua` — 149.1 KB
+- `ThreeHorizons_rojo.rbxlx` — 182.9 KB
+- `validate_err.txt` — 0 B
+- `validate_out.txt` — 16.9 KB
 
 ## backups/ — версии проекта
 

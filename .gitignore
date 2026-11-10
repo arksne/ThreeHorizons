@@ -1,16 +1,38 @@
-# --- vendor-бинарники: portable Blender ~900 МБ, в git не тянем ---
-tools/blender/
-
-# --- локальные кэши инструментов ---
-.serena/
+# --- сборки и кэш инструментов ---
+build/
+.rojo/
+.rojo.json
 __pycache__/
 *.pyc
+.serena/
+node_modules/
+*.log
 
-# --- локальные бэкапы проекта (9 снимков, ~326 МБ) ---
-backups/
-
-# --- служебное ---
+# --- бинарники арта: в git только манифесты и скрипты ---
+*.fbx
+*.blend
 *.blend1
+*.psd
+*.rbxlx
+*.rbxm
+ART_ASSETS/textures/*.png
+ART_ASSETS/models/*
+!ART_ASSETS/models/README.md
+
+# --- локальные бэкапы ---
+backups/*
+!backups/README.md
+
+# --- вендорные тулзы ---
+tools/blender/
+
+# --- редакторы и ОС ---
 Thumbs.db
 desktop.ini
 .DS_Store
+.obsidian/workspace.json
+.obsidian/cache
+
+# --- временные отчёты скриптов ---
+ART_ASSETS/roadmap/_*.js
+ART_ASSETS/roadmap/html_check.png

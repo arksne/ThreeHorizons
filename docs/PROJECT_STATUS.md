@@ -99,3 +99,15 @@
 6. Корабли в Blender-печи выглядят как баржи (низкий борт, паруса-плоскости) — переделать корпус.
 
 
+
+## Что сделано в v1.6 (round 38, 2026-11-03)
+
+### Мир World Bible V1.0 в Studio (Place1.rbxl)
+- **6 столиц + 10 мини-островов A1..A10** по координатам WORLD_BIBLE (1 м = 3.571 studs).
+- **Облачный океан**: full Edit-режим 3225 vertices; Play-режим **follow-camera patch** 8 чанков (шаг 64, бюджет EditableMesh) — **60 FPS**, HUD TH_CloudStats (chunks/ticks/verts/fps).
+- **Terrain water плёнка** 16000×16000 studs (Y -5..+1) — глобальная фоновая вода, реплицируется автоматически.
+- **surfaceHeightAt связка**: фрегат TH_Ship (hull+deckhouse+mast+sail+flag) у причала Black Harbor, динамика через ChunkGen.surfaceHeightAt (docked pivot y=102).
+- **Причалы** WorldDocks (54 parts) у 6 столиц; **навигационные буйки маршрутов** WorldRoutes (42 parts) по TradeRoutes V1.0.
+- **Архитектура/Рельеф**: 332 arch (фермы-грядки Grinwald) + 117 relief (балуны/скалы/террасы/горые ступени/валуны) + 120 deco (окна/двери) + 8 faction specials.
+- **Документы**: WORLD_BIBLE пакет (9 файлов), CSV 17 островов, WORLD_MAP.png с маршрутами и легендой.
+- **preflight.ps1** OK (stylua + selene 0 ошибок + luau-compile + rojo build); тесты CloudOcean 22/22 PASS.

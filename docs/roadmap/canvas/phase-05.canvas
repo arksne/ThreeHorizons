@@ -1,0 +1,174 @@
+{
+ "nodes": [
+  {
+   "id": "p5_head",
+   "type": "text",
+   "text": "# Ф5 · Roblox-каркас (кодовая база)\n**Цель:** собираемый Rojo-проект с деревом модулей, конфигами из данных, сетью, сохранениями и\n\n**12 шагов · готово 0/12** · файл: [[phase-05-roblox-skeleton]] · индекс: [[ROADMAP_0.1]]",
+   "x": 0,
+   "y": -190,
+   "width": 1080,
+   "height": 150,
+   "color": "6"
+  },
+  {
+   "id": "p5_s5_1",
+   "type": "text",
+   "text": "### 5.1 · Rojo-проект\n`ROBLOX_IMPLEMENTATION/default.project.json`: `src/ServerScriptService` → `ServerScriptService`, `src/ReplicatedStorage/TH_Shared` → `ReplicatedStorage/TH_Shared`, `src/StarterPlayer` → `StarterPlayer`, `src/Workspace` → `Workspace`.\n**✔ Готово, когда:** `rojo build -o build/TH_dev.rbxlx` собирается, Studio открывает плейс.",
+   "x": 0,
+   "y": 0,
+   "width": 620,
+   "height": 226,
+   "color": "5"
+  },
+  {
+   "id": "p5_s5_2",
+   "type": "text",
+   "text": "### 5.2 · Дерево модулей\nсоздать по `ARCHITECTURE.md` §1: `TH_Shared/{Config,Types,Util,Net}`, `TH_Server/{Main,Data,Economy,Ships,NPC,World,Security,Chat}`, `TH_Client/{ClientMain,Controllers}`.\n**✔ Готово, когда:** все папки в `src/`, каждый модуль — заглушка с `-- @version` и описанием.",
+   "x": 0,
+   "y": 248,
+   "width": 620,
+   "height": 202,
+   "color": "5"
+  },
+  {
+   "id": "p5_s5_3",
+   "type": "text",
+   "text": "### 5.3 · Типы и стиль\n`Types.lua` (PlayerProfile, Ship, Good, Route, WeatherState), `--!strict` во всех модулях, стиль под StyLua; `selene.toml` (std=roblox).\n**✔ Готово, когда:** `stylua --check` и `selene` чистые, `luau-compile` проходит.",
+   "x": 0,
+   "y": 472,
+   "width": 620,
+   "height": 202,
+   "color": "5"
+  },
+  {
+   "id": "p5_s5_4",
+   "type": "text",
+   "text": "### 5.4 · Утилиты\n`Signal.lua`, `TableUtil.lua`, `SeededRNG.lua` (mulberry32 — детерминизм зданий/облаков), `TimeUtil.lua` (unix/фазы).\n**✔ Готово, когда:** на каждую утилиту есть тест в `tests/` (детерминизм RNG, копирование таблиц).",
+   "x": 0,
+   "y": 696,
+   "width": 620,
+   "height": 178,
+   "color": "5"
+  },
+  {
+   "id": "p5_s5_5",
+   "type": "text",
+   "text": "### 5.5 · Конфиги из данных (Ф1)\n`Config/Factions.lua`, `Goods.lua`, `Ships.lua`, `Palettes.lua`, `Weather.lua` — генерируются `tools/bundle_design.py` из JSON; руками не правятся (шапка-предупреждение).\n**✔ Готово, когда:** изменил JSON → перегенерировал → значение в игре поменялось; расхождений нет.",
+   "x": 0,
+   "y": 896,
+   "width": 620,
+   "height": 202,
+   "color": "5"
+  },
+  {
+   "id": "p5_s5_6",
+   "type": "text",
+   "text": "### 5.6 · `NetAPI`\nобёртка над RemoteEvents: имена `v1:<Domain>:<Action>`, сериализация аргументов, серверный rate-limit (торговля 5/с, взаимодействие 10/с, чат 3/с), клиентский троттлинг.\n**✔ Готово, когда:** тест «спам 100 событий → 95 отброшено» проходит; в Output нет ошибок.\n_Канон: `WORLD_NETWORK_ARCHITECTURE.md` §5; `SPECS_COMBINED.md` §SECURITY 4._",
+   "x": 0,
+   "y": 1120,
+   "width": 620,
+   "height": 250,
+   "color": "5"
+  },
+  {
+   "id": "p5_s5_7",
+   "type": "text",
+   "text": "### 5.7 · Bootstrap\n`Main.server.lua` создаёт `Remotes/`, `TH_World/`, инициализирует сервисы в фиксированном порядке и логирует `[TH] server online v0.1`; `ClientMain.client.lua` — `[TH] client online`.\n**✔ Готово, когда:** Play в Studio даёт обе строки, ноль ошибок.",
+   "x": 0,
+   "y": 1392,
+   "width": 620,
+   "height": 178,
+   "color": "5"
+  },
+  {
+   "id": "p5_s5_8",
+   "type": "text",
+   "text": "### 5.8 · Профиль игрока\n`PlayerData.lua` (ProfileService-lite): схема `{version, faction, hero, money, skills{}, ships[], cargo{}, property[], quests{}, mapFog{}}`, autosave 120 с, save-on-leave, `BindToClose` с очередью, ретраи 3× с backoff, `Migrations.lua`.\n**✔ Готово, когда:** leave/rejoin сохраняет деньги и фракцию; ручной тест на 2 клиентах.\n_Канон: `ARCHITECTURE.md` §4._",
+   "x": 0,
+   "y": 1592,
+   "width": 620,
+   "height": 250,
+   "color": "5"
+  },
+  {
+   "id": "p5_s5_9",
+   "type": "text",
+   "text": "### 5.9 · Безопасность\n`Validators.lua` (тип, диапазон, владение, кулдаун, дистанция <40 st), `RateLimit.lua`, `Audit.lua` (стратегические перемещения), `Wallet.lua` с транзакцией «списание+начисление в одной» и `txId`.\n**✔ Готово, когда:** попытка списать больше баланса блокируется; повтор с тем же `txId` — no-op (тест).\n_Канон: `SPECS_COMBINED.md` §SECURITY 1–8._",
+   "x": 0,
+   "y": 1864,
+   "width": 620,
+   "height": 226,
+   "color": "5"
+  },
+  {
+   "id": "p5_s5_10",
+   "type": "text",
+   "text": "### 5.10 · Тестовый харнесс\n`tests/run.lua` под Luau CLI: набор юнит-тестов, код возврата ≠ 0 при провале; `tools/test.ps1`.\n**✔ Готово, когда:** `tools/test.ps1` печатает `PASS=12 FAIL=0` (число растёт с модулями).",
+   "x": 0,
+   "y": 2112,
+   "width": 620,
+   "height": 178,
+   "color": "5"
+  },
+  {
+   "id": "p5_s5_11",
+   "type": "text",
+   "text": "### 5.11 · Сборка и preflight\n`rojo build` в `build/TH_dev.rbxlx`, прогон `preflight.ps1` (stylua+selene+compile+build).\n**✔ Готово, когда:** `PREFLIGHT OK`, `.rbxlx` открывается.",
+   "x": 0,
+   "y": 2312,
+   "width": 620,
+   "height": 154,
+   "color": "5"
+  },
+  {
+   "id": "p5_s5_12",
+   "type": "text",
+   "text": "### 5.12 · Фиксация каркаса\nтег `v0.6.0`, бэкап, CHANGELOG, `STATUS.md` → «каркас готов».\n**✔ Готово, когда:** новый человек по `docs/PIPELINE.md` + `README` собирает проект с нуля.",
+   "x": 0,
+   "y": 2488,
+   "width": 620,
+   "height": 154,
+   "color": "5"
+  },
+  {
+   "id": "p5_Defi",
+   "type": "text",
+   "text": "**Definition of Done**\n☐ Rojo собирает `.rbxlx`, Studio запускает без ошибок.\n☐ NetAPI + rate-limit + тест спама.\n☐ Профиль с autosave/rejoin/BindToClose/миграциями.\n☐ Валидаторы, Wallet с `txId`, Audit.\n☐ `tools/test.ps1` зелёный, `preflight` зелёный.\n☐ Тег `v0.6.0`.",
+   "x": 660,
+   "y": 0,
+   "width": 420,
+   "height": 270,
+   "color": "4"
+  },
+  {
+   "id": "p5_Риск",
+   "type": "text",
+   "text": "**Риски и грабли**\n• **Мегаскрипт «пока так»** — через месяц не разобрать. Сразу модули.\n• **Сохранения без очереди на BindToClose** — потеря прогресса при рестарте сервера.\n• **Доверие клиенту** — любая цена/награда с клиента = дюп. Только сервер.\n• **Remote без версии** — ломает совместимость при обновлениях; сразу `v1:`.",
+   "x": 660,
+   "y": 292,
+   "width": 420,
+   "height": 270,
+   "color": "2"
+  },
+  {
+   "id": "p5_Чего",
+   "type": "text",
+   "text": "**Чего в этой фазе НЕ делаем**\n— Геймплея (торговля «по-настоящему», квесты — Ф9), UI (Ф10), мира (Ф6).\n— Кросс-шардовой синхронизации: только интерфейсы, реализация — после альфы.",
+   "x": 660,
+   "y": 584,
+   "width": 420,
+   "height": 174,
+   "color": "1"
+  }
+ ],
+ "edges": [
+  {
+   "id": "p5_e",
+   "fromNode": "p5_head",
+   "fromSide": "right",
+   "toNode": "p5_s5_1",
+   "toSide": "left",
+   "color": "6"
+  }
+ ]
+}
