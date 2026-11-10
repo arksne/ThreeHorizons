@@ -81,7 +81,7 @@
 | 45 | `DESIGN_TOKENS.md` §UI | PARCHMENT/BRASS/INK, радиусы, шрифты | `constants.json` → `uiTokens` | transfer |
 | 46 | `AUDIO_DESIGN_BIBLE.md` | темы по зонам, BPM 70–95, правила SFX | `constants.json` → `audio` | transfer |
 | 47 | `CLOUD_SYSTEM.md` §2.3 | параметры CloudField: мир 12×12 км, шаг 4 Гц, PUFF_MAX_ACTIVE=6 | `constants.json` → `clouds` | transfer |
-| 48 | `THREE_LAYER_CLOUD_SEA.md` | 3 слоя моря, Y-уровни, дрейф | `constants.json` → `cloudSea` | transfer |
+| 48 | `CLOUD_SYSTEM.md` §2 + решение S-06 | 3 слоя: нативные Clouds + альфа-клочья + Atmosphere; уровни Y и пухи — Ф12 | `constants.json` → `cloudSea` | transfer |
 
 ## Решения и конфликты (в `DECISIONS.md`, не в JSON)
 

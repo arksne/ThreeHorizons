@@ -15,7 +15,6 @@ return {
 			"docs/DESIGN_TOKENS.md",
 			"docs/AUDIO_DESIGN_BIBLE.md",
 			"docs/CLOUD_SYSTEM.md",
-			"docs/THREE_LAYER_CLOUD_SEA.md",
 			"docs/SPECS_COMBINED.md",
 			"docs/PROCEDURAL_GENERATION.md",
 			"docs/ART_PIPELINE_BLENDER_KIT.md",
@@ -232,20 +231,28 @@ return {
 				"middle",
 				"upper",
 			},
-			["yStuds"] = {
-				1.2,
-				5.0,
-				9.5,
-			},
-			["wave"] = {
-				0.8,
-				1.4,
-				2.0,
-			},
-			["billows"] = {
-				18,
-				14,
-				10,
+			["status"] = "PROPOSED",
+			["note"] = "Три слоя — по S-06 (нативные Clouds + альфа-клочья + Atmosphere) и Bible §1 (мир высоко над землёй среди облаков). Точные уровни Y, амплитуды волн и число пухов ПЕРЕОПРЕДЕЛЯЮТСЯ в Ф12 из канона — прежние числа шли из реализации v1.x и удалены.",
+			["yStuds"] = nil,
+			["wave"] = nil,
+			["billows"] = nil,
+			["previousV1x"] = {
+				["yStuds"] = {
+					1.2,
+					5.0,
+					9.5,
+				},
+				["wave"] = {
+					0.8,
+					1.4,
+					2.0,
+				},
+				["billows"] = {
+					18,
+					14,
+					10,
+				},
+				["note"] = "значения из реализации v1.x (документ удалён 2026-11-11) — переопределяются в Ф12",
 			},
 		},
 		["defeat"] = {

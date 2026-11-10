@@ -174,6 +174,14 @@ def main() -> None:
         if c.get("limits", {}).get("playersPerShard") != 60:
             errors.append("constants.limits.playersPerShard должен быть 60 (S-04)")
 
+    # --- generatedFrom: все источники должны существовать ---
+    for name, data in files.items():
+        for src in data.get("generatedFrom", []) or []:
+            path = ROOT / src.split("#")[0].strip()
+            if not path.exists():
+                errors.append(f"{name}: generatedFrom ссылается на несуществующий файл "
+                              f"«{src}»")
+
     # --- итог ---
     print(f"файлов: {len(f)} | " + ", ".join(sorted(files)))
     if errors:

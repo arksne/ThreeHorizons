@@ -11,7 +11,6 @@
   "docs/DESIGN_TOKENS.md",
   "docs/AUDIO_DESIGN_BIBLE.md",
   "docs/CLOUD_SYSTEM.md",
-  "docs/THREE_LAYER_CLOUD_SEA.md",
   "docs/SPECS_COMBINED.md",
   "docs/PROCEDURAL_GENERATION.md",
   "docs/ART_PIPELINE_BLENDER_KIT.md"
@@ -26,35 +25,77 @@
  "ergonomics": {
   "playerHeightM": 1.7,
   "shoulderWidthM": 0.5,
-  "doorM": [1.0, 2.1],
+  "doorM": [
+   1.0,
+   2.1
+  ],
   "corridorMinM": 1.2,
   "ceilingLivingM": 2.7,
   "ceilingServiceM": 3.2,
-  "stairs": { "depthM": 0.25, "heightM": 0.18 },
+  "stairs": {
+   "depthM": 0.25,
+   "heightM": 0.18
+  },
   "rampMaxDeg": 20,
-  "furnitureM": { "tableH": 0.75, "chairH": 0.45, "bed": [2.0, 0.9], "wardrobeDepth": 0.6 }
+  "furnitureM": {
+   "tableH": 0.75,
+   "chairH": 0.45,
+   "bed": [
+    2.0,
+    0.9
+   ],
+   "wardrobeDepth": 0.6
+  }
  },
  "city": {
   "streetSecondaryM": 4,
   "streetMainM": 8,
-  "squareMinM": [20, 20],
-  "dockM": [40, 14],
+  "squareMinM": [
+   20,
+   20
+  ],
+  "dockM": [
+   40,
+   14
+  ],
   "buildingGapM": 3,
   "chunkM": 100
  },
  "world": {
-  "mapStuds": [64278, 92846],
-  "mapKm": [18, 26],
+  "mapStuds": [
+   64278,
+   92846
+  ],
+  "mapKm": [
+   18,
+   26
+  ],
   "seaY": 0,
   "islands": 5,
   "miniIslands": 4,
-  "streaming": { "pcRadiusStuds": 1200, "mobileRadiusStuds": 500 },
-  "heights": { "low": 0.3, "plateau": 0.55, "peak": 1.0 },
+  "streaming": {
+   "pcRadiusStuds": 1200,
+   "mobileRadiusStuds": 500
+  },
+  "heights": {
+   "low": 0.3,
+   "plateau": 0.55,
+   "peak": 1.0
+  },
   "heightNote": "S-08: Y=0 = облачное море; низ/плато/пик = доли игровой высоты острова.",
   "capitals": {
-   "arkenhold": [250, 200],
-   "valmara": [300, 250],
-   "grinholm": [300, 250]
+   "arkenhold": [
+    250,
+    200
+   ],
+   "valmara": [
+    300,
+    250
+   ],
+   "grinholm": [
+    300,
+    250
+   ]
   },
   "capitalNote": "S-09: размеры столиц по WORLD_MASTER_MAP.md; острова-города (Эстерхольм, Чёрная Гавань) = размер острова."
  },
@@ -74,35 +115,76 @@
   "playersPerShard": 60
  },
  "net": {
-  "shardRange": [60, 80],
+  "shardRange": [
+   60,
+   80
+  ],
   "messagingPerMin": 1000,
   "memoryOpsPerMin": 100000,
   "posRepNearHz": 10,
   "posRepFarHz": 2,
   "nearDistanceStuds": 500,
   "weatherTickSec": 10,
-  "fleetOffline": { "tickMin": 5, "capHours": 24 }
+  "fleetOffline": {
+   "tickMin": 5,
+   "capHours": 24
+  }
  },
- "rateLimit": { "tradePerSec": 5, "interactPerSec": 10, "chatPerSec": 3 },
- "save": { "autosaveSec": 120, "retries": 3, "bindToClose": true, "migrations": true },
+ "rateLimit": {
+  "tradePerSec": 5,
+  "interactPerSec": 10,
+  "chatPerSec": 3
+ },
+ "save": {
+  "autosaveSec": 120,
+  "retries": 3,
+  "bindToClose": true,
+  "migrations": true
+ },
  "platform": {
-  "pc": { "targetRadiusStuds": 1200, "shadows": true },
-  "mobile": { "targetRadiusStuds": 500, "shadows": false, "lodBias": -1, "minButtonPt": 44 },
-  "profiles": ["Low", "Med", "High"],
+  "pc": {
+   "targetRadiusStuds": 1200,
+   "shadows": true
+  },
+  "mobile": {
+   "targetRadiusStuds": 500,
+   "shadows": false,
+   "lodBias": -1,
+   "minButtonPt": 44
+  },
+  "profiles": [
+   "Low",
+   "Med",
+   "High"
+  ],
   "autoDowngradeFps": 30
  },
  "procgen": {
   "rng": "mulberry32",
   "facade": "+Z",
-  "windowM": [0.9, 1.2],
+  "windowM": [
+   0.9,
+   1.2
+  ],
   "windowStepM": 1.8,
   "beamM": 0.24,
-  "roofKinds": ["gable", "hip", "tower", "flat"]
+  "roofKinds": [
+   "gable",
+   "hip",
+   "tower",
+   "flat"
+  ]
  },
  "ui": {
   "template": "список слева → детали справа → действие внизу",
   "windowsCount": 11,
-  "verbs": { "interact": "E", "dock": "F", "map": "M", "inventory": "Tab", "help": "H" },
+  "verbs": {
+   "interact": "E",
+   "dock": "F",
+   "map": "M",
+   "inventory": "Tab",
+   "help": "H"
+  },
   "tokensSource": "Style.json#uiTokens",
   "tokensNote": "HEX и названия UI-токенов — в Style.json (генерируется из DESIGN_TOKENS.md). Здесь не дублируем.",
   "fontsSource": "Style.json#fonts",
@@ -112,13 +194,26 @@
   "bodyFont": "Style.json#fonts.body"
  },
  "audio": {
-  "bpm": [70, 95],
-  "zones": ["arkvein", "valmer", "grinwald", "esterholm", "black_harbor", "sea"],
+  "bpm": [
+   70,
+   95
+  ],
+  "zones": [
+   "arkvein",
+   "valmer",
+   "grinwald",
+   "esterholm",
+   "black_harbor",
+   "sea"
+  ],
   "uiMaxDb": -12,
   "naming": "TH_AU_<faction>_<name>_v1"
  },
  "clouds": {
-  "fieldKm": [12, 12],
+  "fieldKm": [
+   12,
+   12
+  ],
   "tickHz": 4,
   "puffMaxActive": 6,
   "puffLifetimeSec": 6,
@@ -127,16 +222,45 @@
   "meshClouds": false
  },
  "cloudSea": {
-  "layers": ["lower", "middle", "upper"],
-  "yStuds": [1.2, 5.0, 9.5],
-  "wave": [0.8, 1.4, 2.0],
-  "billows": [18, 14, 10]
+  "layers": [
+   "lower",
+   "middle",
+   "upper"
+  ],
+  "status": "PROPOSED",
+  "note": "Три слоя — по S-06 (нативные Clouds + альфа-клочья + Atmosphere) и Bible §1 (мир высоко над землёй среди облаков). Точные уровни Y, амплитуды волн и число пухов ПЕРЕОПРЕДЕЛЯЮТСЯ в Ф12 из канона — прежние числа шли из реализации v1.x и удалены.",
+  "yStuds": null,
+  "wave": null,
+  "billows": null,
+  "previousV1x": {
+   "yStuds": [
+    1.2,
+    5.0,
+    9.5
+   ],
+   "wave": [
+    0.8,
+    1.4,
+    2.0
+   ],
+   "billows": [
+    18,
+    14,
+    10
+   ],
+   "note": "значения из реализации v1.x (документ удалён 2026-11-11) — переопределяются в Ф12"
+  }
  },
  "defeat": {
   "respawnSafePoint": true,
   "keepSkills": true,
   "cargoLoss": "часть груза",
-  "ship": { "damage": true, "cargoLoss": true, "capture": true, "destroyOnCrit": true },
+  "ship": {
+   "damage": true,
+   "cargoLoss": true,
+   "capture": true,
+   "destroyOnCrit": true
+  },
   "respawnShieldSec": 5
  }
 }
