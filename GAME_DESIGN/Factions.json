@@ -1,0 +1,143 @@
+{
+ "schemaVersion": 1,
+ "generatedFrom": [
+  "docs/THREE_HORIZONS_PROJECT_BIBLE.md#2",
+  "docs/world/CITY_LAYOUTS.md",
+  "docs/world/ISLAND_CATALOG.md",
+  "docs/DESIGN_TOKENS.md",
+  "docs/CONTRADICTIONS.md#C-02,C-03,C-05,C-10,C-11"
+ ],
+ "note": "Районы: districtsGame — игровая структура из CITY_LAYOUTS (её строим), districtsLore — лорный список из Bible §2. Расхождение зафиксировано как C-10. Размер и роль Чёрной Гавани — C-11.",
+ "factions": [
+  {
+   "id": "arkvein",
+   "name": { "ru": "Арквейн", "en": "Arkwain" },
+   "capital": "arkenhold",
+   "capitalName": { "ru": "Аркенхольд", "en": "Arkenhold" },
+   "island": "arkvein",
+   "role": "технологии и сила",
+   "resource": "ether_fuel",
+   "government": "технократическая монархия (монарх + Совет инженеров)",
+   "specializations": ["engineer", "musketeer", "duelist", "artilleryman"],
+   "antagonistHouse": "valcroft",
+   "districtsGame": [
+    "central_square", "residential", "industrial_zone", "great_shipyard",
+    "engineering_quarter", "metallurgy", "warehouses", "trade_harbor"
+   ],
+   "districtsLore": [
+    "royal_fortress", "engineering_quarter", "shipyard", "old_town",
+    "energy_quarter", "trade_port", "workers_districts"
+   ],
+   "paletteTokens": [
+    "ARK_GRAPHITE", "ARK_STONE", "ARK_WOOD_DARK", "ARK_BURGUNDY",
+    "ARK_COPPER", "ARK_STEEL", "ARK_PLASTER"
+   ],
+   "islandLore": { "sizeKm": [12, 9], "areaKm2": 108, "heightM": 2800, "population": 65000 },
+   "status": "APPROVED",
+   "sources": ["Bible §2", "CITY_LAYOUTS", "ISLAND_CATALOG", "DESIGN_TOKENS"]
+  },
+  {
+   "id": "valmer",
+   "name": { "ru": "Вальмер", "en": "Valmere" },
+   "capital": "valmara",
+   "capitalName": { "ru": "Вальмара", "en": "Valmara" },
+   "island": "valmer",
+   "role": "вода и торговля",
+   "resource": "aquacrystal",
+   "government": "торговая олигархия (совет водных и торговых домов)",
+   "specializations": ["sailor", "harpooner", "boarder", "shooter"],
+   "antagonistHouse": "solveyn",
+   "districtsGame": [
+    "central_square", "trade_quarter", "water_infrastructure", "reservoirs",
+    "water_treatment", "residential", "warehouse_district", "port"
+   ],
+   "districtsLore": [
+    "council_square", "grand_market", "water_quarter", "merchant_district",
+    "port", "old_town", "production_district"
+   ],
+   "paletteTokens": [
+    "VAL_LIMESTONE", "VAL_CREAM", "VAL_SAND", "VAL_TEAL",
+    "VAL_SEA", "VAL_BRONZE", "VAL_WHITE"
+   ],
+   "islandLore": { "sizeKm": [24, 18], "areaKm2": 432, "heightM": 2100, "population": 90000 },
+   "status": "APPROVED",
+   "sources": ["Bible §2", "CITY_LAYOUTS", "ISLAND_CATALOG", "DESIGN_TOKENS"]
+  },
+  {
+   "id": "grinwald",
+   "name": { "ru": "Гринвальд", "en": "Greenwald" },
+   "capital": "grinholm",
+   "capitalName": { "ru": "Гринхольм", "en": "Grinholm" },
+   "island": "grinwald",
+   "role": "земля и урожай",
+   "resource": "sky_grain",
+   "government": "феодальная монархия (король + совет знати)",
+   "specializations": ["tracker", "archer", "infantryman", "crossbowman"],
+   "antagonistHouse": "ravenhall",
+   "districtsGame": [
+    "central_square", "residential", "trade_quarter", "farm_territories",
+    "barns", "mills", "livestock_territories", "processing"
+   ],
+   "districtsLore": [
+    "fortress", "old_town", "market", "granaries",
+    "mill_quarter", "craft_district", "trade_port", "estates"
+   ],
+   "paletteTokens": [
+    "GRN_OLIVE", "GRN_FOREST", "GRN_WOOD", "GRN_BEIGE",
+    "GRN_STRAW", "GRN_TERRA", "GRN_STONE"
+   ],
+   "islandLore": { "sizeKm": [25, 19], "areaKm2": 475, "heightM": 1650, "population": 80000 },
+   "status": "APPROVED",
+   "sources": ["Bible §2", "CITY_LAYOUTS", "ISLAND_CATALOG", "DESIGN_TOKENS", "C-03"]
+  }
+ ],
+ "extrafactional": [
+  {
+   "id": "esterholm",
+   "name": { "ru": "Эстерхольм", "en": "Esterholm" },
+   "role": "нейтральный порт, точка встречи трёх сюжетов",
+   "island": "esterholm",
+   "sizeLore": { "km": [1.5, 1.0], "heightM": 1900, "population": 15000 },
+   "government": "нейтральный торговый город без фракции",
+   "districtsGame": ["ruins", "abandoned_buildings", "research_sites", "broken_roads", "debris", "hidden_areas"],
+   "paletteTokens": ["VAL_LIMESTONE", "GRN_STONE", "ARK_STEEL"],
+   "status": "APPROVED",
+   "notes": "C-05: 1.5×1 км, 1900 м, ~15 000. C-08: руины = заброшенные поселения/обломки, без мистики.",
+   "sources": ["Bible §2", "CITY_LAYOUTS", "C-05", "C-08"]
+  },
+  {
+   "id": "black_harbor",
+   "name": { "ru": "Чёрная Гавань", "en": "Black Harbor" },
+   "role": "пиратский свободный порт и торговый хаб",
+   "island": "black_harbor",
+   "sizeLore": { "km": [0.8, 0.6], "heightM": 1700, "population": 8000 },
+   "government": "без единого правителя (капитаны и банды)",
+   "districtsGame": [
+    "central_market", "main_harbor", "warehouses", "taverns",
+    "inns", "shops", "residential", "meeting_places", "npc_hiring"
+   ],
+   "paletteTokens": ["GRN_WOOD", "ARK_STEEL", "GRN_TERRA"],
+   "status": "PROPOSED",
+   "notes": "C-11: Bible §2 и C-05 дают 0.8×0.6 км/1700 м/8000 (взято здесь), ISLAND_CATALOG — 1100×850 м и роль «торговый хаб». Нужно решение владельца: Гавань = пиратский free-port (выбрано) или отдельный торговый хаб + Pirate Base.",
+   "sources": ["Bible §2", "CITY_LAYOUTS", "ISLAND_CATALOG", "C-05", "C-11"]
+  }
+ ],
+ "pirateOutpost": {
+  "id": "pirate_base",
+  "name": { "ru": "Пиратская база", "en": "Pirate Base" },
+  "role": "внешняя пиратская стоянка",
+  "sizeLore": { "km": [1.4, 1.1], "heightM": null, "population": null },
+  "districtsGame": ["main_base", "port", "workshops", "living_quarters", "warehouses", "outer_fortifications"],
+  "status": "PROPOSED",
+  "notes": "Есть в ISLAND_CATALOG, отсутствует в WORLD_MASTER_MAP. До решения C-11 считаем необязательным POI."
+ },
+ "smallSettlements": [
+  { "id": "bronze_hill", "name": "Бронзовый Холм", "anchor": "arkvein_south" },
+  { "id": "farnwick", "name": "Фарнвик", "anchor": "valmer_east" },
+  { "id": "redstone", "name": "Редстоун", "anchor": "periphery" },
+  { "id": "westport", "name": "Вестпорт", "anchor": "periphery" },
+  { "id": "green_valley", "name": "Зелёная Долина", "anchor": "grinwald" },
+  { "id": "rivervood", "name": "Ривервуд", "anchor": "grinwald" },
+  { "id": "sunny_farm", "name": "Солнечная Ферма", "anchor": "grinwald" }
+ ]
+}

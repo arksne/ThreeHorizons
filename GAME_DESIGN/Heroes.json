@@ -1,0 +1,52 @@
+{
+ "schemaVersion": 1,
+ "generatedFrom": [
+  "docs/THREE_HORIZONS_PROJECT_BIBLE.md#3",
+  "docs/CONTRADICTIONS.md#C-02,C-04",
+  "docs/THREE_HORIZONS_PROJECT_BIBLE.md#7"
+ ],
+ "note": "Каждый герой — пара М/Ж. Возрасты зеркальные (C-04). Фамилия Морвей зафиксирована как канон (C-02). Все трое независимо прибывают в Эстерхольм — там точка встречи.",
+ "heroes": [
+  {
+   "id": "vale",
+   "name": { "male": "Эдриан Вейл", "female": "Элиана Вейл" },
+   "nameEn": { "male": "Adrian Vale", "female": "Eliana Vale" },
+   "age": 24,
+   "faction": "arkvein",
+   "profession": "engineer",
+   "startPoint": "small_shipyard",
+   "meetingPoint": "esterholm",
+   "hook": "Отец пропал в государственной экспедиции; герой хочет выяснить, что случилось.",
+   "sources": ["Bible §3", "C-04"]
+  },
+  {
+   "id": "morwey",
+   "name": { "male": "Леонард Морвей", "female": "Леона Морвей" },
+   "nameEn": { "male": "Leonard Morwey", "female": "Leona Morwey" },
+   "age": 26,
+   "faction": "valmer",
+   "profession": "trader",
+   "startPoint": "grand_market",
+   "meetingPoint": "esterholm",
+   "hook": "Семья потеряла груз аквакристаллов; нужно вернуть долг и репутацию дома.",
+   "sources": ["Bible §3", "C-02"]
+  },
+  {
+   "id": "ashford",
+   "name": { "male": "Гаррет Эшфорд", "female": "Грейс Эшфорд" },
+   "nameEn": { "male": "Garrett Ashford", "female": "Grace Ashford" },
+   "age": 23,
+   "faction": "grinwald",
+   "profession": "tracker",
+   "startPoint": "estates",
+   "meetingPoint": "esterholm",
+   "hook": "Давление землевладельца и налоги; семья теряет землю.",
+   "sources": ["Bible §3", "C-04"]
+  }
+ ],
+ "rules": {
+  "genderChoice": "Игрок выбирает Male или Female-версию одного и того же героя; мир и крючок одинаковые.",
+  "noClasses": "Классов нет — только профессии и навыки (Bible §5).",
+  "oneHeroPerPlayer": true
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "generatedFrom": [
+  "docs/THREE_HORIZONS_PROJECT_BIBLE.md#6",
+  "docs/DESIGN_TOKENS.md#Стратегические ресурсы",
+  "docs/CONTRADICTIONS.md#C-09",
+  "docs/SPECS_COMBINED.md#BALANCING"
+ ],
+ "note": "Цепочки производства и стратегические ресурсы. Цены и время крафта — PROPOSED (см. Prices.json), до гейм-теста не менять.",
+ "goods": [
+  { "id": "wood",        "name": "Древесина",        "tier": 0, "inputs": [],           "outputQty": 1, "timeSec": 0,   "strategic": false, "status": "APPROVED" },
+  { "id": "planks",      "name": "Доски",            "tier": 1, "inputs": ["wood"],     "outputQty": 2, "timeSec": 90,  "strategic": false, "status": "PROPOSED" },
+  { "id": "ore",         "name": "Руда",             "tier": 0, "inputs": [],           "outputQty": 1, "timeSec": 0,   "strategic": false, "status": "APPROVED" },
+  { "id": "metal",       "name": "Металл",           "tier": 1, "inputs": ["ore"],      "outputQty": 1, "timeSec": 120, "strategic": false, "status": "PROPOSED" },
+  { "id": "parts",       "name": "Детали",           "tier": 2, "inputs": ["metal"],    "outputQty": 1, "timeSec": 180, "strategic": false, "status": "PROPOSED" },
+  { "id": "fiber",       "name": "Волокно",          "tier": 0, "inputs": [],           "outputQty": 1, "timeSec": 0,   "strategic": false, "status": "APPROVED" },
+  { "id": "cloth",       "name": "Ткань",            "tier": 1, "inputs": ["fiber"],    "outputQty": 1, "timeSec": 90,  "strategic": false, "status": "PROPOSED" },
+  { "id": "clothes",     "name": "Одежда",           "tier": 2, "inputs": ["cloth"],    "outputQty": 1, "timeSec": 150, "strategic": false, "status": "PROPOSED" },
+  { "id": "ether_raw",   "name": "Эфир-сырьё",       "tier": 0, "inputs": [],           "outputQty": 1, "timeSec": 0,   "strategic": false, "status": "APPROVED" },
+  { "id": "fuel",        "name": "Эфирное топливо",  "tier": 1, "inputs": ["ether_raw"],"outputQty": 1, "timeSec": 120, "strategic": true,  "token": "#3FA7FF", "materialHint": "Neon", "status": "PROPOSED" },
+  { "id": "grain",       "name": "Небесное зерно",   "tier": 0, "inputs": [],           "outputQty": 1, "timeSec": 0,   "strategic": true,  "token": "#D8A93B", "status": "APPROVED" },
+  { "id": "flour",       "name": "Мука",             "tier": 1, "inputs": ["grain"],    "outputQty": 2, "timeSec": 90,  "strategic": false, "status": "PROPOSED" },
+  { "id": "bread",       "name": "Хлеб",             "tier": 2, "inputs": ["flour"],    "outputQty": 2, "timeSec": 120, "strategic": false, "status": "PROPOSED" },
+  { "id": "aquacrystal", "name": "Аквакристалл",     "tier": 0, "inputs": [],           "outputQty": 1, "timeSec": 0,   "strategic": true,  "token": "#7FD4FF", "materialHint": "Glass", "status": "APPROVED" }
+ ],
+ "chains": [
+  { "id": "timber",   "name": "Древесина → доски",              "path": ["wood", "planks"] },
+  { "id": "metal",    "name": "Руда → металл → детали",         "path": ["ore", "metal", "parts"] },
+  { "id": "textile",  "name": "Волокно → ткань → одежда",       "path": ["fiber", "cloth", "clothes"], "note": "C-09: цепочка APPROVED" },
+  { "id": "food",     "name": "Зерно → мука → хлеб",            "path": ["grain", "flour", "bread"] },
+  { "id": "ether",    "name": "Эфир-сырьё → топливо",           "path": ["ether_raw", "fuel"] }
+ ],
+ "rules": {
+  "baseAlwaysAvailable": "Обычные товары всегда есть в NPC-магазинах (Bible §6).",
+  "strategicLimited": "Топливо, аквакристалл и зерно — лимитный запас: цена растёт при выборке, недельный лимит покупки.",
+  "singleSource": "Все цены — только в Prices.json; здесь их нет."
+ }
+}
