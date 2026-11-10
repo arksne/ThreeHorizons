@@ -556,6 +556,33 @@ return {
 				["usage"] = "акцент Вальмера/воды",
 			},
 		},
+		["cloudTokens"] = {
+			{
+				["id"] = "CLOUD_LIGHT",
+				["hex"] = "#EDE6D3",
+				["usage"] = "облака в свету (верхние плоскости, подсвет)",
+			},
+			{
+				["id"] = "CLOUD_SILVER",
+				["hex"] = "#C9C2B4",
+				["usage"] = "облака в серебре (средний тон)",
+			},
+			{
+				["id"] = "CLOUD_SHADOW",
+				["hex"] = "#A9A396",
+				["usage"] = "облака в тени (нижние плоскости)",
+			},
+			{
+				["id"] = "CLOUD_HAZE",
+				["hex"] = "#CBB98F",
+				["usage"] = "дальняя дымка, горизонт",
+			},
+			{
+				["id"] = "SKY_PALE",
+				["hex"] = "#B8BEB4",
+				["usage"] = "бледное небо с лёгкой сепиёй",
+			},
+		},
 		["strategicResources"] = {
 			{
 				["id"] = "ETHER_FUEL",
@@ -807,6 +834,7 @@ return {
 		["counts"] = {
 			["factionTokens"] = 21,
 			["uiTokens"] = 7,
+			["cloudTokens"] = 5,
 			["strategicResources"] = 3,
 			["gateA1"] = 8,
 		},

@@ -65,6 +65,7 @@ def parse_tokens(text: str) -> tuple:
 
     faction_tokens = {v: [] for v in FACTION_SECTIONS.values()}
     ui_tokens = []
+    cloud_tokens = []
     strategic = []
     lighting_factions = {}
     lighting_common = {}
@@ -94,6 +95,14 @@ def parse_tokens(text: str) -> tuple:
                 if len(r) < 3:
                     continue
                 ui_tokens.append({"id": r[0], "hex": r[1], "usage": r[2]})
+            continue
+
+        # --- облачное море и небо: | Токен | HEX | Применение |
+        if name.startswith("Облачное"):
+            for r in rows:
+                if len(r) < 3:
+                    continue
+                cloud_tokens.append({"id": r[0], "hex": r[1], "usage": r[2]})
             continue
 
         # --- стратегические ресурсы: | Ресурс | HEX | Material | Применение |
@@ -139,7 +148,7 @@ def parse_tokens(text: str) -> tuple:
             continue
 
     # шрифты могут быть в «Общем»-подразделе раздела «Свет и атмосфера» — уже собрано выше
-    return faction_tokens, ui_tokens, strategic, lighting_factions, lighting_common, fonts
+    return faction_tokens, ui_tokens, cloud_tokens, strategic, lighting_factions, lighting_common, fonts
 
 
 SPECIAL_KEYS = {
@@ -190,13 +199,15 @@ def _num(s: str):
 
 def build() -> dict:
     text = TOKENS_MD.read_text(encoding="utf-8")
-    ft, ui, strat, lf, lc, fonts = parse_tokens(text)
+    ft, ui, cloud, strat, lf, lc, fonts = parse_tokens(text)
 
     n_fac = sum(len(v) for v in ft.values())
     if n_fac != 21:
         raise SystemExit(f"ожидалось 21 токен фракций, разобрано {n_fac} — проверь DESIGN_TOKENS.md")
     if len(ui) != 7:
         raise SystemExit(f"ожидалось 7 общих токенов, разобрано {len(ui)}")
+    if len(cloud) != 5:
+        raise SystemExit(f"ожидалось 5 облачных токенов, разобрано {len(cloud)}")
     if len(strat) != 3:
         raise SystemExit(f"ожидалось 3 стратегических ресурса, разобрано {len(strat)}")
 
@@ -236,6 +247,7 @@ def build() -> dict:
         ],
         "factionTokens": ft,
         "uiTokens": ui,
+        "cloudTokens": cloud,
         "strategicResources": strat,
         "materials": materials,
         "lighting": {"factions": lf, "common": lc},
@@ -260,7 +272,8 @@ def build() -> dict:
         ],
         "stockMaterials": sorted(STOCK_MATERIALS),
         "counts": {"factionTokens": n_fac, "uiTokens": len(ui),
-                   "strategicResources": len(strat), "gateA1": 8},
+                   "cloudTokens": len(cloud), "strategicResources": len(strat),
+                   "gateA1": 8},
     }
 
 
@@ -290,6 +303,9 @@ def write_bible(style: dict) -> None:
         L.append("")
     L += ["## Общие токены UI", "", "| Токен | HEX | Применение |", "|---|---|---|"]
     for t in style["uiTokens"]:
+        L.append(f"| `{t['id']}` | {t['hex']} | {t['usage']} |")
+    L += ["", "## Облачное море и небо", "", "| Токен | HEX | Применение |", "|---|---|---|"]
+    for t in style.get("cloudTokens", []):
         L.append(f"| `{t['id']}` | {t['hex']} | {t['usage']} |")
     L += ["", "## Стратегические ресурсы", "", "| Ресурс | HEX | Material | Применение |", "|---|---|---|---|"]
     for s in style["strategicResources"]:

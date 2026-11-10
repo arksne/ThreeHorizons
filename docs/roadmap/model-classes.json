@@ -205,7 +205,7 @@
    "usage": "здания"
   },
   {
-   "id": "bld_house_mid",
+   "id": "bld_house_medium",
    "name": "Дом средний",
    "group": "buildings",
    "sizeM": "10×14",
