@@ -25,6 +25,7 @@ backups/*
 
 # --- вендорные тулзы ---
 tools/blender/
+tools/luau/
 
 # --- редакторы и ОС ---
 Thumbs.db
