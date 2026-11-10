@@ -1,0 +1,7 @@
+std = "roblox"
+
+exclude = [
+  "tools/luau/**",
+  "backups/**",
+  "ROBLOX_IMPLEMENTATION/build/**",
+]

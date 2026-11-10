@@ -14,6 +14,12 @@
 | 2026-11-02 | D-010 | Текстурный пак: 66 бесшовных PBR PNG 512² (22 материала), TileSize=4 м, палитра = DESIGN_TOKENS; применять через MaterialConfig + SurfaceAppearance, фолбэк на Color+Material | TEXTURE_PIPELINE + худконтроль A-1 | APPROVED |
 | 2026-11-02 | D-011 | Арт-пайплайн гибрид: HERO (Blender→FBX→MeshPart, ≤12k tri, LOD L0/L1/L2) + процедурные боксы как L2-фолбэк; игра не зависит от наличия мешей, `MeshBuilding` возвращает модель всегда | ART_PIPELINE_BLENDER_KIT + прогон Blender 4.5.15 | APPROVED |
 | 2026-11-02 | D-007 | Roblox Studio не подключён (studios=[]) — работа через файлы + импорт-скрипт | Проверка MCP | APPROVED |
+| 2026-11-10 | S-01 | **1 метр = 3.571 studs** (1 stud = 0.28 м). Значение «3 studs» в MASTER_SCALE_SPEC — бытовое округление, не для расчётов | WORLD_SCALE + физика Roblox; подтверждено владельцем 2026-11-10 | APPROVED |
+| 2026-11-10 | S-02 | **Сжатие мира 1:10** по горизонтали и вертикали (игровые размеры из WORLD_MASTER_MAP) | WORLD_MASTER_MAP §«Игровые размеры»; P-01 закрыт | APPROVED |
+| 2026-11-10 | S-03 | Размер карты — **18×26 км игровых**; 168 км² — только лор-текст | WORLD_MASTER_MAP | APPROVED |
+| 2026-11-10 | S-04 | Лимит шарда — **60 игроков** на старте, поднимать после профилирования | P-02, ARCHITECTURE §5 | APPROVED |
+| 2026-11-10 | S-05 | **Вода только near-зоной 2–4 км** + туман/облачное море на горизонте; полную карту водой не заливаем | NEW_MAP_LIVING_SEA (краш Studio на 54k×78k) | APPROVED |
+| 2026-11-10 | S-06 | **Меш-облака запрещены**: три слоя — нативные Clouds + альфа-клочья + Atmosphere | D-012, CLOUD_SYSTEM | APPROVED |
 
 
 ## D-013 — Облачный океан: EditableMesh-поверхность (V1.0)

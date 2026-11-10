@@ -1,3 +1,28 @@
+## v0.1.0 — 2026-11-10
+
+**Чистый старт.** Наработки v1.x обнулены (вынесены в `_TRASH_2026-11-10/`), оставлен только канон
+`docs/` и собран новый роадмап 0.1.
+
+### Ф0 · База и правила (закрыта)
+- Скелет: `GAME_DESIGN/`, `ART_ASSETS/{models,textures,previews}`, `ROBLOX_IMPLEMENTATION/{src,tests,build}`,
+  `STEAM_IMPLEMENTATION/`, `tools/`, `tests/`, `backups/`.
+- `.gitignore` v0.1: бинарники арта, сборки, бэкапы, вендорные тулзы — вне git.
+- `tools/preflight.ps1`: stylua + selene + luau-compile + rojo build (+ `-Art` под Ф3); `selene.toml`.
+- `tools/TOOLCHAIN.md`: git 2.47, Python 3.12.4, Node 22.14, Rojo 7.7.1, selene 0.32, StyLua 2.6,
+  Luau CLI 0.745 (восстановлен в `tools/luau/`), Obsidian 1.15 (канвасы); Blender — восстановить в Ф3.
+- Управление: `docs/STATUS.md` (живой статус), `CHANGELOG.md` (формат версий), `DECISIONS.md`,
+  `docs/NAMING.md`, `docs/SESSION_TEMPLATE.md`, `docs/PROGRESS.json` (147 шагов, источник статусов).
+- `tools/bump_version.py`, `tools/backup.ps1`, `version.json`.
+- **Решения S-01…S-06 приняты**: 1 м = 3.571 studs; сжатие мира 1:10; карта 18×26 км; шард 60;
+  вода near-зоной 2–4 км; облака — три слоя без мешей.
+- `ROBLOX_IMPLEMENTATION/default.project.json` + сборка `build/TH_dev.rbxlx` (Rojo 7.7.1).
+- Роадмап: `ROADMAP_0.1.md`, канвасы `ROADMAP_0.1.canvas` + `docs/roadmap/canvas/phase-XX.canvas`.
+
+## Архив старой истории (v1.0–v1.7.1)
+
+> Ниже — записи прежнего проекта. Код и ассеты удалены 2026-11-10, история оставлена только для
+> справки; на неё **не опираться** при работе.
+
 ## v1.7.1 — 2026-11-03
 
 ### Исправление: террейн не ограничен 2044 стадами
