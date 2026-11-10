@@ -6,7 +6,6 @@
 ## 1. Почему отказались от меш-облаков
 
 Эксперимент: облако из метаболов → voxel remesh → шум → decimate до 57 000 tri
-(`blender/cloud_gen_real2.py`, результат в `blender/export/clouds_real/`).
 
 Результат честно плохой: вблизи это «вата» или пластик. Причины не в количестве полигонов:
 
@@ -31,7 +30,7 @@
 | Средний план / влёт | Слои альфа-клоньев `TH_TEX_CloudPuff_00…03` на скрещённых плоскостях | 9–12 тонких `Part` на облако |
 | Внутри облака | `Atmosphere` (Density/Haze/Glare) + локальные клочья у игрока | по триггеру плотности |
 
-Плюс **физика** (чистый Luau, без Roblox API): `TH_Shared/Sim/CloudField.lua`.
+Плюс **физика** (чистый Luau, без Roblox API): `TH_Shared/Sim/CloudField.lua` (создаётся в Ф12).
 
 ### 2.1 Нативный слой
 
@@ -44,12 +43,10 @@
 | fog | 0.85 | 0.78 | серо-белый | 0.58 | 5.0 |
 | storm | 0.95 | 0.92 | тёмно-серый | 0.50 | 3.2 |
 
-Значения — в `TH_Shared/Config/Clouds.lua`, таблицы `NATIVE_BY_WEATHER` и `ATMOSPHERE_BY_WEATHER`.
+Значения — в `TH_Shared/Config/Clouds.lua` (создаётся в Ф12), таблицы `NATIVE_BY_WEATHER` и `ATMOSPHERE_BY_WEATHER`.
 
 ### 2.2 Слой клоньев
 
-Текстуры: `ART_ASSETS/textures/clouds/TH_TEX_CloudPuff_XX.png` (512², RGBA).
-Сгенерированы `tools/make_cloud_puff_textures.py`: фрактальный value-noise + кластер из 9 «клочьев»
 + радиальное затухание → мягкий рваный край, а не вырезанный кружок.
 
 Каждое облако — `Model` из 9–12 плоскостей (`Part` + `SurfaceGui`/`ImageLabel`, лицо и тыл),
@@ -68,7 +65,6 @@
 - Турбулентность — вектор для качки корабля, ограничен по модулю.
 - Погодные пресеты: `applyWeather(state)` (clear/overcast/fog/storm).
 
-Проверено офлайн: `tools/build_cloud_test.py` → **15/15 OK**, включая детерминизм, заворот мира,
 плотность в центре/на краю/снаружи, 10 минут симуляции без NaN.
 
 ### 2.4 API для других систем
@@ -104,11 +100,7 @@ CloudSystem.puffCount()
 
 | Файл | Назначение |
 |---|---|
-| `blender/cloud_gen.py` | генератор низкополигональных облачных мешей (L0 0.6–3k tri), эксперимент |
-| `blender/cloud_gen_real2.py` | 57k tri меш + voxel remesh + Cycles AO — **эксперимент, не в игру** |
-| `blender/cloud_check_render.py` | быстрый контрольный кадр из сохранённого `.blend` |
-| `tools/make_cloud_puff_textures.py` | альфа-текстуры клочьев (то, что реально идёт в игру) |
-| `TH_Shared/Config/Clouds.lua` | пресеты нативных облаков, атмосферы, клочьев |
-| `TH_Shared/Sim/CloudField.lua` | физика поля (чистый Luau) |
-| `TH_Server/World/CloudSystem.lua` | серверная обвязка: Lighting.Clouds, клочья, API |
-| `tests/test_clouds.lua` | 15 офлайн-тестов физики |
+| `TH_Shared/Config/Clouds.lua` (создаётся в Ф12) | пресеты нативных облаков, атмосферы, клочьев |
+| `TH_Shared/Sim/CloudField.lua` (создаётся в Ф12) | физика поля (чистый Luau) |
+| `TH_Server/World/CloudSystem.lua` (создаётся в Ф12) | серверная обвязка: Lighting.Clouds, клочья, API |
+| `tests/test_clouds.lua` (создаётся в Ф12) | 15 офлайн-тестов физики |

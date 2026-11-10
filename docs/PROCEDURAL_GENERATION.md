@@ -3,7 +3,6 @@
 
 ## Принцип
 1. `BuildingGenerator.generate(params)` возвращает GenResult в метрах — чистые данные, без Roblox API. Детерминизм: seed → одно здание везде (mulberry32).
-2. Адаптеры: `TH_Server/Build/Builder.lua` (Parts, 1м=3st) и `blender/ark_house.py` (меши, экспорт FBX).
 3. Бюджет L0: дом ≤60 боксов. Декор CanCollide=false. Magenta = токен не из палитры (frog).
 
 ## Генераторы (статус)
@@ -16,4 +15,4 @@
 Фасад всегда +Z, дверь 1.0×2.1, окна 0.9×1.2 шаг ~1.8м, балки 0.24, пояс между этажами, крыша gable/hip/tower/flat, медь-оковка + бордо-акцент. Seed двигает только смещение двери и высоту крыши в допуске — силуэт улицы целостен.
 
 ## QA
-`tests/test_building_generator.lua`: детерминизм, бюджет, дверь, окна, имена TH_*. Builder проверяется magenta-сканом.
+`tests/test_building_generator.lua` (создаётся в Ф5): детерминизм, бюджет, дверь, окна, имена TH_*. Builder проверяется magenta-сканом.

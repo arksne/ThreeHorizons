@@ -97,7 +97,6 @@
 | `build/TH_dev.rbxlx` | Ф08 · 8.11 |
 | `default.project.json` | Ф00 · 0.12 |
 | `docs/ASSET_REGISTRY.md` | Ф07 · 7.1 |
-| `docs/PROJECT_STATUS.md` | Ф00 · 0.7 |
 | `docs/SESSION_TEMPLATE.md` | Ф00 · 0.10 |
 | `docs/STYLE_BIBLE.md` | Ф03 · 3.8 |
 | `preflight.ps1` | Ф08 · 8.11 |

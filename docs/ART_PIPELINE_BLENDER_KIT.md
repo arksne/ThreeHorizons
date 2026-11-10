@@ -27,10 +27,8 @@
 8. **Файлы**: `blender/export/<faction>/<name>.fbx` + `manifest.json`. В репозиторий FBX не коммитим — только скрипты и манифест.
 
 ## Как это выглядит по шагам
-1. `blender/hero_export.py --all --out blender/export` — печёт hero-здания (3 фракции × 3 варианта + башня + мастерская), корабли (3 корпуса), LOD L1/L2. Требует Blender 4.x.
-2. `blender/batch_export.py` — обёртка-батч, пишет `manifest.json` с размерами и количеством tri.
 3. Импорт в Roblox Studio: **3D Importer** (FBX) → `ReplicatedStorage/TH_Art/<name>`; в свойствах — `Anchored = true`, `CanCollide` по типу.
-4. Прописать asset id (или имя Model в ReplicatedStorage) в `TH_Shared/Config/MeshAssets.lua`.
+4. Прописать asset id (или имя Model в ReplicatedStorage) в `TH_Shared/Config/MeshAssets.lua` (создаётся в Ф5 (арт-пайплайн)).
 5. В игре `MeshBuilding.build(...)` берёт меш, ставит по `base_center`, при отсутствии — падает в `Builder` (боксы) с логом `[TH] mesh fallback`.
 
 ## Проверка качества (гейт A-1)

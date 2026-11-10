@@ -1,7 +1,6 @@
 # TEXTURE PIPELINE (v1.1, APPROVED)
 
 ## Что сгенерировано
-`tools/gen_textures.py` (numpy + Pillow, без внешних ассетов) создаёт **66 бесшовных PNG** в `ART_ASSETS/textures/`:
 22 материала × 3 карты (`_a` albedo, `_n` normal, `_r` roughness), 512×512, палитры строго из `DESIGN_TOKENS.md`.
 
 Материалы по фракциям:
@@ -12,15 +11,13 @@
 
 Проверено визуально (скрин-контроль в сессии): камень/кирпич/известняк/сланец/медь/парусина/солома — читаемая фактура; мрамор — прожилки; normal-карта камня корректно даёт рельеф кладки.
 
-Перегенерация: `python tools/gen_textures.py` (нужны numpy, Pillow).
-
 ## Шаг 1. Загрузка в Roblox
 1. Creator Dashboard → Creations → ваш Place → **Asset Manager** → Upload → Images.
 2. Загрузить 66 PNG (можно папкой). Имена не менять — по ним работает `MaterialConfig`.
 3. Записать asset id каждого файла.
 
 ## Шаг 2. Прописать ID
-В `ReplicatedStorage/TH_Shared/Config/MaterialConfig.lua` заполнить таблицу:
+В `ReplicatedStorage/TH_Shared/Config/MaterialConfig.lua` (создаётся в Ф6 (текстуры)) заполнить таблицу:
 ```lua
 MaterialConfig.TEXTURE_IDS.ARK_Stone = {
     albedo    = "rbxassetid://0000000001",
@@ -32,7 +29,6 @@ MaterialConfig.TEXTURE_IDS.ARK_Stone = {
 
 ## Шаг 3. Где применяется
 - `Builder.build` (сервер/Studio) — после создания Part вызывает `MaterialConfig.apply(part, token)`.
-- `tools/demo_arkwain.lua` — то же для демо-сцены.
 - Если ID не заданы — фолбэк: `Color3` палитры + стандартный `Material` (как в v1.0), ничего не ломается.
 
 ## Правила (худконтроль A-1)
@@ -40,7 +36,6 @@ MaterialConfig.TEXTURE_IDS.ARK_Stone = {
 - Текстуры бесшовные: тайлинг по X/Z не должен давать швов (проверять на стене 12×8 м).
 - Normal не «пережимать»: strength задан уровнем 2.4 в генераторе.
 - Один материал = один набор из 3 карт. Дубликаты не создавать — сверяться с `ASSET_REGISTRY.md`.
-- Палитра: HEX в manifest.json должен совпадать с токеном DESIGN_TOKENS (контроль — `ART_ASSETS/textures/manifest.json`).
 
 ## Ограничения
 - Лимит Roblox на загрузку изображений зависит от аккаунта/подписки — 66 файлов может потребовать нескольких сессий загрузки.

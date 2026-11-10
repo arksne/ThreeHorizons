@@ -97,8 +97,8 @@
 
 | Источник | Почему |
 |---|---|
-| `PROJECT_STATUS.md`, `CHANGELOG.md`, `FILE_INDEX.md`, `ASSET_REGISTRY.md` | процесс и учёт, а не правила игры |
-| `TRANSFER_README.md`, `AI_PROMPT_CHARACTERS.md` | передача персонажей другому исполнителю (вне зоны v0.1) |
+| `STATUS.md`, `CHANGELOG.md`, `ASSET_REGISTRY.md` | процесс и учёт, а не правила игры |
+| — | ~~передача персонажей другому исполнителю~~ — вне зоны v0.1, документы удалены 2026-11-11 |
 | `VISUAL_DESIGN_BIBLE.md`, `ART_PIPELINE_BLENDER_KIT.md`, `TEXTURE_PIPELINE.md` | правила арта — в пайплайн, не в JSON |
 | `NEW_MAP_LIVING_SEA.md`, `WORLD_SCALE.md` (частично) | эксперименты/устаревшие системы — только как справка по ограничениям |
 
