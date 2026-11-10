@@ -83,7 +83,20 @@ else {
   else { Pass ("rojo build -> {0}" -f $out) }
 }
 
-# 5. арт (-Art)
+# 5. контроль канона (Bible ↔ данные ↔ лор ↔ карта)
+$ctrl = Join-Path $root 'tools\control_audit.py'
+if (-not (Test-Path -LiteralPath $ctrl)) { Skip "control_audit — нет tools/control_audit.py" }
+elseif (-not $py) { Fail "control_audit — python не найден" }
+else {
+  $out = & $py -X utf8 $ctrl 2>&1
+  if ($LASTEXITCODE -ne 0) {
+    Fail "control_audit: расхождения канона (см. вывод)"
+    $out | Where-Object { $_ -match '!!' } | ForEach-Object { Write-Host ("     " + $_) -ForegroundColor Red }
+  }
+  else { Pass "control_audit: Bible ↔ данные ↔ лор ↔ карта — расхождений нет" }
+}
+
+# 6. арт (-Art)
 if ($Art) {
   $val = Join-Path $root 'blender\validate_assets.py'
   $exp = Join-Path $root 'blender\export'

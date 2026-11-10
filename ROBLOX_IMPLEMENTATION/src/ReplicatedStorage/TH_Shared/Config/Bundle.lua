@@ -68,20 +68,41 @@ return {
 		},
 		["world"] = {
 			["mapStuds"] = {
-				54000,
-				78000,
+				64278,
+				92846,
 			},
 			["mapKm"] = {
 				18,
 				26,
 			},
 			["seaY"] = 0,
-			["islands"] = 6,
-			["miniIslands"] = 10,
+			["islands"] = 5,
+			["miniIslands"] = 4,
 			["streaming"] = {
 				["pcRadiusStuds"] = 1200,
 				["mobileRadiusStuds"] = 500,
 			},
+			["heights"] = {
+				["low"] = 0.3,
+				["plateau"] = 0.55,
+				["peak"] = 1.0,
+			},
+			["heightNote"] = "S-08: Y=0 = облачное море; низ/плато/пик = доли игровой высоты острова.",
+			["capitals"] = {
+				["arkenhold"] = {
+					250,
+					200,
+				},
+				["valmara"] = {
+					300,
+					250,
+				},
+				["grinholm"] = {
+					300,
+					250,
+				},
+			},
+			["capitalNote"] = "S-09: размеры столиц по WORLD_MASTER_MAP.md; острова-города (Эстерхольм, Чёрная Гавань) = размер острова.",
 		},
 		["art"] = {
 			["heroTriMax"] = 12000,
@@ -276,6 +297,7 @@ return {
 					"artilleryman",
 				},
 				["antagonistHouse"] = "valcroft",
+				["antagonistHouseRu"] = "Валькрофт",
 				["districtsGame"] = {
 					"central_square",
 					"residential",
@@ -343,6 +365,7 @@ return {
 					"shooter",
 				},
 				["antagonistHouse"] = "solveyn",
+				["antagonistHouseRu"] = "Сольвейн",
 				["districtsGame"] = {
 					"central_square",
 					"trade_quarter",
@@ -410,6 +433,7 @@ return {
 					"crossbowman",
 				},
 				["antagonistHouse"] = "ravenhall",
+				["antagonistHouseRu"] = "Рейвенхолл",
 				["districtsGame"] = {
 					"central_square",
 					"residential",
