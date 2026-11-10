@@ -42,7 +42,7 @@
 - `tools/validate_design.py` → **DESIGN OK**; негативный тест (битый JSON) падает с понятной ошибкой.
 - `tools/bundle_design.py` → `bundle.json` + `Bundle.lua` (12 блоков), `luau-compile` проходит.
 - `pwsh -File tools/preflight.ps1` → **PREFLIGHT OK** (stylua, selene, luau-compile, rojo build).
-- Git: тег `v0.1.0`, бэкап `backups/v0.1.0_2026-11-10`.
+- Git: теги `v0.1.0` (Ф0) и `v0.2.0` (Ф1), бэкапы `backups/v0.1.0_2026-11-10`, `backups/v0.2.0_2026-11-10`.
 
 ## Следующее (Ф2)
 
