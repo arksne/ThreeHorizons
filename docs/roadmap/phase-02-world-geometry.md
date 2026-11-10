@@ -3,7 +3,10 @@
 > **Цель:** одна система мер и координат, по которой можно строить и город, и корабль, и небо.
 > После фазы карта, координаты, высоты и времена перелётов — единый набор чисел.
 > **Зависит от:** Ф1 · **Выход:** `constants.json`, `WORLD_COORDINATES.csv`, карта PNG/SVG, `travel_times.json` · **Сессий:** 1–2
-> **Канон:** `MASTER_SCALE_SPEC.md`, `WORLD_SCALE.md`, `WORLD_MASTER_MAP.md`, `world/ISLAND_CATALOG.md`, `CONTRADICTIONS.md`
+> **Канон:** `MASTER_SCALE_SPEC.md`, `WORLD_MASTER_MAP.md`, `world/ISLAND_CATALOG.md`, `CONTRADICTIONS.md`
+> **Рамка (S-07):** атлас + карта 18×26 км игровых; позиции — по композиции атласа.
+> Старая рамка `docs/world/WORLD_SCALE.md` (168 км², 6 островов, Pirate Base) — **устаревшая,
+> в расчёты не идёт** (см. `DECISIONS.md` S-07, C-11).
 
 ## Правила фазы
 
@@ -21,8 +24,12 @@
   `ceilingM: {living: 2.7, service: 3.2}`, `stairsM: {depth: 0.25, height: 0.18}`,
   `streetM: {secondary: 4, main: 8}`, `squareMinM: [20, 20]`, `dockM: [40, 14]`,
   `buildingGapM: 3`.
-- **Готово, когда:** json валиден, значения совпадают с `MASTER_SCALE_SPEC.md` §2–§4.
-- **Канон:** `MASTER_SCALE_SPEC.md`.
+- **Готово, когда:** json валиден, значения совпадают с `MASTER_SCALE_SPEC.md` §2–§4;
+  **сверка §1–§5:** `python -X utf8 tools/validate_design.py` → `DESIGN OK`, и ни одного
+  расхождения с каноном не осталось: 1 м = 3.571 studs (S-01), сжатие 1:10 (S-02),
+  карта 18 000 × 26 000 м = 64 278 × 92 846 studs (S-03, S-07), острова Арквейн 1200×900,
+  Вальмер 2400×1800, Гринвальд 2500×1900, Эстерхольм 150×100, Чёрная Гавань 80×60 м.
+- **Канон:** `MASTER_SCALE_SPEC.md` (исправлен под S-01/S-02/S-07), `DECISIONS.md` S-01…S-03, S-07.
 
 ### 2.2 · Координаты островов
 - **Действие:** пересчитать 6 островов из `world/ISLAND_CATALOG.md` (лор, метры) в игровые метры

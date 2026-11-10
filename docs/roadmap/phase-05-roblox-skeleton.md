@@ -38,7 +38,10 @@
 ### 5.5 · Конфиги из данных (Ф1)
 - **Действие:** `Config/Factions.lua`, `Goods.lua`, `Ships.lua`, `Palettes.lua`, `Weather.lua` —
   генерируются `tools/bundle_design.py` из JSON; руками не правятся (шапка-предупреждение).
-- **Готово, когда:** изменил JSON → перегенерировал → значение в игре поменялось; расхождений нет.
+- **Готово, когда:** `python -X utf8 tools/bundle_design.py` → `Config/Bundle.lua`
+  содержит 12 блоков и проходит `luau-compile`; **тест на руку:** изменить значение
+  в `GAME_DESIGN/*.json` → перегенерировать → значение в `Bundle.lua` изменилось;
+  расхождений между JSON и Lua нет (сверка `tools/validate_design.py` → `DESIGN OK`).
 
 ### 5.6 · `NetAPI`
 - **Действие:** обёртка над RemoteEvents: имена `v1:<Domain>:<Action>`, сериализация аргументов,
@@ -76,7 +79,7 @@
 
 ### 5.12 · Фиксация каркаса
 - **Действие:** тег `v0.6.0`, бэкап, CHANGELOG, `STATUS.md` → «каркас готов».
-- **Готово, когда:** новый человек по `docs/PIPELINE.md` + `README` собирает проект с нуля.
+- **Готово, когда:** новый человек по `docs/PIPELINE.md` (создаётся в Ф3.10) + `README` собирает проект с нуля.
 
 ## Definition of Done фазы
 

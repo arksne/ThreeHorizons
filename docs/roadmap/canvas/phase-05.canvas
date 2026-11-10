@@ -53,11 +53,11 @@
   {
    "id": "p5_s5_5",
    "type": "text",
-   "text": "### 5.5 · Конфиги из данных (Ф1)\n`Config/Factions.lua`, `Goods.lua`, `Ships.lua`, `Palettes.lua`, `Weather.lua` — генерируются `tools/bundle_design.py` из JSON; руками не правятся (шапка-предупреждение).\n**✔ Готово, когда:** изменил JSON → перегенерировал → значение в игре поменялось; расхождений нет.",
+   "text": "### 5.5 · Конфиги из данных (Ф1)\n`Config/Factions.lua`, `Goods.lua`, `Ships.lua`, `Palettes.lua`, `Weather.lua` — генерируются `tools/bundle_design.py` из JSON; руками не правятся (шапка-предупреждение).\n**✔ Готово, когда:** `python -X utf8 tools/bundle_design.py` → `Config/Bundle.lua` содержит 12 блоков и проходит `luau-compile`; **тест на руку:** изменить значение в `GAME_DESIGN/*.json` → перегенерировать → значение в `Bundle.lua` изменилось; расхождений между JSON и Lua нет (сверка `tools/validate_design.py` → `DESIGN OK`).",
    "x": 0,
    "y": 896,
    "width": 620,
-   "height": 202,
+   "height": 274,
    "color": "5"
   },
   {
@@ -65,7 +65,7 @@
    "type": "text",
    "text": "### 5.6 · `NetAPI`\nобёртка над RemoteEvents: имена `v1:<Domain>:<Action>`, сериализация аргументов, серверный rate-limit (торговля 5/с, взаимодействие 10/с, чат 3/с), клиентский троттлинг.\n**✔ Готово, когда:** тест «спам 100 событий → 95 отброшено» проходит; в Output нет ошибок.\n_Канон: `WORLD_NETWORK_ARCHITECTURE.md` §5; `SPECS_COMBINED.md` §SECURITY 4._",
    "x": 0,
-   "y": 1120,
+   "y": 1192,
    "width": 620,
    "height": 250,
    "color": "5"
@@ -75,7 +75,7 @@
    "type": "text",
    "text": "### 5.7 · Bootstrap\n`Main.server.lua` создаёт `Remotes/`, `TH_World/`, инициализирует сервисы в фиксированном порядке и логирует `[TH] server online v0.1`; `ClientMain.client.lua` — `[TH] client online`.\n**✔ Готово, когда:** Play в Studio даёт обе строки, ноль ошибок.",
    "x": 0,
-   "y": 1392,
+   "y": 1464,
    "width": 620,
    "height": 178,
    "color": "5"
@@ -85,7 +85,7 @@
    "type": "text",
    "text": "### 5.8 · Профиль игрока\n`PlayerData.lua` (ProfileService-lite): схема `{version, faction, hero, money, skills{}, ships[], cargo{}, property[], quests{}, mapFog{}}`, autosave 120 с, save-on-leave, `BindToClose` с очередью, ретраи 3× с backoff, `Migrations.lua`.\n**✔ Готово, когда:** leave/rejoin сохраняет деньги и фракцию; ручной тест на 2 клиентах.\n_Канон: `ARCHITECTURE.md` §4._",
    "x": 0,
-   "y": 1592,
+   "y": 1664,
    "width": 620,
    "height": 250,
    "color": "5"
@@ -95,7 +95,7 @@
    "type": "text",
    "text": "### 5.9 · Безопасность\n`Validators.lua` (тип, диапазон, владение, кулдаун, дистанция <40 st), `RateLimit.lua`, `Audit.lua` (стратегические перемещения), `Wallet.lua` с транзакцией «списание+начисление в одной» и `txId`.\n**✔ Готово, когда:** попытка списать больше баланса блокируется; повтор с тем же `txId` — no-op (тест).\n_Канон: `SPECS_COMBINED.md` §SECURITY 1–8._",
    "x": 0,
-   "y": 1864,
+   "y": 1936,
    "width": 620,
    "height": 226,
    "color": "5"
@@ -105,7 +105,7 @@
    "type": "text",
    "text": "### 5.10 · Тестовый харнесс\n`tests/run.lua` под Luau CLI: набор юнит-тестов, код возврата ≠ 0 при провале; `tools/test.ps1`.\n**✔ Готово, когда:** `tools/test.ps1` печатает `PASS=12 FAIL=0` (число растёт с модулями).",
    "x": 0,
-   "y": 2112,
+   "y": 2184,
    "width": 620,
    "height": 178,
    "color": "5"
@@ -115,7 +115,7 @@
    "type": "text",
    "text": "### 5.11 · Сборка и preflight\n`rojo build` в `build/TH_dev.rbxlx`, прогон `preflight.ps1` (stylua+selene+compile+build).\n**✔ Готово, когда:** `PREFLIGHT OK`, `.rbxlx` открывается.",
    "x": 0,
-   "y": 2312,
+   "y": 2384,
    "width": 620,
    "height": 154,
    "color": "5"
@@ -123,9 +123,9 @@
   {
    "id": "p5_s5_12",
    "type": "text",
-   "text": "### 5.12 · Фиксация каркаса\nтег `v0.6.0`, бэкап, CHANGELOG, `STATUS.md` → «каркас готов».\n**✔ Готово, когда:** новый человек по `docs/PIPELINE.md` + `README` собирает проект с нуля.",
+   "text": "### 5.12 · Фиксация каркаса\nтег `v0.6.0`, бэкап, CHANGELOG, `STATUS.md` → «каркас готов».\n**✔ Готово, когда:** новый человек по `docs/PIPELINE.md` (создаётся в Ф3.10) + `README` собирает проект с нуля.",
    "x": 0,
-   "y": 2488,
+   "y": 2560,
    "width": 620,
    "height": 154,
    "color": "5"
