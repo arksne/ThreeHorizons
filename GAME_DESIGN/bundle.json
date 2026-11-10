@@ -187,16 +187,13 @@
     "inventory": "Tab",
     "help": "H"
    },
-   "tokens": {
-    "parchment": "#E8DCC0",
-    "parchmentDark": "#CBB98F",
-    "brass": "#B08D3E",
-    "ink": "#1E1A14"
-   },
+   "tokensSource": "Style.json#uiTokens",
+   "tokensNote": "HEX и названия UI-токенов — в Style.json (генерируется из DESIGN_TOKENS.md). Здесь не дублируем.",
+   "fontsSource": "Style.json#fonts",
    "radiusPx": 4,
    "borderPx": 2,
-   "titleFont": "serif (Garamond / Merriweather)",
-   "bodyFont": "sans 14–16px"
+   "titleFont": "Style.json#fonts.title",
+   "bodyFont": "Style.json#fonts.body"
   },
   "audio": {
    "bpm": [
@@ -259,6 +256,549 @@
     "destroyOnCrit": true
    },
    "respawnShieldSec": 5
+  }
+ },
+ "style": {
+  "schemaVersion": 1,
+  "status": "APPROVED",
+  "generatedFrom": [
+   "docs/DESIGN_TOKENS.md",
+   "docs/VISUAL_DESIGN_BIBLE.md",
+   "docs/THREE_HORIZONS_PROJECT_BIBLE.md#1",
+   "docs/DECISIONS.md#D-001"
+  ],
+  "note": "Арт-дирекшн: стиль, палитры, материалы, свет, UI-токены, чек-лист gate A-1. Генерируется из DESIGN_TOKENS.md — парсер tools/build_style.py. HEX не дублируются: правишь док — меняется здесь.",
+  "styleFormula": {
+   "formula": "Stylized Realism + Medieval Maritime + Vintage Exploration",
+   "axes": [
+    {
+     "name": "Stylized Realism",
+     "means": "реалистичные пропорции, упрощённая форма"
+    },
+    {
+     "name": "Medieval Maritime",
+     "means": "средневековая морская техника и корабли"
+    },
+    {
+     "name": "Vintage Exploration",
+     "means": "винтажная палитра, типографика, ретушь"
+    }
+   ],
+   "antiExamples": [
+    "фэнтези",
+    "стимпанк",
+    "мультяшно",
+    "гиперреализм"
+   ]
+  },
+  "artPriority": "text",
+  "artPriorityNote": "D-001: при конфликте атласа с Master Prompt побеждает текст. Атлас — референс формы и палитры, не правил.",
+  "knownArtDeviations": [
+   {
+    "topic": "фамилия Морвей",
+    "note": "«Моряк» — ошибка, канон «Морвей / Morwey» (C-02)"
+   },
+   {
+    "topic": "специализация «фермер»",
+    "note": "это профессия, не боевая специализация (C-03)"
+   },
+   {
+    "topic": "«древние руины»",
+    "note": "заброшенные поселения, без мистики (C-08)"
+   },
+   {
+    "topic": "площадь Гавани",
+    "note": "0.8×0.6 км, а не 0.48 (C-05)"
+   }
+  ],
+  "factionTokens": {
+   "arkvein": [
+    {
+     "id": "ARK_GRAPHITE",
+     "hex": "#2B2E33",
+     "usage": "крыши, металл тёмный",
+     "materials": [
+      "Slate",
+      "Metal"
+     ],
+     "materialIsStock": true
+    },
+    {
+     "id": "ARK_STONE",
+     "hex": "#5A5C60",
+     "usage": "стены, камень",
+     "materials": [
+      "Cobblestone"
+     ],
+     "materialIsStock": true
+    },
+    {
+     "id": "ARK_WOOD_DARK",
+     "hex": "#4A3226",
+     "usage": "балки, двери",
+     "materials": [
+      "WoodPlanks"
+     ],
+     "materialIsStock": true
+    },
+    {
+     "id": "ARK_BURGUNDY",
+     "hex": "#6E2A2A",
+     "usage": "акценты, флаги",
+     "materials": [
+      "Fabric"
+     ],
+     "materialIsStock": true
+    },
+    {
+     "id": "ARK_COPPER",
+     "hex": "#8C5A3B",
+     "usage": "механизмы, трубы",
+     "materials": [
+      "Metal"
+     ],
+     "materialIsStock": true
+    },
+    {
+     "id": "ARK_STEEL",
+     "hex": "#9AA2A8",
+     "usage": "оковки, механизмы",
+     "materials": [
+      "DiamondPlate"
+     ],
+     "materialIsStock": true
+    },
+    {
+     "id": "ARK_PLASTER",
+     "hex": "#C9C2B4",
+     "usage": "вставки стен",
+     "materials": [
+      "Plaster"
+     ],
+     "materialIsStock": true
+    }
+   ],
+   "valmer": [
+    {
+     "id": "VAL_LIMESTONE",
+     "hex": "#EDE6D3",
+     "usage": "фасады",
+     "materials": [
+      "Limestone"
+     ],
+     "materialIsStock": true
+    },
+    {
+     "id": "VAL_CREAM",
+     "hex": "#D9C9A8",
+     "usage": "декор, арки",
+     "materials": [
+      "Plaster"
+     ],
+     "materialIsStock": true
+    },
+    {
+     "id": "VAL_SAND",
+     "hex": "#B99B6B",
+     "usage": "цоколи, мостовые",
+     "materials": [
+      "Sandstone"
+     ],
+     "materialIsStock": true
+    },
+    {
+     "id": "VAL_TEAL",
+     "hex": "#4E7E8C",
+     "usage": "ставни, ткань",
+     "materials": [
+      "Fabric"
+     ],
+     "materialIsStock": true
+    },
+    {
+     "id": "VAL_SEA",
+     "hex": "#2E4E7E",
+     "usage": "крыши, флаги",
+     "materials": [
+      "Slate"
+     ],
+     "materialIsStock": true
+    },
+    {
+     "id": "VAL_BRONZE",
+     "hex": "#A87F3F",
+     "usage": "купола, светильники",
+     "materials": [
+      "Metal"
+     ],
+     "materialIsStock": true
+    },
+    {
+     "id": "VAL_WHITE",
+     "hex": "#F5F1E6",
+     "usage": "камень белый",
+     "materials": [
+      "Marble"
+     ],
+     "materialIsStock": true
+    }
+   ],
+   "grinwald": [
+    {
+     "id": "GRN_OLIVE",
+     "hex": "#5A6B3C",
+     "usage": "ставни, ткань",
+     "materials": [
+      "Fabric"
+     ],
+     "materialIsStock": true
+    },
+    {
+     "id": "GRN_FOREST",
+     "hex": "#3E5230",
+     "usage": "крыши тёмные",
+     "materials": [
+      "Wood"
+     ],
+     "materialIsStock": true
+    },
+    {
+     "id": "GRN_WOOD",
+     "hex": "#6B4A2E",
+     "usage": "каркас, балки",
+     "materials": [
+      "WoodPlanks"
+     ],
+     "materialIsStock": true
+    },
+    {
+     "id": "GRN_BEIGE",
+     "hex": "#D8C9A3",
+     "usage": "штукатурка",
+     "materials": [
+      "Plaster"
+     ],
+     "materialIsStock": true
+    },
+    {
+     "id": "GRN_STRAW",
+     "hex": "#C2A35C",
+     "usage": "крыши солома/черепица светлая",
+     "materials": [
+      "Wood"
+     ],
+     "materialIsStock": true
+    },
+    {
+     "id": "GRN_TERRA",
+     "hex": "#A55A35",
+     "usage": "черепица, кирпич",
+     "materials": [
+      "Brick"
+     ],
+     "materialIsStock": true
+    },
+    {
+     "id": "GRN_STONE",
+     "hex": "#8A8578",
+     "usage": "камень",
+     "materials": [
+      "Cobblestone"
+     ],
+     "materialIsStock": true
+    }
+   ]
+  },
+  "uiTokens": [
+   {
+    "id": "INK",
+    "hex": "#1E1A14",
+    "usage": "обводка UI, текст тёмный"
+   },
+   {
+    "id": "PARCHMENT",
+    "hex": "#E8DCC0",
+    "usage": "фон UI, пергамент"
+   },
+   {
+    "id": "PARCH_DARK",
+    "hex": "#CBB98F",
+    "usage": "фон UI вторичный"
+   },
+   {
+    "id": "BRASS",
+    "hex": "#B08D3E",
+    "usage": "рамки, латунь UI"
+   },
+   {
+    "id": "WOOD_UI",
+    "hex": "#3A2A1C",
+    "usage": "панели тёмного дерева"
+   },
+   {
+    "id": "DANGER",
+    "hex": "#8C2B1B",
+    "usage": "урон/пираты"
+   },
+   {
+    "id": "FOCUS_BLUE",
+    "hex": "#2E4E7E",
+    "usage": "акцент Вальмера/воды"
+   }
+  ],
+  "strategicResources": [
+   {
+    "id": "ETHER_FUEL",
+    "hex": "#3FA7FF",
+    "material": "Neon",
+    "usage": "эфирное топливо, свечение баков"
+   },
+   {
+    "id": "AQUACRYSTAL",
+    "hex": "#7FD4FF",
+    "material": "Glass",
+    "usage": "аквакристалл, резервуары Вальмера"
+   },
+   {
+    "id": "SKY_GRAIN",
+    "hex": "#D8A93B",
+    "material": null,
+    "usage": "небесное зерно, амбары Гринвальда"
+   }
+  ],
+  "materials": [
+   {
+    "token": "ARK_GRAPHITE",
+    "faction": "arkvein",
+    "material": "Slate",
+    "stock": true
+   },
+   {
+    "token": "ARK_GRAPHITE",
+    "faction": "arkvein",
+    "material": "Metal",
+    "stock": true
+   },
+   {
+    "token": "ARK_STONE",
+    "faction": "arkvein",
+    "material": "Cobblestone",
+    "stock": true
+   },
+   {
+    "token": "ARK_WOOD_DARK",
+    "faction": "arkvein",
+    "material": "WoodPlanks",
+    "stock": true
+   },
+   {
+    "token": "ARK_BURGUNDY",
+    "faction": "arkvein",
+    "material": "Fabric",
+    "stock": true
+   },
+   {
+    "token": "ARK_COPPER",
+    "faction": "arkvein",
+    "material": "Metal",
+    "stock": true
+   },
+   {
+    "token": "ARK_STEEL",
+    "faction": "arkvein",
+    "material": "DiamondPlate",
+    "stock": true
+   },
+   {
+    "token": "ARK_PLASTER",
+    "faction": "arkvein",
+    "material": "Plaster",
+    "stock": true
+   },
+   {
+    "token": "VAL_LIMESTONE",
+    "faction": "valmer",
+    "material": "Limestone",
+    "stock": true
+   },
+   {
+    "token": "VAL_CREAM",
+    "faction": "valmer",
+    "material": "Plaster",
+    "stock": true
+   },
+   {
+    "token": "VAL_SAND",
+    "faction": "valmer",
+    "material": "Sandstone",
+    "stock": true
+   },
+   {
+    "token": "VAL_TEAL",
+    "faction": "valmer",
+    "material": "Fabric",
+    "stock": true
+   },
+   {
+    "token": "VAL_SEA",
+    "faction": "valmer",
+    "material": "Slate",
+    "stock": true
+   },
+   {
+    "token": "VAL_BRONZE",
+    "faction": "valmer",
+    "material": "Metal",
+    "stock": true
+   },
+   {
+    "token": "VAL_WHITE",
+    "faction": "valmer",
+    "material": "Marble",
+    "stock": true
+   },
+   {
+    "token": "GRN_OLIVE",
+    "faction": "grinwald",
+    "material": "Fabric",
+    "stock": true
+   },
+   {
+    "token": "GRN_FOREST",
+    "faction": "grinwald",
+    "material": "Wood",
+    "stock": true
+   },
+   {
+    "token": "GRN_WOOD",
+    "faction": "grinwald",
+    "material": "WoodPlanks",
+    "stock": true
+   },
+   {
+    "token": "GRN_BEIGE",
+    "faction": "grinwald",
+    "material": "Plaster",
+    "stock": true
+   },
+   {
+    "token": "GRN_STRAW",
+    "faction": "grinwald",
+    "material": "Wood",
+    "stock": true
+   },
+   {
+    "token": "GRN_TERRA",
+    "faction": "grinwald",
+    "material": "Brick",
+    "stock": true
+   },
+   {
+    "token": "GRN_STONE",
+    "faction": "grinwald",
+    "material": "Cobblestone",
+    "stock": true
+   }
+  ],
+  "lighting": {
+   "factions": {
+    "arkvein": {
+     "colorTempK": 6500,
+     "exposure": -0.2,
+     "saturation": 0,
+     "fog": "лёгкий",
+     "waterReflectance": null
+    },
+    "valmer": {
+     "colorTempK": 5600,
+     "exposure": 0,
+     "saturation": 0,
+     "fog": "нет",
+     "waterReflectance": 0.4
+    },
+    "grinwald": {
+     "colorTempK": 5200,
+     "exposure": 0,
+     "saturation": 0.1,
+     "fog": null,
+     "waterReflectance": null
+    }
+   },
+   "common": {
+    "atmosphereDensity": 0.35,
+    "haze": 2.0,
+    "cloudsCover": 0.6,
+    "stormAtmosphereDensity": 0.7,
+    "windDriftNote": "множитель в GAME_DESIGN"
+   }
+  },
+  "fonts": {
+   "title": "serif с засечками (Antique, fallback serif)",
+   "body": "sans 14–16 px",
+   "radiusPx": 4,
+   "border": "2 px BRASS"
+  },
+  "gateA1": [
+   {
+    "id": "hexFromTokens",
+    "title": "HEX из токенов",
+    "check": "все цвета ассета есть в factionTokens/uiTokens/strategicResources"
+   },
+   {
+    "id": "scaleSpec",
+    "title": "масштаб по MASTER_SCALE_SPEC",
+    "check": "габарит совпадает с заявленным в classes/dimsM"
+   },
+   {
+    "id": "nameTH",
+    "title": "имя TH_*",
+    "check": "имя начинается с TH_ и в верхнем регистре"
+   },
+   {
+    "id": "status",
+    "title": "статус concept|blockout|final|lod",
+    "check": "поле status из допустимых"
+   },
+   {
+    "id": "materialsMax3",
+    "title": "материалов ≤ 3",
+    "check": "len(materials) ≤ 3"
+   },
+   {
+    "id": "hasUV",
+    "title": "UV есть",
+    "check": "uvLayers > 0"
+   },
+   {
+    "id": "lodRatio",
+    "title": "LOD 35 % / 8 %",
+    "check": "triL1 ≈ 35 % ±3 % triL0, triL2 ≈ 8 % ±2 % triL0"
+   },
+   {
+    "id": "pivotBase",
+    "title": "пивот в основании",
+    "check": "origin = base_center, низ модели на y = 0"
+   }
+  ],
+  "stockMaterials": [
+   "Brick",
+   "Cobblestone",
+   "DiamondPlate",
+   "Fabric",
+   "Limestone",
+   "Marble",
+   "Metal",
+   "Plaster",
+   "Sandstone",
+   "Slate",
+   "Wood",
+   "WoodPlanks"
+  ],
+  "counts": {
+   "factionTokens": 21,
+   "uiTokens": 7,
+   "strategicResources": 3,
+   "gateA1": 8
   }
  },
  "factions": {
@@ -1466,7 +2006,7 @@
    "docs/WORLD_MASTER_MAP.md#Маршруты",
    "docs/THREE_HORIZONS_PROJECT_BIBLE.md#4"
   ],
-  "note": "Маршруты связывают столицы с хабом (Чёрная Гавань). Расстояния и время в игровых единицах считаются в Ф2.7 по WORLD_COORDINATES.csv — здесь их пока нет намеренно.",
+  "note": "Маршруты связывают столицы с хабом (Чёрная Гавань). Расстояния и время посчитаны в Ф2.7 из GAME_DESIGN/World.json (18 м/с, сжатие 1:10 учтено).",
   "speedMs": 18,
   "speedNote": "18 м/с — скорость среднего корпуса (Bible §4 / плановая).",
   "routes": [
@@ -1483,10 +2023,12 @@
     "backCargo": [
      "goods_all_factions"
     ],
-    "distanceGameM": null,
-    "distanceLoreKm": null,
+    "distanceGameM": 9604.7,
+    "distanceLoreKm": 96.05,
     "status": "APPROVED",
-    "note": "Корабли/механизмы в обмен на товары всех фракций."
+    "note": "Корабли/механизмы в обмен на товары всех фракций.",
+    "travelSec": 534,
+    "travelMin": 8.9
    },
    {
     "id": "valmer_hub",
@@ -1500,10 +2042,12 @@
     "backCargo": [
      "goods_all_factions"
     ],
-    "distanceGameM": null,
-    "distanceLoreKm": null,
+    "distanceGameM": 12000.0,
+    "distanceLoreKm": 120.0,
     "status": "APPROVED",
-    "note": "Вода/очистка в обмен на питьё и услуги."
+    "note": "Вода/очистка в обмен на питьё и услуги.",
+    "travelSec": 667,
+    "travelMin": 11.1
    },
    {
     "id": "grinwald_hub",
@@ -1518,10 +2062,12 @@
     "backCargo": [
      "goods_all_factions"
     ],
-    "distanceGameM": null,
-    "distanceLoreKm": null,
+    "distanceGameM": 10387.0,
+    "distanceLoreKm": 103.87,
     "status": "APPROVED",
-    "note": "Продовольствие."
+    "note": "Продовольствие.",
+    "travelSec": 577,
+    "travelMin": 9.6
    },
    {
     "id": "esterholm_hub",
@@ -1535,10 +2081,12 @@
     "backCargo": [
      "supplies"
     ],
-    "distanceGameM": null,
-    "distanceLoreKm": null,
+    "distanceGameM": 7942.9,
+    "distanceLoreKm": 79.43,
     "status": "APPROVED",
-    "note": "Исследовательские грузы из руин (C-08: без мистики)."
+    "note": "Исследовательские грузы из руин (C-08: без мистики).",
+    "travelSec": 441,
+    "travelMin": 7.4
    },
    {
     "id": "pirate_raid",
@@ -1549,10 +2097,12 @@
      "seized_goods"
     ],
     "backCargo": [],
-    "distanceGameM": null,
-    "distanceLoreKm": null,
+    "distanceGameM": 9604.7,
+    "distanceLoreKm": 96.05,
     "status": "PROPOSED",
-    "note": "Рейды на маршрут Арквейн↔Гавань; контрабандный тип, аудит не пишется."
+    "note": "Рейды на маршрут Арквейн↔Гавань; контрабандный тип, аудит не пишется.",
+    "travelSec": 534,
+    "travelMin": 8.9
    }
   ],
   "requirements": {

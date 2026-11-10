@@ -12,6 +12,8 @@
 | `build_arkenhold.py` | сетка кварталов Аркенхольда → `arkenhold_blocks.json` (**Ф2.8**) |
 | `render_world_map.py` | карта мира PNG+SVG (**Ф2.5**) |
 | `control_audit.py` | контроль канона: Bible ↔ данные ↔ лор ↔ карта (**Ф2.10**) |
+| `build_style.py` | парсер `DESIGN_TOKENS.md` → `Style.json` + `STYLE_BIBLE.md` (**Ф3.1–3.6**) |
+| `validate_style.py` | gate A-1: чек-лист худконтроля по ассету (**Ф3.7**) |
 | `bump_version.py`, `backup.ps1` | версии и бэкапы (**Ф0.9**) |
 | `blender.ps1` | безопасный запуск Blender (`--threads 2`, BelowNormal) — **Ф2.9, Ф3+** |
 

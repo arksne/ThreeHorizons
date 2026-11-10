@@ -98,6 +98,32 @@ else {
 
 # 6. арт (-Art)
 if ($Art) {
+  # 6a. gate A-1 — чек-лист худконтроля (Style.json)
+  $styleChk = Join-Path $root 'tools\validate_style.py'
+  if (-not (Test-Path -LiteralPath $styleChk)) { Skip "-Art: нет tools/validate_style.py (появится в Ф3.7)" }
+  elseif (-not $py) { Fail "-Art: python не найден" }
+  else {
+    $mf = Join-Path $root 'blender\manifest.json'
+    if (-not (Test-Path -LiteralPath $mf)) {
+      # манифеста ещё нет (Ф4) — гоняем на тест-фикстурах: проверка должна и зелёная, и красная
+      $good = Join-Path $root 'tools\testdata\style_good.json'
+      $bad  = Join-Path $root 'tools\testdata\style_bad.json'
+      & $py -X utf8 $styleChk $good *> $null
+      if ($LASTEXITCODE -ne 0) { Fail "-Art: gate A-1 не пропускает эталонный ассет" }
+      else {
+        & $py -X utf8 $styleChk $bad *> $null
+        if ($LASTEXITCODE -eq 0) { Fail "-Art: gate A-1 НЕ ловит битый ассет" }
+        else { Pass "-Art: gate A-1 (эталон OK, битый — FAIL)" }
+      }
+    } else {
+      $out = & $py -X utf8 $styleChk $mf 2>&1
+      if ($LASTEXITCODE -ne 0) {
+        Fail "-Art: gate A-1 — нарушения худконтроля"
+        $out | Where-Object { $_ -match '!!' } | ForEach-Object { Write-Host ("     " + $_) -ForegroundColor Red }
+      } else { Pass "-Art: gate A-1 (Style.json)" }
+    }
+  }
+
   $val = Join-Path $root 'blender\validate_assets.py'
   $exp = Join-Path $root 'blender\export'
   if (-not (Test-Path -LiteralPath $val)) { Skip "-Art: нет blender/validate_assets.py (появится в Ф3.5)" }

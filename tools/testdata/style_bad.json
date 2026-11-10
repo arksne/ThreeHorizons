@@ -1,0 +1,18 @@
+{
+ "schemaVersion": 1,
+ "note": "Тест-фикстура для gate A-1: заведомо битый ассет. Нарушает 6 из 8 пунктов — чтобы негативный тест был настоящим.",
+ "assets": [
+  {
+   "name": "ark_house_00",
+   "status": "draft",
+   "dimsM": [12, 18],
+   "expectedDimsM": [8, 10],
+   "colors": ["#123456", "#2B2E33"],
+   "materials": ["Slate", "Cobblestone", "WoodPlanks", "Fabric", "Metal"],
+   "uvLayers": 0,
+   "tri": { "L0": 6400, "L1": 2560, "L2": 768 },
+   "origin": "geometry",
+   "baseY": 1.2
+  }
+ ]
+}

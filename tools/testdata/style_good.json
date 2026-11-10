@@ -1,0 +1,18 @@
+{
+ "schemaVersion": 1,
+ "note": "Тест-фикстура для gate A-1 (tools/validate_style.py). Один исправный ассет — эталон, что проверка проходит.",
+ "assets": [
+  {
+   "name": "TH_ARK_House_00",
+   "status": "final",
+   "dimsM": [8, 10],
+   "expectedDimsM": [8, 10],
+   "colors": ["#2B2E33", "#5A5C60", "#4A3226"],
+   "materials": ["Slate", "Cobblestone", "WoodPlanks"],
+   "uvLayers": 1,
+   "tri": { "L0": 6400, "L1": 2240, "L2": 512 },
+   "origin": "base_center",
+   "baseY": 0
+  }
+ ]
+}

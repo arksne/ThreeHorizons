@@ -103,11 +103,13 @@
   "template": "список слева → детали справа → действие внизу",
   "windowsCount": 11,
   "verbs": { "interact": "E", "dock": "F", "map": "M", "inventory": "Tab", "help": "H" },
-  "tokens": { "parchment": "#E8DCC0", "parchmentDark": "#CBB98F", "brass": "#B08D3E", "ink": "#1E1A14" },
+  "tokensSource": "Style.json#uiTokens",
+  "tokensNote": "HEX и названия UI-токенов — в Style.json (генерируется из DESIGN_TOKENS.md). Здесь не дублируем.",
+  "fontsSource": "Style.json#fonts",
   "radiusPx": 4,
   "borderPx": 2,
-  "titleFont": "serif (Garamond / Merriweather)",
-  "bodyFont": "sans 14–16px"
+  "titleFont": "Style.json#fonts.title",
+  "bodyFont": "Style.json#fonts.body"
  },
  "audio": {
   "bpm": [70, 95],

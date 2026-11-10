@@ -18,6 +18,7 @@ STYLUA = Path(r"D:\DSH\20-tools\stylua\stylua.exe")
 
 KEYS = {
     "constants.json": "constants",
+    "Style.json": "style",
     "Factions.json": "factions",
     "Heroes.json": "heroes",
     "Goods.json": "goods",
