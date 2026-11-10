@@ -1,0 +1,402 @@
+[
+ {
+  "id": "R-01",
+  "sec": "§1",
+  "req": "Постоянный мир; без магии, только люди",
+  "status": "только фаза",
+  "inData": false,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-02",
+  "sec": "§1",
+  "req": "3 острова-государства + порт + гавань + малые поселения/обломки/стоянки",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-03",
+  "sec": "§1",
+  "req": "Путь: фракция→профессия→корабль→дом→компания→флот",
+  "status": "только фаза",
+  "inData": false,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-04",
+  "sec": "§1",
+  "req": "Стиль: Stylized Realism + Medieval Maritime + Vintage",
+  "status": "только фаза",
+  "inData": false,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-05",
+  "sec": "§2",
+  "req": "3 фракции с ролями и ресурсами",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-06",
+  "sec": "§2",
+  "req": "Ресурс фракции: эфир/аквакристалл/зерно",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-07",
+  "sec": "§2",
+  "req": "Форма правления каждой фракции",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-08",
+  "sec": "§2",
+  "req": "Дом-антигонист у каждой фракции",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-09",
+  "sec": "§2",
+  "req": "4 специализации на фракцию",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-10",
+  "sec": "§2",
+  "req": "Эстерхольм (нейтральный) + Чёрная Гавань (пираты)",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-11",
+  "sec": "§2",
+  "req": "7 малых поселений (Бронзовый Холм…Солнечная Ферма)",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-12",
+  "sec": "§3",
+  "req": "3 героя × 2 пола, крючки, общий старт в Эстерхольме",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-13",
+  "sec": "§3",
+  "req": "Сюжет: заговор трёх домов, без древнего зла",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-14",
+  "sec": "§3",
+  "req": "Триггеры героев: отец/груз/налоги",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-15",
+  "sec": "§4",
+  "req": "3 корпуса-конфигуратора 18×6 / 32×10 / 48×15",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-16",
+  "sec": "§4",
+  "req": "10 модулей корабля",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-17",
+  "sec": "§4",
+  "req": "Лимиты: масса/размер/мощность/вместимость/совместимость",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-18",
+  "sec": "§4",
+  "req": "6 ролей экипажа",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-19",
+  "sec": "§4",
+  "req": "Интерьер корабля ОБЯЗАТЕЛЕН (6 помещений)",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-20",
+  "sec": "§4",
+  "req": "Флот + NPC-капитаны + офлайн-симуляция",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-21",
+  "sec": "§4",
+  "req": "Дирижабли = худ. подача эфирной силы (C-06)",
+  "status": "только фаза",
+  "inData": false,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-22",
+  "sec": "§5",
+  "req": "Только люди; пресеты разработчиков + покупная одежда",
+  "status": "только фаза",
+  "inData": false,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-23",
+  "sec": "§5",
+  "req": "11 профессий",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-24",
+  "sec": "§5",
+  "req": "Мультипрофессии разрешены; обучение вместо классов",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-25",
+  "sec": "§5",
+  "req": "Все люди, без «злодейской» внешности",
+  "status": "только фаза",
+  "inData": false,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-26",
+  "sec": "§6",
+  "req": "База статична: обычные товары всегда в NPC-магазинах",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-27",
+  "sec": "§6",
+  "req": "Лимитные ресурсы: топливо/кристалл/зерно",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-28",
+  "sec": "§6",
+  "req": "5 производственных цепочек",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-29",
+  "sec": "§6",
+  "req": "Покупка домов/складов/мастерских/ферм; совладение",
+  "status": "только фаза",
+  "inData": false,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-30",
+  "sec": "§6",
+  "req": "Гильдии/компании/общие склады",
+  "status": "только фаза",
+  "inData": false,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-31",
+  "sec": "§6",
+  "req": "Чёрный рынок в Гавани — нелегальный контур",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-32",
+  "sec": "§7",
+  "req": "NPC: расписание + состояния + агрегация вне видимости",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-33",
+  "sec": "§7",
+  "req": "Общие события (одно нападение — одно на всех) + личные квесты",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-34",
+  "sec": "§7",
+  "req": "День/ночь + погода 4 состояния, влияют на видимость/навигацию/посадку/износ",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-35",
+  "sec": "§7",
+  "req": "Погода синхронна у всех игроков",
+  "status": "только фаза",
+  "inData": false,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-36",
+  "sec": "§8",
+  "req": "Респаун в безопасной точке, навыки сохраняются, часть груза теряется",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-37",
+  "sec": "§8",
+  "req": "Корабль: повреждение/потеря груза/ЗАХВАТ/уничтожение",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-38",
+  "sec": "§8",
+  "req": "Короткий щит от повторной атаки",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-39",
+  "sec": "§9",
+  "req": "GAME_DESIGN/ — чистые правила без Roblox",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-40",
+  "sec": "§9",
+  "req": "ART_ASSETS/ — Blender-исходники, текстуры, палитры",
+  "status": "только фаза",
+  "inData": false,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-41",
+  "sec": "§9",
+  "req": "ROBLOX_IMPLEMENTATION/ — Luau, Studio, UI, сеть, сохранения",
+  "status": "только фаза",
+  "inData": false,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-42",
+  "sec": "§9",
+  "req": "STEAM_IMPLEMENTATION/ — только GDD, кода нет",
+  "status": "только фаза",
+  "inData": false,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-43",
+  "sec": "§9",
+  "req": "Каждый ассет: concept|blockout|final|lod; gate A-1",
+  "status": "только фаза",
+  "inData": false,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-44",
+  "sec": "§9",
+  "req": "Производственный порядок: Bible→масштабы→…→оптимизация",
+  "status": "только фаза",
+  "inData": false,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-45",
+  "sec": "§10",
+  "req": "Gate D-006: массовая генерация только после утверждения Bible",
+  "status": "только фаза",
+  "inData": false,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-46",
+  "sec": "§2",
+  "req": "Столицы: Аркенхольд/Вальмара/Гринхольм",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-47",
+  "sec": "§4",
+  "req": "Тяжёлый корпус = груз/бой",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-48",
+  "sec": "§2",
+  "req": "Население и лор-размеры островов",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-49",
+  "sec": "§1",
+  "req": "Слоган «мир, который живёт»",
+  "status": "только фаза",
+  "inData": false,
+  "inRoadmap": true
+ },
+ {
+  "id": "R-50",
+  "sec": "§7",
+  "req": "Общее пиратское нападение на всех рядом",
+  "status": "полное",
+  "inData": true,
+  "inRoadmap": true
+ }
+]

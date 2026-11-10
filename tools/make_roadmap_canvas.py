@@ -20,7 +20,8 @@ OUT_DIR = PHASES_DIR / "canvas"
 INDEX_OUT = ROOT / "ROADMAP_0.1.canvas"
 
 RED, ORANGE, YELLOW, GREEN, CYAN, PURPLE = "1", "2", "3", "4", "5", "6"
-CRITICAL = {0, 1, 2, 6, 8, 9, 10, 11}
+# Критический путь (23 фазы): Ф0 → Ф1 → Ф2 → Ф3 → Ф4 → Ф6 → Ф8 → Ф12 → Ф13 → Ф16 → Ф22
+CRITICAL = {0, 1, 2, 3, 4, 6, 8, 12, 13, 16, 22}
 PROGRESS_FILE = ROOT / "docs" / "PROGRESS.json"
 STATUS_COLOR = {"done": GREEN, "in_progress": YELLOW, "blocked": RED,
                 "skipped": ORANGE, "todo": CYAN}
