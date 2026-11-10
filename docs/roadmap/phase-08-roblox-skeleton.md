@@ -1,4 +1,4 @@
-# Ф7 · Roblox-каркас v0.1
+# Ф8 · Roblox-каркас v0.1
 
 > **Цель:** собираемый Rojo-проект с деревом модулей, конфигами из данных, сетью, сохранениями и
 > тестами. Игры в нём ещё нет — но всё, что будет, ставится на этот каркас.
@@ -14,28 +14,28 @@
 
 ## Шаги
 
-### 7.1 · Rojo-проект
+### 8.1 · Rojo-проект
 - **Действие:** `ROBLOX_IMPLEMENTATION/default.project.json`: `src/ServerScriptService` →
   `ServerScriptService`, `src/ReplicatedStorage/TH_Shared` → `ReplicatedStorage/TH_Shared`,
   `src/StarterPlayer` → `StarterPlayer`, `src/Workspace` → `Workspace`.
 - **Готово, когда:** `rojo build -o build/TH_dev.rbxlx` собирается, Studio открывает плейс.
 
-### 7.2 · Дерево модулей
+### 8.2 · Дерево модулей
 - **Действие:** создать по `ARCHITECTURE.md` §1: `TH_Shared/{Config,Types,Util,Net}`,
   `TH_Server/{Main,Data,Economy,Ships,NPC,World,Security,Chat}`, `TH_Client/{ClientMain,Controllers}`.
 - **Готово, когда:** все папки в `src/`, каждый модуль — заглушка с `-- @version` и описанием.
 
-### 7.3 · Типы и стиль
+### 8.3 · Типы и стиль
 - **Действие:** `Types.lua` (PlayerProfile, Ship, Good, Route, WeatherState), `--!strict` во всех
   модулях, стиль под StyLua; `selene.toml` (std=roblox).
 - **Готово, когда:** `stylua --check` и `selene` чистые, `luau-compile` проходит.
 
-### 7.4 · Утилиты
+### 8.4 · Утилиты
 - **Действие:** `Signal.lua`, `TableUtil.lua`, `SeededRNG.lua` (mulberry32 — детерминизм зданий/облаков),
   `TimeUtil.lua` (unix/фазы).
 - **Готово, когда:** на каждую утилиту есть тест в `tests/` (детерминизм RNG, копирование таблиц).
 
-### 7.5 · Конфиги из данных (Ф1)
+### 8.5 · Конфиги из данных (Ф1)
 - **Действие:** `Config/Factions.lua`, `Goods.lua`, `Ships.lua`, `Palettes.lua`, `Weather.lua` —
   генерируются `tools/bundle_design.py` из JSON; руками не правятся (шапка-предупреждение).
 - **Готово, когда:** `python -X utf8 tools/bundle_design.py` → `Config/Bundle.lua`
@@ -43,43 +43,43 @@
   в `GAME_DESIGN/*.json` → перегенерировать → значение в `Bundle.lua` изменилось;
   расхождений между JSON и Lua нет (сверка `tools/validate_design.py` → `DESIGN OK`).
 
-### 7.6 · `NetAPI`
+### 8.6 · `NetAPI`
 - **Действие:** обёртка над RemoteEvents: имена `v1:<Domain>:<Action>`, сериализация аргументов,
   серверный rate-limit (торговля 5/с, взаимодействие 10/с, чат 3/с), клиентский троттлинг.
 - **Готово, когда:** тест «спам 100 событий → 95 отброшено» проходит; в Output нет ошибок.
 - **Канон:** `WORLD_NETWORK_ARCHITECTURE.md` §5; `SPECS_COMBINED.md` §SECURITY 4.
 
-### 7.7 · Bootstrap
+### 8.7 · Bootstrap
 - **Действие:** `Main.server.lua` создаёт `Remotes/`, `TH_World/`, инициализирует сервисы в
   фиксированном порядке и логирует `[TH] server online v0.1`; `ClientMain.client.lua` — `[TH] client online`.
 - **Готово, когда:** Play в Studio даёт обе строки, ноль ошибок.
 
-### 7.8 · Профиль игрока
+### 8.8 · Профиль игрока
 - **Действие:** `PlayerData.lua` (ProfileService-lite): схема `{version, faction, hero, money,
   skills{}, ships[], cargo{}, property[], quests{}, mapFog{}}`, autosave 120 с, save-on-leave,
   `BindToClose` с очередью, ретраи 3× с backoff, `Migrations.lua`.
 - **Готово, когда:** leave/rejoin сохраняет деньги и фракцию; ручной тест на 2 клиентах.
 - **Канон:** `ARCHITECTURE.md` §4.
 
-### 7.9 · Безопасность
+### 8.9 · Безопасность
 - **Действие:** `Validators.lua` (тип, диапазон, владение, кулдаун, дистанция <40 st),
   `RateLimit.lua`, `Audit.lua` (стратегические перемещения), `Wallet.lua` с транзакцией
   «списание+начисление в одной» и `txId`.
 - **Готово, когда:** попытка списать больше баланса блокируется; повтор с тем же `txId` — no-op (тест).
 - **Канон:** `SPECS_COMBINED.md` §SECURITY 1–8.
 
-### 7.10 · Тестовый харнесс
+### 8.10 · Тестовый харнесс
 - **Действие:** `tests/run.lua` под Luau CLI: набор юнит-тестов, код возврата ≠ 0 при провале;
   `tools/test.ps1`.
 - **Готово, когда:** `tools/test.ps1` печатает `PASS=12 FAIL=0` (число растёт с модулями).
 
-### 7.11 · Сборка и preflight
+### 8.11 · Сборка и preflight
 - **Действие:** `rojo build` в `build/TH_dev.rbxlx`, прогон `preflight.ps1` (stylua+selene+compile+build).
 - **Готово, когда:** `PREFLIGHT OK`, `.rbxlx` открывается.
 
-### 7.12 · Фиксация каркаса
+### 8.12 · Фиксация каркаса
 - **Действие:** тег `v0.6.0`, бэкап, CHANGELOG, `STATUS.md` → «каркас готов».
-- **Готово, когда:** новый человек по `docs/PIPELINE.md` (создаётся в Ф4.10) + `README` собирает проект с нуля.
+- **Готово, когда:** новый человек по `docs/PIPELINE.md` (создаётся в Ф5.10) + `README` собирает проект с нуля.
 
 ## Definition of Done фазы
 
@@ -99,5 +99,5 @@
 
 ## Чего в этой фазе НЕ делаем
 
-- Геймплея (торговля «по-настоящему», квесты — Ф15), UI (Ф13), мира (Ф8).
+- Геймплея (торговля «по-настоящему», квесты — Ф16), UI (Ф14), мира (Ф9).
 - Кросс-шардовой синхронизации: только интерфейсы, реализация — после альфы.

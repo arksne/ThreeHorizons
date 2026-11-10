@@ -50,7 +50,7 @@
 ### 0.6 · `tools/preflight.ps1` — единая проверка
 - **Действие:** скрипт с 4 проверками: `stylua --check`, `selene`, `luau-compile` всех `.lua` из
   `ROBLOX_IMPLEMENTATION/src`, `rojo build` в `ROBLOX_IMPLEMENTATION/build/`. Флаг `-Art` — позже
-  (Ф3, валидатор FBX).
+  (Ф5, валидатор FBX).
 - **Результат:** одна команда, один итог: `PREFLIGHT OK` или список ошибок с файлами.
 - **Готово, когда:** на пустом проекте скрипт печатает `PREFLIGHT OK` (0 модулей — не ошибка).
 - **Канон:** `docs/QUALITY_ASSURANCE.md` Gate S-1.
