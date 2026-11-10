@@ -43,6 +43,11 @@
 - `tools/bundle_design.py` → `bundle.json` + `Bundle.lua` (12 блоков), `luau-compile` проходит.
 - `pwsh -File tools/preflight.ps1` → **PREFLIGHT OK** (stylua, selene, luau-compile, rojo build).
 - Git: теги `v0.1.0` (Ф0) и `v0.2.0` (Ф1), бэкапы `backups/v0.1.0_2026-11-10`, `backups/v0.2.0_2026-11-10`.
+- **История переписана 2026-11-10** (см. CHANGELOG): из git вычищены находки v1.x (63 FBX, 66 текстур,
+  .blend, Luau-модули, атласы) — 184 МБ. `.git` 167 МБ → 0.8 МБ, в истории только канон v0.1 (123 файла).
+  **Хеши коммитов и тегов изменились**, старые SHA недействительны. Бэкап старой истории:
+  `../_git_cleanup/ThreeHorizons_full_backup_2026-11-10.bundle`. Старые файлы лежат на диске:
+  `../_TRASH_2026-11-10/` и `../_ThreeHorizons_archive_2026-11-10/`.
 
 ## Следующее (Ф2)
 
