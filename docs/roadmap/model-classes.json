@@ -1,0 +1,746 @@
+{
+ "schemaVersion": 1,
+ "status": "APPROVED",
+ "generatedFrom": [
+  "docs/ART_PIPELINE_BLENDER_KIT.md",
+  "docs/world/BUILDING_CATALOG.md",
+  "docs/THREE_HORIZONS_PROJECT_BIBLE.md#4",
+  "docs/CLOUD_SYSTEM.md#2.1"
+ ],
+ "note": "Реестр классов моделей. Ф4.1 превращает его в blender/visual_library.json, добавляя поля из классов; Ф4.3 рендерит по 1–2 кадра на класс.",
+ "groups": {
+  "particles": 5,
+  "clouds": 4,
+  "ships": 5,
+  "buildings": 12,
+  "world": 8,
+  "characters": 5,
+  "props": 8,
+  "ui": 5,
+  "environment": 5
+ },
+ "total": 57,
+ "triBudgets": {
+  "hero": 12000,
+  "prop": 2000,
+  "particle": 200,
+  "ui": 0
+ },
+ "classes": [
+  {
+   "id": "env_dust",
+   "name": "Пылинка/пепел",
+   "group": "particles",
+   "sizeM": "0.1",
+   "triBudget": 200,
+   "materials": [
+    "TRANSPARENT"
+   ],
+   "usage": "частица, погода"
+  },
+  {
+   "id": "env_rain",
+   "name": "Дождь (streк)",
+   "group": "particles",
+   "sizeM": "0.5",
+   "triBudget": 200,
+   "materials": [
+    "TRANSPARENT"
+   ],
+   "usage": "частица, погода"
+  },
+  {
+   "id": "env_snow",
+   "name": "Снег",
+   "group": "particles",
+   "sizeM": "0.2",
+   "triBudget": 200,
+   "materials": [
+    "TRANSPARENT"
+   ],
+   "usage": "частица, погода"
+  },
+  {
+   "id": "env_spray",
+   "name": "Брызги у воды",
+   "group": "particles",
+   "sizeM": "0.3",
+   "triBudget": 200,
+   "materials": [
+    "TRANSPARENT"
+   ],
+   "usage": "частица, море"
+  },
+  {
+   "id": "env_spark",
+   "name": "Искры",
+   "group": "particles",
+   "sizeM": "0.1",
+   "triBudget": 200,
+   "materials": [
+    "TRANSPARENT"
+   ],
+   "usage": "частица, эффект"
+  },
+  {
+   "id": "cloud_puff",
+   "name": "Клочья облака (плоскость)",
+   "group": "clouds",
+   "sizeM": "12×12",
+   "triBudget": 2000,
+   "materials": [
+    "TRANSPARENT"
+   ],
+   "usage": "облака"
+  },
+  {
+   "id": "cloud_sea_lower",
+   "name": "Слой моря Lower",
+   "group": "clouds",
+   "sizeM": "1000×1000",
+   "triBudget": 2000,
+   "materials": [
+    "TRANSPARENT"
+   ],
+   "usage": "облачное море"
+  },
+  {
+   "id": "cloud_sea_middle",
+   "name": "Слой моря Middle",
+   "group": "clouds",
+   "sizeM": "1000×1000",
+   "triBudget": 2000,
+   "materials": [
+    "TRANSPARENT"
+   ],
+   "usage": "облачное море"
+  },
+  {
+   "id": "cloud_sea_upper",
+   "name": "Слой моря Upper",
+   "group": "clouds",
+   "sizeM": "1000×1000",
+   "triBudget": 2000,
+   "materials": [
+    "TRANSPARENT"
+   ],
+   "usage": "облачное море"
+  },
+  {
+   "id": "ship_light",
+   "name": "Корпус лёгкий",
+   "group": "ships",
+   "sizeM": "18×6",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_WHITE",
+    "ARK_WOOD_DARK",
+    "VAL_BRONZE"
+   ],
+   "usage": "корабли"
+  },
+  {
+   "id": "ship_medium",
+   "name": "Корпус средний",
+   "group": "ships",
+   "sizeM": "32×10",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_WHITE",
+    "ARK_WOOD_DARK",
+    "VAL_BRONZE"
+   ],
+   "usage": "корабли"
+  },
+  {
+   "id": "ship_heavy",
+   "name": "Корпус тяжёлый",
+   "group": "ships",
+   "sizeM": "48×15",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_WHITE",
+    "ARK_WOOD_DARK",
+    "VAL_BRONZE"
+   ],
+   "usage": "корабли"
+  },
+  {
+   "id": "ship_mast",
+   "name": "Мачта с реями",
+   "group": "ships",
+   "sizeM": "14",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_WHITE",
+    "ARK_WOOD_DARK",
+    "VAL_BRONZE"
+   ],
+   "usage": "корабли"
+  },
+  {
+   "id": "ship_rudder",
+   "name": "Руль",
+   "group": "ships",
+   "sizeM": "2×1.5",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_WHITE",
+    "ARK_WOOD_DARK",
+    "VAL_BRONZE"
+   ],
+   "usage": "корабли"
+  },
+  {
+   "id": "bld_house_small",
+   "name": "Дом малый",
+   "group": "buildings",
+   "sizeM": "8×10",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_STONE",
+    "ARK_WOOD_DARK",
+    "VAL_LIMESTONE"
+   ],
+   "usage": "здания"
+  },
+  {
+   "id": "bld_house_mid",
+   "name": "Дом средний",
+   "group": "buildings",
+   "sizeM": "10×14",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_STONE",
+    "ARK_WOOD_DARK",
+    "VAL_LIMESTONE"
+   ],
+   "usage": "здания"
+  },
+  {
+   "id": "bld_house_large",
+   "name": "Дом большой",
+   "group": "buildings",
+   "sizeM": "14×18",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_STONE",
+    "ARK_WOOD_DARK",
+    "VAL_LIMESTONE"
+   ],
+   "usage": "здания"
+  },
+  {
+   "id": "bld_shop",
+   "name": "Торговый дом",
+   "group": "buildings",
+   "sizeM": "12×18",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_STONE",
+    "ARK_WOOD_DARK",
+    "VAL_LIMESTONE"
+   ],
+   "usage": "здания"
+  },
+  {
+   "id": "bld_tavern",
+   "name": "Таверна",
+   "group": "buildings",
+   "sizeM": "18×24",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_STONE",
+    "ARK_WOOD_DARK",
+    "VAL_LIMESTONE"
+   ],
+   "usage": "здания"
+  },
+  {
+   "id": "bld_workshop",
+   "name": "Мастерская",
+   "group": "buildings",
+   "sizeM": "12×20",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_STONE",
+    "ARK_WOOD_DARK",
+    "VAL_LIMESTONE"
+   ],
+   "usage": "здания"
+  },
+  {
+   "id": "bld_warehouse",
+   "name": "Склад",
+   "group": "buildings",
+   "sizeM": "20×35",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_STONE",
+    "ARK_WOOD_DARK",
+    "VAL_LIMESTONE"
+   ],
+   "usage": "здания"
+  },
+  {
+   "id": "bld_dock",
+   "name": "Причал",
+   "group": "buildings",
+   "sizeM": "40×14",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_STONE",
+    "ARK_WOOD_DARK",
+    "VAL_LIMESTONE"
+   ],
+   "usage": "здания"
+  },
+  {
+   "id": "bld_tower",
+   "name": "Башня",
+   "group": "buildings",
+   "sizeM": "8×8",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_STONE",
+    "ARK_WOOD_DARK",
+    "VAL_LIMESTONE"
+   ],
+   "usage": "здания"
+  },
+  {
+   "id": "bld_manor",
+   "name": "Усадьба",
+   "group": "buildings",
+   "sizeM": "20×20",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_STONE",
+    "ARK_WOOD_DARK",
+    "VAL_LIMESTONE"
+   ],
+   "usage": "здания"
+  },
+  {
+   "id": "bld_wall",
+   "name": "Стена",
+   "group": "buildings",
+   "sizeM": "10×3×2",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_STONE",
+    "ARK_WOOD_DARK",
+    "VAL_LIMESTONE"
+   ],
+   "usage": "здания"
+  },
+  {
+   "id": "bld_gate",
+   "name": "Ворота",
+   "group": "buildings",
+   "sizeM": "6×4",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_STONE",
+    "ARK_WOOD_DARK",
+    "VAL_LIMESTONE"
+   ],
+   "usage": "здания"
+  },
+  {
+   "id": "terr_island",
+   "name": "Остров (рельеф)",
+   "group": "world",
+   "sizeM": "1200×900",
+   "triBudget": 2000,
+   "materials": [
+    "GRN_OLIVE",
+    "GRN_WOOD",
+    "ARK_STONE"
+   ],
+   "usage": "мир"
+  },
+  {
+   "id": "terr_rock",
+   "name": "Скала/валун",
+   "group": "world",
+   "sizeM": "2×2×3",
+   "triBudget": 2000,
+   "materials": [
+    "GRN_OLIVE",
+    "GRN_WOOD",
+    "ARK_STONE"
+   ],
+   "usage": "мир"
+  },
+  {
+   "id": "terr_tree",
+   "name": "Дерево",
+   "group": "world",
+   "sizeM": "6×4",
+   "triBudget": 2000,
+   "materials": [
+    "GRN_OLIVE",
+    "GRN_WOOD",
+    "ARK_STONE"
+   ],
+   "usage": "мир"
+  },
+  {
+   "id": "terr_grass",
+   "name": "Куст/трава",
+   "group": "world",
+   "sizeM": "0.5",
+   "triBudget": 2000,
+   "materials": [
+    "GRN_OLIVE",
+    "GRN_WOOD",
+    "ARK_STONE"
+   ],
+   "usage": "мир"
+  },
+  {
+   "id": "terr_farm",
+   "name": "Грядка/ферма",
+   "group": "world",
+   "sizeM": "20×10",
+   "triBudget": 2000,
+   "materials": [
+    "GRN_OLIVE",
+    "GRN_WOOD",
+    "ARK_STONE"
+   ],
+   "usage": "мир"
+  },
+  {
+   "id": "terr_windmill",
+   "name": "Мельница",
+   "group": "world",
+   "sizeM": "8×12",
+   "triBudget": 2000,
+   "materials": [
+    "GRN_OLIVE",
+    "GRN_WOOD",
+    "ARK_STONE"
+   ],
+   "usage": "мир"
+  },
+  {
+   "id": "terr_aqueduct",
+   "name": "Акведук",
+   "group": "world",
+   "sizeM": "20",
+   "triBudget": 2000,
+   "materials": [
+    "GRN_OLIVE",
+    "GRN_WOOD",
+    "ARK_STONE"
+   ],
+   "usage": "мир"
+  },
+  {
+   "id": "terr_bridge",
+   "name": "Мост",
+   "group": "world",
+   "sizeM": "12×4",
+   "triBudget": 2000,
+   "materials": [
+    "GRN_OLIVE",
+    "GRN_WOOD",
+    "ARK_STONE"
+   ],
+   "usage": "мир"
+  },
+  {
+   "id": "char_hero_m",
+   "name": "Герой-мужчина",
+   "group": "characters",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_GRAPHITE",
+    "VAL_CREAM",
+    "GRN_OLIVE"
+   ],
+   "usage": "персонажи"
+  },
+  {
+   "id": "char_hero_f",
+   "name": "Героиня",
+   "group": "characters",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_GRAPHITE",
+    "VAL_CREAM",
+    "GRN_OLIVE"
+   ],
+   "usage": "персонажи"
+  },
+  {
+   "id": "char_npc_civil",
+   "name": "NPC горожанин",
+   "group": "characters",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_GRAPHITE",
+    "VAL_CREAM",
+    "GRN_OLIVE"
+   ],
+   "usage": "персонажи"
+  },
+  {
+   "id": "char_npc_sailor",
+   "name": "NPC моряк",
+   "group": "characters",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_GRAPHITE",
+    "VAL_CREAM",
+    "GRN_OLIVE"
+   ],
+   "usage": "персонажи"
+  },
+  {
+   "id": "char_npc_pirate",
+   "name": "NPC пират",
+   "group": "characters",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_GRAPHITE",
+    "VAL_CREAM",
+    "GRN_OLIVE"
+   ],
+   "usage": "персонажи"
+  },
+  {
+   "id": "prop_barrel",
+   "name": "Бочка",
+   "group": "props",
+   "sizeM": "0.6×0.9",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "пропы"
+  },
+  {
+   "id": "prop_crate",
+   "name": "Ящик",
+   "group": "props",
+   "sizeM": "0.8×0.8",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "пропы"
+  },
+  {
+   "id": "prop_bench",
+   "name": "Лавка",
+   "group": "props",
+   "sizeM": "1.8×0.5",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "пропы"
+  },
+  {
+   "id": "prop_table",
+   "name": "Стол",
+   "group": "props",
+   "sizeM": "1.2×0.75",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "пропы"
+  },
+  {
+   "id": "prop_stall",
+   "name": "Прилавок",
+   "group": "props",
+   "sizeM": "2×1",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "пропы"
+  },
+  {
+   "id": "prop_anchor",
+   "name": "Якорь",
+   "group": "props",
+   "sizeM": "1.2",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "пропы"
+  },
+  {
+   "id": "prop_lamp",
+   "name": "Фонарь",
+   "group": "props",
+   "sizeM": "0.4×1.2",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "пропы"
+  },
+  {
+   "id": "prop_crane",
+   "name": "Кран портовый",
+   "group": "props",
+   "sizeM": "4×3×6",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "пропы"
+  },
+  {
+   "id": "ui_panel",
+   "name": "Панель окна",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "PARCHMENT",
+    "BRASS",
+    "INK"
+   ],
+   "usage": "интерфейс"
+  },
+  {
+   "id": "ui_button",
+   "name": "Кнопка (3 состояния)",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "PARCHMENT",
+    "BRASS",
+    "INK"
+   ],
+   "usage": "интерфейс"
+  },
+  {
+   "id": "ui_scroll",
+   "name": "Скролл-лист",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "PARCHMENT",
+    "BRASS",
+    "INK"
+   ],
+   "usage": "интерфейс"
+  },
+  {
+   "id": "ui_toast",
+   "name": "Тост-уведомление",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "PARCHMENT",
+    "BRASS",
+    "INK"
+   ],
+   "usage": "интерфейс"
+  },
+  {
+   "id": "ui_input",
+   "name": "Поле ввода",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "PARCHMENT",
+    "BRASS",
+    "INK"
+   ],
+   "usage": "интерфейс"
+  },
+  {
+   "id": "env_sea",
+   "name": "Море (плоскость)",
+   "group": "environment",
+   "sizeM": "1000×1000",
+   "triBudget": 2000,
+   "materials": [
+    "GRN_STONE",
+    "VAL_SEA",
+    "ARK_GRAPHITE"
+   ],
+   "usage": "окружение"
+  },
+  {
+   "id": "env_waves",
+   "name": "Волны",
+   "group": "environment",
+   "sizeM": "1000×1000",
+   "triBudget": 2000,
+   "materials": [
+    "GRN_STONE",
+    "VAL_SEA",
+    "ARK_GRAPHITE"
+   ],
+   "usage": "окружение"
+  },
+  {
+   "id": "env_terrain",
+   "name": "Террейн чанка",
+   "group": "environment",
+   "sizeM": "100×100",
+   "triBudget": 2000,
+   "materials": [
+    "GRN_STONE",
+    "VAL_SEA",
+    "ARK_GRAPHITE"
+   ],
+   "usage": "окружение"
+  },
+  {
+   "id": "env_road",
+   "name": "Дорога/мостовая",
+   "group": "environment",
+   "sizeM": "100×4",
+   "triBudget": 2000,
+   "materials": [
+    "GRN_STONE",
+    "VAL_SEA",
+    "ARK_GRAPHITE"
+   ],
+   "usage": "окружение"
+  },
+  {
+   "id": "env_rail",
+   "name": "Рельсы/портовые пути",
+   "group": "environment",
+   "sizeM": "100×2",
+   "triBudget": 2000,
+   "materials": [
+    "GRN_STONE",
+    "VAL_SEA",
+    "ARK_GRAPHITE"
+   ],
+   "usage": "окружение"
+  }
+ ]
+}

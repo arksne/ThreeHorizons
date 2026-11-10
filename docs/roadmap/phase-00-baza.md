@@ -14,12 +14,36 @@
 ## Шаги
 
 ### 0.1 · Структура папок
-- **Действие:** создать дерево по `ARCHITECTURE.md` §1 и техстеку библии §9:
-  `GAME_DESIGN/`, `ART_ASSETS/{models,textures,previews}`, `ROBLOX_IMPLEMENTATION/{src,tests,build}`,
-  `STEAM_IMPLEMENTATION/`, `tools/`, `tests/`, `backups/`, `docs/`.
+- **Действие:** создать дерево по `ARCHITECTURE.md` §1 и техстеку библии §9, **полностью на 23 фазы**
+  (папки, которые вводят поздние фазы, создаются сразу — иначе каждая фаза будет изобретать свои):
+  ```
+  docs/                     канон + roadmap/{canvas,story}
+  docs/roadmap/             ARTIFACTS.md, DATA-SCHEMAS.md, RELEASE-PLAN.md, model-classes.json
+  GAME_DESIGN/              данные (13+ JSON), bundle.json
+  ART_ASSETS/
+    models/                 Blender-исходники (в git — только скрипты)
+    textures/               PBR-карты 23 материалов (в git — только манифест)
+    previews/               превью процедурных моделей
+    previews3d/             рендеры hero-моделей
+    visual_library/         Ф4: рендеры-эталоны по группам
+    sounds/                 Ф15: звуки + спектрограммы
+    screenshots/            Ф9+ по подпапкам (ui/, weather/, phase-XX/)
+    textures/tiling/        Ф6: проверка бесшовности 3×3
+  ROBLOX_IMPLEMENTATION/
+    src/ReplicatedStorage/TH_Shared/   Config (Bundle.lua), Sim, Generators
+    src/ServerScriptService/TH_Server/ World, Ships, Economy, Data, Net
+    src/StarterPlayer/TH_Client/       UI, Controllers
+    tests/  build/
+  STEAM_IMPLEMENTATION/     только GDD-интерфейсы, кода нет
+  blender/                  Ф5: скрипты, пресеты, export/, renders/, manifest.json
+  tools/                    скрипты проекта (см. tools/README.md)
+  tests/                    офлайн-тесты Luau и Python
+  backups/                  бэкапы версий (в git — только README)
+  ```
 - **Инструмент:** pwsh `New-Item`.
 - **Результат:** дерево существует, в каждой папке `README.md` с 3–5 строками «что здесь лежит».
-- **Готово, когда:** `Get-ChildItem -Recurse -Directory` показывает все папки, пустые — с `.gitkeep`.
+- **Готово, когда:** `Get-ChildItem -Recurse -Directory` показывает все перечисленные папки, пустые — с `.gitkeep`;
+  ни одна папка, нужная поздней фазе, не создаётся «на ходу» (проверка: список выше совпадает с фактическим деревом).
 - **Канон:** `docs/ARCHITECTURE.md` §1; `docs/THREE_HORIZONS_PROJECT_BIBLE.md` §9.
 
 ### 0.2 · `.gitignore` и правила репозитория
