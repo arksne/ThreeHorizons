@@ -23,6 +23,8 @@ ART_ASSETS/models/*
 # --- референсные картинки (тяжёлые, ~7 МБ каждая) остаются локально ---
 ART_ASSETS/refs/*.png
 ART_ASSETS/refs/**/*.png
+ART_ASSETS/blockout/*.png
+ART_ASSETS/visual_library/**/*.png
 
 # --- локальные бэкапы ---
 backups/*
