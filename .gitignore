@@ -20,6 +20,10 @@ ART_ASSETS/textures/*.png
 ART_ASSETS/models/*
 !ART_ASSETS/models/README.md
 
+# --- референсные картинки (тяжёлые, ~7 МБ каждая) остаются локально ---
+ART_ASSETS/refs/*.png
+ART_ASSETS/refs/**/*.png
+
 # --- локальные бэкапы ---
 backups/*
 !backups/README.md
@@ -27,6 +31,14 @@ backups/*
 # --- вендорные тулзы ---
 tools/blender/
 tools/luau/
+
+# --- локальные окружения пайплайнов (генерация рефов, image-to-3D) ---
+tools/i2m/.venv/
+tools/i2m/.tmp/
+tools/refgen/.runner.lock
+tools/refgen/__pycache__/
+tools/i2m/__pycache__/
+*.tmp
 
 # --- редакторы и ОС ---
 Thumbs.db

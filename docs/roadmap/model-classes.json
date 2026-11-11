@@ -7,19 +7,28 @@
   "docs/THREE_HORIZONS_PROJECT_BIBLE.md#4",
   "docs/CLOUD_SYSTEM.md#2.1"
  ],
- "note": "Реестр классов моделей. Ф4.1 превращает его в blender/visual_library.json, добавляя поля из классов; Ф4.3 рендерит по 1–2 кадра на класс.",
+ "note": "Реестр классов моделей для визуальной библиотеки (Ф4). Расширен до 250+ классов: персонажи (базовые тела + NPC по профессиям), одежда по тирам 10/20/30/40/50, 20 корпусов, 55 видов оружия, детали построек, предметы, инструменты, погода, UI, тайлы. Размеры — реальные метры из канона; tri-бюджеты по классу.",
  "groups": {
   "particles": 5,
   "clouds": 4,
-  "ships": 5,
+  "ships": 25,
   "buildings": 12,
   "world": 8,
   "characters": 5,
   "props": 8,
-  "ui": 5,
-  "environment": 5
+  "ui": 26,
+  "environment": 5,
+  "char_bodies": 8,
+  "char_npcs": 19,
+  "clothing": 22,
+  "weapons": 50,
+  "details": 64,
+  "items": 14,
+  "tools": 16,
+  "weather": 10,
+  "tiles": 18
  },
- "total": 57,
+ "total": 319,
  "triBudgets": {
   "hero": 12000,
   "prop": 2000,
@@ -741,6 +750,3726 @@
     "ARK_GRAPHITE"
    ],
    "usage": "окружение"
+  },
+  {
+   "id": "char_base_m_lean",
+   "name": "Базовое тело: мужчина худощавое",
+   "group": "char_bodies",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "персонажи: базовое тело в простом белье"
+  },
+  {
+   "id": "char_base_m_heavy",
+   "name": "Базовое тело: мужчина тяжёлое",
+   "group": "char_bodies",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "персонажи: базовое тело в простом белье"
+  },
+  {
+   "id": "char_base_m_old",
+   "name": "Базовое тело: мужчина пожилой",
+   "group": "char_bodies",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "персонажи: базовое тело в простом белье"
+  },
+  {
+   "id": "char_base_f_lean",
+   "name": "Базовое тело: женщина худощавая",
+   "group": "char_bodies",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "персонажи: базовое тело в простом белье"
+  },
+  {
+   "id": "char_base_f_heavy",
+   "name": "Базовое тело: женщина крепкая",
+   "group": "char_bodies",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "персонажи: базовое тело в простом белье"
+  },
+  {
+   "id": "char_base_f_old",
+   "name": "Базовое тело: женщина пожилая",
+   "group": "char_bodies",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "персонажи: базовое тело в простом белье"
+  },
+  {
+   "id": "char_base_m_young",
+   "name": "Базовое тело: мужчина молодой",
+   "group": "char_bodies",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "персонажи: базовое тело в простом белье"
+  },
+  {
+   "id": "char_base_f_young",
+   "name": "Базовое тело: женщина молодая",
+   "group": "char_bodies",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "персонажи: базовое тело в простом белье"
+  },
+  {
+   "id": "char_npc_farmer",
+   "name": "NPC: Крестьянин",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "GRN_OLIVE",
+    "GRN_FOREST",
+    "GRN_WOOD",
+    "GRN_BEIGE",
+    "GRN_STRAW",
+    "GRN_TERRA",
+    "GRN_STONE"
+   ],
+   "usage": "персонажи: крестьянин с профессиональной одеждой"
+  },
+  {
+   "id": "char_npc_miller",
+   "name": "NPC: Мельник",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "GRN_OLIVE",
+    "GRN_FOREST",
+    "GRN_WOOD",
+    "GRN_BEIGE",
+    "GRN_STRAW",
+    "GRN_TERRA",
+    "GRN_STONE"
+   ],
+   "usage": "персонажи: мельник с профессиональной одеждой"
+  },
+  {
+   "id": "char_npc_smith",
+   "name": "NPC: Кузнец",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_GRAPHITE",
+    "ARK_STONE",
+    "ARK_WOOD_DARK",
+    "ARK_BURGUNDY",
+    "ARK_COPPER",
+    "ARK_STEEL",
+    "ARK_PLASTER"
+   ],
+   "usage": "персонажи: кузнец с профессиональной одеждой"
+  },
+  {
+   "id": "char_npc_engineer",
+   "name": "NPC: Инженер",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_GRAPHITE",
+    "ARK_STONE",
+    "ARK_WOOD_DARK",
+    "ARK_BURGUNDY",
+    "ARK_COPPER",
+    "ARK_STEEL",
+    "ARK_PLASTER"
+   ],
+   "usage": "персонажи: инженер с профессиональной одеждой"
+  },
+  {
+   "id": "char_npc_carpenter",
+   "name": "NPC: Плотник",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "GRN_OLIVE",
+    "GRN_FOREST",
+    "GRN_WOOD",
+    "GRN_BEIGE",
+    "GRN_STRAW",
+    "GRN_TERRA",
+    "GRN_STONE"
+   ],
+   "usage": "персонажи: плотник с профессиональной одеждой"
+  },
+  {
+   "id": "char_npc_captain",
+   "name": "NPC: Капитан",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "персонажи: капитан с профессиональной одеждой"
+  },
+  {
+   "id": "char_npc_merchant",
+   "name": "NPC: Купец",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "персонажи: купец с профессиональной одеждой"
+  },
+  {
+   "id": "char_npc_innkeeper",
+   "name": "NPC: Хозяин таверны",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "персонажи: хозяин таверны с профессиональной одеждой"
+  },
+  {
+   "id": "char_npc_dockhand",
+   "name": "NPC: Портовый рабочий",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_GRAPHITE",
+    "ARK_STONE",
+    "ARK_WOOD_DARK",
+    "ARK_BURGUNDY",
+    "ARK_COPPER",
+    "ARK_STEEL",
+    "ARK_PLASTER"
+   ],
+   "usage": "персонажи: портовый рабочий с профессиональной одеждой"
+  },
+  {
+   "id": "char_npc_miner",
+   "name": "NPC: Шахтёр",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_GRAPHITE",
+    "ARK_STONE",
+    "ARK_WOOD_DARK",
+    "ARK_BURGUNDY",
+    "ARK_COPPER",
+    "ARK_STEEL",
+    "ARK_PLASTER"
+   ],
+   "usage": "персонажи: шахтёр с профессиональной одеждой"
+  },
+  {
+   "id": "char_npc_hunter",
+   "name": "NPC: Охотник",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "GRN_OLIVE",
+    "GRN_FOREST",
+    "GRN_WOOD",
+    "GRN_BEIGE",
+    "GRN_STRAW",
+    "GRN_TERRA",
+    "GRN_STONE"
+   ],
+   "usage": "персонажи: охотник с профессиональной одеждой"
+  },
+  {
+   "id": "char_npc_guard",
+   "name": "NPC: Городской страж",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_GRAPHITE",
+    "ARK_STONE",
+    "ARK_WOOD_DARK",
+    "ARK_BURGUNDY",
+    "ARK_COPPER",
+    "ARK_STEEL",
+    "ARK_PLASTER"
+   ],
+   "usage": "персонажи: городской страж с профессиональной одеждой"
+  },
+  {
+   "id": "char_npc_priest",
+   "name": "NPC: Служитель культа",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "персонажи: служитель культа с профессиональной одеждой"
+  },
+  {
+   "id": "char_npc_noble",
+   "name": "NPC: Дворянин",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "персонажи: дворянин с профессиональной одеждой"
+  },
+  {
+   "id": "char_npc_nurse",
+   "name": "NPC: Лекарь",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "персонажи: лекарь с профессиональной одеждой"
+  },
+  {
+   "id": "char_npc_fisherman",
+   "name": "NPC: Рыбак",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "персонажи: рыбак с профессиональной одеждой"
+  },
+  {
+   "id": "char_npc_trader",
+   "name": "NPC: Торговец",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "персонажи: торговец с профессиональной одеждой"
+  },
+  {
+   "id": "char_npc_worker",
+   "name": "NPC: Чернорабочий",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "ARK_GRAPHITE",
+    "ARK_STONE",
+    "ARK_WOOD_DARK",
+    "ARK_BURGUNDY",
+    "ARK_COPPER",
+    "ARK_STEEL",
+    "ARK_PLASTER"
+   ],
+   "usage": "персонажи: чернорабочий с профессиональной одеждой"
+  },
+  {
+   "id": "char_npc_clerk",
+   "name": "NPC: Писарь",
+   "group": "char_npcs",
+   "sizeM": "1.7",
+   "triBudget": 12000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "персонажи: писарь с профессиональной одеждой"
+  },
+  {
+   "id": "cloth_t10_рубаха_1",
+   "name": "Одежда тир 10 (Базовый): рубаха #1",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 10, предмет 1 из 1"
+  },
+  {
+   "id": "cloth_t20_рубаха_1",
+   "name": "Одежда тир 20 (Рабочий): рубаха #1",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 20, предмет 1 из 3"
+  },
+  {
+   "id": "cloth_t20_штаны_2",
+   "name": "Одежда тир 20 (Рабочий): штаны #2",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 20, предмет 2 из 3"
+  },
+  {
+   "id": "cloth_t20_куртка_3",
+   "name": "Одежда тир 20 (Рабочий): куртка #3",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 20, предмет 3 из 3"
+  },
+  {
+   "id": "cloth_t30_кафтан_1",
+   "name": "Одежда тир 30 (Городской): кафтан #1",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 30, предмет 1 из 5"
+  },
+  {
+   "id": "cloth_t30_штаны_2",
+   "name": "Одежда тир 30 (Городской): штаны #2",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 30, предмет 2 из 5"
+  },
+  {
+   "id": "cloth_t30_плащ_3",
+   "name": "Одежда тир 30 (Городской): плащ #3",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 30, предмет 3 из 5"
+  },
+  {
+   "id": "cloth_t30_шапка_4",
+   "name": "Одежда тир 30 (Городской): шапка #4",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 30, предмет 4 из 5"
+  },
+  {
+   "id": "cloth_t30_перчатки_5",
+   "name": "Одежда тир 30 (Городской): перчатки #5",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 30, предмет 5 из 5"
+  },
+  {
+   "id": "cloth_t40_камзол_1",
+   "name": "Одежда тир 40 (Офицерский): камзол #1",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 40, предмет 1 из 6"
+  },
+  {
+   "id": "cloth_t40_штаны_2",
+   "name": "Одежда тир 40 (Офицерский): штаны #2",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 40, предмет 2 из 6"
+  },
+  {
+   "id": "cloth_t40_бушлат_3",
+   "name": "Одежда тир 40 (Офицерский): бушлат #3",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 40, предмет 3 из 6"
+  },
+  {
+   "id": "cloth_t40_перчатки_4",
+   "name": "Одежда тир 40 (Офицерский): перчатки #4",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 40, предмет 4 из 6"
+  },
+  {
+   "id": "cloth_t40_шляпа_5",
+   "name": "Одежда тир 40 (Офицерский): шляпа #5",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 40, предмет 5 из 6"
+  },
+  {
+   "id": "cloth_t40_сапоги_6",
+   "name": "Одежда тир 40 (Офицерский): сапоги #6",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 40, предмет 6 из 6"
+  },
+  {
+   "id": "cloth_t50_камзол_с_шитьём_1",
+   "name": "Одежда тир 50 (Парадный): камзол с шитьём #1",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 50, предмет 1 из 7"
+  },
+  {
+   "id": "cloth_t50_плащ_2",
+   "name": "Одежда тир 50 (Парадный): плащ #2",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 50, предмет 2 из 7"
+  },
+  {
+   "id": "cloth_t50_шляпа_с_пером_3",
+   "name": "Одежда тир 50 (Парадный): шляпа с пером #3",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 50, предмет 3 из 7"
+  },
+  {
+   "id": "cloth_t50_перчатки_4",
+   "name": "Одежда тир 50 (Парадный): перчатки #4",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 50, предмет 4 из 7"
+  },
+  {
+   "id": "cloth_t50_туфли_5",
+   "name": "Одежда тир 50 (Парадный): туфли #5",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 50, предмет 5 из 7"
+  },
+  {
+   "id": "cloth_t50_пояс_6",
+   "name": "Одежда тир 50 (Парадный): пояс #6",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 50, предмет 6 из 7"
+  },
+  {
+   "id": "cloth_t50_цепочка_7",
+   "name": "Одежда тир 50 (Парадный): цепочка #7",
+   "group": "clothing",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "одежда: комплект тира 50, предмет 7 из 7"
+  },
+  {
+   "id": "skiff",
+   "name": "Корпус: Шлюпка (4×1.5 м, высота борта 0.8 м)",
+   "group": "ships",
+   "sizeM": "4×1.5",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: шлюпка, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "trawler",
+   "name": "Корпус: Траулер (7×2.5 м, высота борта 1.0 м)",
+   "group": "ships",
+   "sizeM": "7×2.5",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: траулер, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "sloop",
+   "name": "Корпус: Шлюп (10×3.5 м, высота борта 1.2 м)",
+   "group": "ships",
+   "sizeM": "10×3.5",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: шлюп, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "cutter",
+   "name": "Корпус: Катер (14×4.5 м, высота борта 1.4 м)",
+   "group": "ships",
+   "sizeM": "14×4.5",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: катер, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "smack",
+   "name": "Корпус: Смак (12×3.2 м, высота борта 1.1 м)",
+   "group": "ships",
+   "sizeM": "12×3.2",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: смак, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "schoner",
+   "name": "Корпус: Шхунер (16×4.2 м, высота борта 1.3 м)",
+   "group": "ships",
+   "sizeM": "16×4.2",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: шхунер, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "brig",
+   "name": "Корпус: Бриг (20×5.2 м, высота борта 1.6 м)",
+   "group": "ships",
+   "sizeM": "20×5.2",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: бриг, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "brigantine",
+   "name": "Корпус: Бригантина (24×5.8 м, высота борта 1.7 м)",
+   "group": "ships",
+   "sizeM": "24×5.8",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: бригантина, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "barque",
+   "name": "Корпус: Барк (30×7.0 м, высота борта 2.1 м)",
+   "group": "ships",
+   "sizeM": "30×7.0",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: барк, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "merchant",
+   "name": "Корпус: Торговое судно (28×6.6 м, высота борта 2.2 м)",
+   "group": "ships",
+   "sizeM": "28×6.6",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: торговое судно, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "clipper",
+   "name": "Корпус: Клипер (34×6.0 м, высота борта 2.0 м)",
+   "group": "ships",
+   "sizeM": "34×6.0",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: клипер, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "frigate",
+   "name": "Корпус: Фрегат (32×6.2 м, высота борта 1.9 м)",
+   "group": "ships",
+   "sizeM": "32×6.2",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: фрегат, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "galleon",
+   "name": "Корпус: Галеон (44×9.0 м, высота борта 2.8 м)",
+   "group": "ships",
+   "sizeM": "44×9.0",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: галеон, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "manowar",
+   "name": "Корпус: Линейный корабль (52×10.5 м, высота борта 3.2 м)",
+   "group": "ships",
+   "sizeM": "52×10.5",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: линейный корабль, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "carrack",
+   "name": "Корпус: Каракка (38×8.0 м, высота борта 2.6 м)",
+   "group": "ships",
+   "sizeM": "38×8.0",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: каракка, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "caravel",
+   "name": "Корпус: Каравелла (18×4.4 м, высота борта 1.5 м)",
+   "group": "ships",
+   "sizeM": "18×4.4",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: каравелла, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "barge",
+   "name": "Корпус: Баржа (15×4.0 м, высота борта 2.4 м)",
+   "group": "ships",
+   "sizeM": "15×4.0",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: баржа, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "lighter",
+   "name": "Корпус: Лайтер (11×3.0 м, высота борта 1.8 м)",
+   "group": "ships",
+   "sizeM": "11×3.0",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: лайтер, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "pinnace",
+   "name": "Корпус: Пинас (9×2.8 м, высота борта 1.2 м)",
+   "group": "ships",
+   "sizeM": "9×2.8",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: пинас, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "hulk",
+   "name": "Корпус: Халк (36×7.4 м, высота борта 2.6 м)",
+   "group": "ships",
+   "sizeM": "36×7.4",
+   "triBudget": 12000,
+   "materials": [
+    "VAL_LIMESTONE",
+    "VAL_CREAM",
+    "VAL_SAND",
+    "VAL_TEAL",
+    "VAL_SEA",
+    "VAL_BRONZE",
+    "VAL_WHITE"
+   ],
+   "usage": "корабли: халк, потенциал улучшения до следующего класса"
+  },
+  {
+   "id": "cutlass",
+   "name": "Оружие: Абордажная сабля",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "rapier",
+   "name": "Оружие: Рапира",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "sword",
+   "name": "Оружие: Меч",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "longsword",
+   "name": "Оружие: Длинный меч",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "greatsword",
+   "name": "Оружие: Двуручник",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "sabre",
+   "name": "Оружие: Сабля",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "broadsword",
+   "name": "Оружие: Палаш",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "falchion",
+   "name": "Оружие: Фальшион",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "estoc",
+   "name": "Оружие: Эсток",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "dagger",
+   "name": "Оружие: Кинжал",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "dirk",
+   "name": "Оружие: Кортик",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "mainchou",
+   "name": "Оружие: Мейншот",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "club",
+   "name": "Оружие: Булава",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "mace",
+   "name": "Оружие: Молот",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "warhammer",
+   "name": "Оружие: Боевой молот",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "spear",
+   "name": "Оружие: Копьё",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "lance",
+   "name": "Оружие: Пика",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "halberd",
+   "name": "Оружие: Алебарда",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "pike",
+   "name": "Оружие: Муштра",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "trident",
+   "name": "Оружие: Трезубец",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "glaive",
+   "name": "Оружие: Глева",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "axe",
+   "name": "Оружие: Топор",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "battleaxe",
+   "name": "Оружие: Секира",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "beardedaxe",
+   "name": "Оружие: Бородатая секира",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "handaxe",
+   "name": "Оружие: Рукавной топор",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "waraxe",
+   "name": "Оружие: Боевой топор",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "poleaxe",
+   "name": "Оружие: П Pole-axe",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "bow",
+   "name": "Оружие: Лук",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "longbow",
+   "name": "Оружие: Длинный лук",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "shortbow",
+   "name": "Оружие: Короткий лук",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "crossbow",
+   "name": "Оружие: Арбалет",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "arbalest",
+   "name": "Оружие: Арбалест",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "sling",
+   "name": "Оружие: Праща",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "atlatl",
+   "name": "Оружие: Атлатл",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "javelin",
+   "name": "Оружие: Метательное копьё",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "dart",
+   "name": "Оружие: Дротик",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "flintlock",
+   "name": "Оружие: Кремнёвый пистолет",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "miquelet",
+   "name": "Оружие: Микелет",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "snaphance",
+   "name": "Оружие: Снафанс",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "wheellock",
+   "name": "Оружие: Колесцовый пистолет",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "blunderbuss",
+   "name": "Оружие: Блаундер-мушкет",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "musket",
+   "name": "Оружие: Мушкет",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "caliver",
+   "name": "Оружие: Каливер",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "arquebus",
+   "name": "Оружие: Аркебуз",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "pistol",
+   "name": "Оружие: Пистолет",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "carbine",
+   "name": "Оружие: Карабин",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "rifle",
+   "name": "Оружие: Винтовка",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "axe_marine",
+   "name": "Оружие: Абордажный топор",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "boardingpike",
+   "name": "Оружие: Абордажная пика",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "cutlass_sail",
+   "name": "Оружие: Абордажный тесак",
+   "group": "weapons",
+   "sizeM": "—",
+   "triBudget": 4000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_COPPER"
+   ],
+   "usage": "оружие: ближний бой, огнестрел, метательное — по ролям экипажа"
+  },
+  {
+   "id": "det_roof_gable",
+   "name": "Деталь: Двускатная крыша",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_roof_hip",
+   "name": "Деталь: Четырёхскатная крыша",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_roof_flat",
+   "name": "Деталь: Плоская кровля",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_roof_tower",
+   "name": "Деталь: Шатёр башни",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_roof_sawtooth",
+   "name": "Деталь: Пилобразная кровля",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_roof_mansard",
+   "name": "Деталь: Мансардная крыша",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_ridge",
+   "name": "Деталь: Конёк кровли",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_eave",
+   "name": "Деталь: Свес кровли",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_eaves_board",
+   "name": "Деталь: Подшивка карниза",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_gutter",
+   "name": "Деталь: Жёлоб",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_downpipe",
+   "name": "Деталь: Водосточная труба",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_chimney",
+   "name": "Деталь: Труба с колпаком",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_beam_horizontal",
+   "name": "Деталь: Горизонтальная балка",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_beam_vertical",
+   "name": "Деталь: Вертикальная стойка",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_brace_diagonal",
+   "name": "Деталь: Диагональный раскос",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_timber_frame",
+   "name": "Деталь: Фахверк панель",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_foundation",
+   "name": "Деталь: Цоколь фундамента",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_plinth_stone",
+   "name": "Деталь: Каменный цоколь",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_stairs",
+   "name": "Деталь: Наружная лестница",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_stairs_rail",
+   "name": "Деталь: Перила лестницы",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_balcony",
+   "name": "Деталь: Балкон",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_balcony_rail",
+   "name": "Деталь: Ограждение балкона",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_window_frame",
+   "name": "Деталь: Оконная рама",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_window_mullion",
+   "name": "Деталь: Переплёт окна",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_window_sill",
+   "name": "Деталь: Подоконник",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_window_shutters",
+   "name": "Деталь: Ставни",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_window_grate",
+   "name": "Деталь: Решётка окна",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_door_frame",
+   "name": "Деталь: Дверной косяк",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_door_leaf",
+   "name": "Деталь: Дверное полотно",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_door_hinges",
+   "name": "Деталь: Петли двери",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_door_ring",
+   "name": "Деталь: Дверное кольцо",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_arch_stone",
+   "name": "Деталь: Каменная арка",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_bracket",
+   "name": "Деталь: Кронштейн",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_corbel",
+   "name": "Деталь: Каменный выступ",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_corner_stone",
+   "name": "Деталь: Угловой камень",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_sill_band",
+   "name": "Деталь: Поясок цоколя",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_wainscot",
+   "name": "Деталь: Панель обшивки",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_lintel",
+   "name": "Деталь: Перемычка",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_gable_board",
+   "name": "Деталь: Доска щипца",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_bargeboard",
+   "name": "Деталь: Подшивка свеса",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_gutter_join",
+   "name": "Деталь: Соединение жёлоба",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_wall_cap",
+   "name": "Деталь: Парапет стены",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_merlon",
+   "name": "Деталь: Зубец стены",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_battlement",
+   "name": "Деталь: Зубчатый парапет",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_banner",
+   "name": "Деталь: Знамя",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_lantern",
+   "name": "Деталь: Фонарь на кронштейне",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_wheel",
+   "name": "Деталь: Корабельное колесо",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_capstan",
+   "name": "Деталь: Кабестан",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_cleat",
+   "name": "Деталь: Швартовный кнехт",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_bollard",
+   "name": "Деталь: Тумба",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_ladder",
+   "name": "Деталь: Приставная лестница",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_gangway",
+   "name": "Деталь: Сходи",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_crane_arm",
+   "name": "Деталь: Стрела крана",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_crane_hook",
+   "name": "Деталь: Крюк крана",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_rigging_rope",
+   "name": "Деталь: Канат такелажа",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_block_pulley",
+   "name": "Деталь: Блок",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_hatch",
+   "name": "Деталь: Люк",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_grating",
+   "name": "Деталь: Решётка палубы",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_anchor_stock",
+   "name": "Деталь: Якорный штока",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_funnel",
+   "name": "Деталь: Труба дымовая",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_vent",
+   "name": "Деталь: Вентиляционный колпак",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_scupper",
+   "name": "Деталь: Сливной отверстие",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_rowlock",
+   "name": "Деталь: Уключина весла",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "det_oar",
+   "name": "Деталь: Весло",
+   "group": "details",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_WOOD_DARK",
+    "ARK_STONE"
+   ],
+   "usage": "детали построек и кораблей — модульные элементы"
+  },
+  {
+   "id": "wood",
+   "name": "Предмет: Древесина — вязанка брёвен",
+   "group": "items",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "GRN_STRAW",
+    "VAL_CREAM"
+   ],
+   "usage": "предметы и ресурсы — из Goods.json, цепочки производства"
+  },
+  {
+   "id": "planks",
+   "name": "Предмет: Доски — стопка досок",
+   "group": "items",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "GRN_STRAW",
+    "VAL_CREAM"
+   ],
+   "usage": "предметы и ресурсы — из Goods.json, цепочки производства"
+  },
+  {
+   "id": "ore",
+   "name": "Предмет: Руда — корзина руды",
+   "group": "items",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "GRN_STRAW",
+    "VAL_CREAM"
+   ],
+   "usage": "предметы и ресурсы — из Goods.json, цепочки производства"
+  },
+  {
+   "id": "metal",
+   "name": "Предмет: Металл — слитки металла",
+   "group": "items",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "GRN_STRAW",
+    "VAL_CREAM"
+   ],
+   "usage": "предметы и ресурсы — из Goods.json, цепочки производства"
+  },
+  {
+   "id": "parts",
+   "name": "Предмет: Детали — ящик механических деталей",
+   "group": "items",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "GRN_STRAW",
+    "VAL_CREAM"
+   ],
+   "usage": "предметы и ресурсы — из Goods.json, цепочки производства"
+  },
+  {
+   "id": "fiber",
+   "name": "Предмет: Волокно — моток волокна",
+   "group": "items",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "GRN_STRAW",
+    "VAL_CREAM"
+   ],
+   "usage": "предметы и ресурсы — из Goods.json, цепочки производства"
+  },
+  {
+   "id": "cloth",
+   "name": "Предмет: Ткань — свёрток ткани",
+   "group": "items",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "GRN_STRAW",
+    "VAL_CREAM"
+   ],
+   "usage": "предметы и ресурсы — из Goods.json, цепочки производства"
+  },
+  {
+   "id": "clothes",
+   "name": "Предмет: Одежда — стопка одежды",
+   "group": "items",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "GRN_STRAW",
+    "VAL_CREAM"
+   ],
+   "usage": "предметы и ресурсы — из Goods.json, цепочки производства"
+  },
+  {
+   "id": "ether_raw",
+   "name": "Предмет: Эфир-сырьё — кристаллы эфира-сырья",
+   "group": "items",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "GRN_STRAW",
+    "VAL_CREAM"
+   ],
+   "usage": "предметы и ресурсы — из Goods.json, цепочки производства"
+  },
+  {
+   "id": "fuel",
+   "name": "Предмет: Эфирное топливо — бочка эфирного топлива",
+   "group": "items",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "GRN_STRAW",
+    "VAL_CREAM"
+   ],
+   "usage": "предметы и ресурсы — из Goods.json, цепочки производства"
+  },
+  {
+   "id": "grain",
+   "name": "Предмет: Небесное зерно — мешок зерна",
+   "group": "items",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "GRN_STRAW",
+    "VAL_CREAM"
+   ],
+   "usage": "предметы и ресурсы — из Goods.json, цепочки производства"
+  },
+  {
+   "id": "flour",
+   "name": "Предмет: Мука — мешок муки",
+   "group": "items",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "GRN_STRAW",
+    "VAL_CREAM"
+   ],
+   "usage": "предметы и ресурсы — из Goods.json, цепочки производства"
+  },
+  {
+   "id": "bread",
+   "name": "Предмет: Хлеб — буханка хлеба",
+   "group": "items",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "GRN_STRAW",
+    "VAL_CREAM"
+   ],
+   "usage": "предметы и ресурсы — из Goods.json, цепочки производства"
+  },
+  {
+   "id": "aquacrystal",
+   "name": "Предмет: Аквакристалл — кристалл аквакристалла",
+   "group": "items",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_WOOD_DARK",
+    "GRN_STRAW",
+    "VAL_CREAM"
+   ],
+   "usage": "предметы и ресурсы — из Goods.json, цепочки производства"
+  },
+  {
+   "id": "tool_engineer",
+   "name": "Инженерные инструменты",
+   "group": "tools",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_COPPER",
+    "ARK_WOOD_DARK"
+   ],
+   "usage": "инструменты по профессиям Bible §5"
+  },
+  {
+   "id": "tool_smith",
+   "name": "Кузнечные инструменты",
+   "group": "tools",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_COPPER",
+    "ARK_WOOD_DARK"
+   ],
+   "usage": "инструменты по профессиям Bible §5"
+  },
+  {
+   "id": "tool_carpenter",
+   "name": "Плотницкие инструменты",
+   "group": "tools",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_COPPER",
+    "ARK_WOOD_DARK"
+   ],
+   "usage": "инструменты по профессиям Bible §5"
+  },
+  {
+   "id": "tool_navigator",
+   "name": "Навигационные приборы",
+   "group": "tools",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_COPPER",
+    "ARK_WOOD_DARK"
+   ],
+   "usage": "инструменты по профессиям Bible §5"
+  },
+  {
+   "id": "tool_seaman",
+   "name": "Морские инструменты",
+   "group": "tools",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_COPPER",
+    "ARK_WOOD_DARK"
+   ],
+   "usage": "инструменты по профессиям Bible §5"
+  },
+  {
+   "id": "tool_trader",
+   "name": "Торговые весы и гири",
+   "group": "tools",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_COPPER",
+    "ARK_WOOD_DARK"
+   ],
+   "usage": "инструменты по профессиям Bible §5"
+  },
+  {
+   "id": "tool_farmer",
+   "name": "Сельскохозяйственные орудия",
+   "group": "tools",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_COPPER",
+    "ARK_WOOD_DARK"
+   ],
+   "usage": "инструменты по профессиям Bible §5"
+  },
+  {
+   "id": "tool_hunter",
+   "name": "Охотничьи снасти",
+   "group": "tools",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_COPPER",
+    "ARK_WOOD_DARK"
+   ],
+   "usage": "инструменты по профессиям Bible §5"
+  },
+  {
+   "id": "tool_shooter",
+   "name": "Оружейные принадлежности",
+   "group": "tools",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_COPPER",
+    "ARK_WOOD_DARK"
+   ],
+   "usage": "инструменты по профессиям Bible §5"
+  },
+  {
+   "id": "tool_fencer",
+   "name": "Фехтовальные принадлежности",
+   "group": "tools",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_COPPER",
+    "ARK_WOOD_DARK"
+   ],
+   "usage": "инструменты по профессиям Bible §5"
+  },
+  {
+   "id": "tool_repair",
+   "name": "Ремонтные инструменты",
+   "group": "tools",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_COPPER",
+    "ARK_WOOD_DARK"
+   ],
+   "usage": "инструменты по профессиям Bible §5"
+  },
+  {
+   "id": "tool_manager",
+   "name": "Канцелярские принадлежности",
+   "group": "tools",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_COPPER",
+    "ARK_WOOD_DARK"
+   ],
+   "usage": "инструменты по профессиям Bible §5"
+  },
+  {
+   "id": "tool_mason",
+   "name": "Каменщицкий инструмент",
+   "group": "tools",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_COPPER",
+    "ARK_WOOD_DARK"
+   ],
+   "usage": "инструменты по профессиям Bible §5"
+  },
+  {
+   "id": "tool_cooper",
+   "name": "Бондарный инструмент",
+   "group": "tools",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_COPPER",
+    "ARK_WOOD_DARK"
+   ],
+   "usage": "инструменты по профессиям Bible §5"
+  },
+  {
+   "id": "tool_leather",
+   "name": "Кожевенный инструмент",
+   "group": "tools",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_COPPER",
+    "ARK_WOOD_DARK"
+   ],
+   "usage": "инструменты по профессиям Bible §5"
+  },
+  {
+   "id": "tool_glass",
+   "name": "Стекольный инструмент",
+   "group": "tools",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STEEL",
+    "ARK_COPPER",
+    "ARK_WOOD_DARK"
+   ],
+   "usage": "инструменты по профессиям Bible §5"
+  },
+  {
+   "id": "wx_fog_bank",
+   "name": "Банка тумана",
+   "group": "weather",
+   "sizeM": "—",
+   "triBudget": 200,
+   "materials": [
+    "INK",
+    "PARCHMENT"
+   ],
+   "usage": "погода — для Ф12 (облака)"
+  },
+  {
+   "id": "wx_cumulus_large",
+   "name": "Кучевое большое",
+   "group": "weather",
+   "sizeM": "—",
+   "triBudget": 200,
+   "materials": [
+    "INK",
+    "PARCHMENT"
+   ],
+   "usage": "погода — для Ф12 (облака)"
+  },
+  {
+   "id": "wx_cumulus_small",
+   "name": "Кучевое малое",
+   "group": "weather",
+   "sizeM": "—",
+   "triBudget": 200,
+   "materials": [
+    "INK",
+    "PARCHMENT"
+   ],
+   "usage": "погода — для Ф12 (облака)"
+  },
+  {
+   "id": "wx_stratus",
+   "name": "Слоистое",
+   "group": "weather",
+   "sizeM": "—",
+   "triBudget": 200,
+   "materials": [
+    "INK",
+    "PARCHMENT"
+   ],
+   "usage": "погода — для Ф12 (облака)"
+  },
+  {
+   "id": "wx_cirrus",
+   "name": "Перистое",
+   "group": "weather",
+   "sizeM": "—",
+   "triBudget": 200,
+   "materials": [
+    "INK",
+    "PARCHMENT"
+   ],
+   "usage": "погода — для Ф12 (облака)"
+  },
+  {
+   "id": "wx_nimbus",
+   "name": "Кучево-дождевое",
+   "group": "weather",
+   "sizeM": "—",
+   "triBudget": 200,
+   "materials": [
+    "INK",
+    "PARCHMENT"
+   ],
+   "usage": "погода — для Ф12 (облака)"
+  },
+  {
+   "id": "wx_mist",
+   "name": "Дымка над водой",
+   "group": "weather",
+   "sizeM": "—",
+   "triBudget": 200,
+   "materials": [
+    "INK",
+    "PARCHMENT"
+   ],
+   "usage": "погода — для Ф12 (облака)"
+  },
+  {
+   "id": "wx_vortex",
+   "name": "Вихрь над морем",
+   "group": "weather",
+   "sizeM": "—",
+   "triBudget": 200,
+   "materials": [
+    "INK",
+    "PARCHMENT"
+   ],
+   "usage": "погода — для Ф12 (облака)"
+  },
+  {
+   "id": "wx_lightning",
+   "name": "Молния",
+   "group": "weather",
+   "sizeM": "—",
+   "triBudget": 200,
+   "materials": [
+    "INK",
+    "PARCHMENT"
+   ],
+   "usage": "погода — для Ф12 (облака)"
+  },
+  {
+   "id": "wx_rain_cloud",
+   "name": "Дождевая туча",
+   "group": "weather",
+   "sizeM": "—",
+   "triBudget": 200,
+   "materials": [
+    "INK",
+    "PARCHMENT"
+   ],
+   "usage": "погода — для Ф12 (облака)"
+  },
+  {
+   "id": "ui_icon",
+   "name": "UI: Иконка",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_badge",
+   "name": "UI: Значок счётчика",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_tab",
+   "name": "UI: Вкладка",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_slider",
+   "name": "UI: Ползунок",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_toggle",
+   "name": "UI: Переключатель",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_checkbox",
+   "name": "UI: Чекбокс",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_radio",
+   "name": "UI: Радиокнопка",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_tooltip",
+   "name": "UI: Всплывающая подсказка",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_progress",
+   "name": "UI: Полоса прогресса",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_meter",
+   "name": "UI: Шкала",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_compass",
+   "name": "UI: Компас",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_minimap",
+   "name": "UI: Мини-карта",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_dialog",
+   "name": "UI: Диалоговое окно",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_toolbar",
+   "name": "UI: Панель инструментов",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_hotbar",
+   "name": "UI: Панель быстрого доступа",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_craft",
+   "name": "UI: Панель крафта",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_ship_hud",
+   "name": "UI: HUD корабля",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_trade_panel",
+   "name": "UI: Панель торговли",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_currency",
+   "name": "UI: Плашка валюты",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_timer",
+   "name": "UI: Таймер",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "ui_tooltip_icon",
+   "name": "UI: Иконка подсказки",
+   "group": "ui",
+   "sizeM": "—",
+   "triBudget": 0,
+   "materials": [
+    "INK",
+    "PARCHMENT",
+    "PARCH_DARK",
+    "BRASS",
+    "WOOD_UI",
+    "DANGER",
+    "FOCUS_BLUE"
+   ],
+   "usage": "интерфейс — 11 окон по Bible §9 + вспомогательные элементы"
+  },
+  {
+   "id": "tile_stone_wall",
+   "name": "Каменная стена (тайл)",
+   "group": "tiles",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STONE"
+   ],
+   "usage": "бесшовные тайлы поверхностей"
+  },
+  {
+   "id": "tile_plaster",
+   "name": "Штукатурка (тайл)",
+   "group": "tiles",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STONE"
+   ],
+   "usage": "бесшовные тайлы поверхностей"
+  },
+  {
+   "id": "tile_wood_floor",
+   "name": "Дощатый пол (тайл)",
+   "group": "tiles",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STONE"
+   ],
+   "usage": "бесшовные тайлы поверхностей"
+  },
+  {
+   "id": "tile_roof_slate",
+   "name": "Сланцевая крыша (тайл)",
+   "group": "tiles",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STONE"
+   ],
+   "usage": "бесшовные тайлы поверхностей"
+  },
+  {
+   "id": "tile_roof_thatch",
+   "name": "Соломенная крыша (тайл)",
+   "group": "tiles",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STONE"
+   ],
+   "usage": "бесшовные тайлы поверхностей"
+  },
+  {
+   "id": "tile_roof_tile",
+   "name": "Черепица (тайл)",
+   "group": "tiles",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STONE"
+   ],
+   "usage": "бесшовные тайлы поверхностей"
+  },
+  {
+   "id": "tile_dirt",
+   "name": "Земля (тайл)",
+   "group": "tiles",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STONE"
+   ],
+   "usage": "бесшовные тайлы поверхностей"
+  },
+  {
+   "id": "tile_grass_patch",
+   "name": "Трава (тайл)",
+   "group": "tiles",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STONE"
+   ],
+   "usage": "бесшовные тайлы поверхностей"
+  },
+  {
+   "id": "tile_gravel",
+   "name": "Гравий (тайл)",
+   "group": "tiles",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STONE"
+   ],
+   "usage": "бесшовные тайлы поверхностей"
+  },
+  {
+   "id": "tile_sand",
+   "name": "Песок (тайл)",
+   "group": "tiles",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STONE"
+   ],
+   "usage": "бесшовные тайлы поверхностей"
+  },
+  {
+   "id": "tile_mud",
+   "name": "Грязь (тайл)",
+   "group": "tiles",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STONE"
+   ],
+   "usage": "бесшовные тайлы поверхностей"
+  },
+  {
+   "id": "tile_snow",
+   "name": "Снег (тайл)",
+   "group": "tiles",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STONE"
+   ],
+   "usage": "бесшовные тайлы поверхностей"
+  },
+  {
+   "id": "tile_cliff",
+   "name": "Скала (тайл)",
+   "group": "tiles",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STONE"
+   ],
+   "usage": "бесшовные тайлы поверхностей"
+  },
+  {
+   "id": "tile_cobble",
+   "name": "Булыжник (тайл)",
+   "group": "tiles",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STONE"
+   ],
+   "usage": "бесшовные тайлы поверхностей"
+  },
+  {
+   "id": "tile_crate_stack",
+   "name": "Штабель ящиков (тайл)",
+   "group": "tiles",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STONE"
+   ],
+   "usage": "бесшовные тайлы поверхностей"
+  },
+  {
+   "id": "tile_net",
+   "name": "Рыболовная сеть (тайл)",
+   "group": "tiles",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STONE"
+   ],
+   "usage": "бесшовные тайлы поверхностей"
+  },
+  {
+   "id": "tile_rope",
+   "name": "Канаты (тайл)",
+   "group": "tiles",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STONE"
+   ],
+   "usage": "бесшовные тайлы поверхностей"
+  },
+  {
+   "id": "tile_rack",
+   "name": "Стеллаж (тайл)",
+   "group": "tiles",
+   "sizeM": "—",
+   "triBudget": 2000,
+   "materials": [
+    "ARK_STONE"
+   ],
+   "usage": "бесшовные тайлы поверхностей"
   }
  ]
 }
