@@ -31,7 +31,7 @@ backups/*
 !backups/README.md
 
 # --- вендорные тулзы ---
-tools/blender/
+tools/blender/blender-*/
 tools/luau/
 
 # --- локальные окружения пайплайнов (генерация рефов, image-to-3D) ---
